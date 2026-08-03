@@ -32,6 +32,77 @@
             padding: 24px;
         }
 
+        /* PASSWORD MODAL LOCKSCREEN */
+        #lock-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(15, 23, 42, 0.96);
+            backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lock-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .lock-box h2 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .lock-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .lock-input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background-color: #0f172a;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            outline: none;
+            margin-bottom: 16px;
+        }
+
+        .lock-btn {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background-color: var(--accent);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .lock-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        .error-msg {
+            color: #ef4444;
+            font-size: 12px;
+            margin-top: 10px;
+            display: none;
+        }
+
         .header {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             border: 1px solid var(--border);
@@ -197,10 +268,21 @@
 </head>
 <body>
 
+    <!-- LOCK SCREEN DIALOG -->
+    <div id="lock-screen">
+        <div class="lock-box">
+            <h2>🔒 BẢO MẬT DASHBOARD</h2>
+            <p>Vui lòng nhập mật khẩu truy cập do Ban Quản lý cấp để mở Dashboard</p>
+            <input type="password" id="pass-input" class="lock-input" placeholder="Nhập mật khẩu..." onkeyup="if(event.key==='Enter') unlockApp()">
+            <button class="lock-btn" onclick="unlockApp()">XÁC NHẬN MỞ KHÓA</button>
+            <div id="error-msg" class="error-msg">⚠️ Mật khẩu không chính xác! Vui lòng thử lại.</div>
+        </div>
+    </div>
+
     <div class="header">
         <div>
-            <h1>DASHBOARD TÁCH RIÊNG SỔ TAY IPITEX & SỔ TAY ASMO</h1>
-            <p>Đã chia Sổ tay IPITEX và Sổ tay ASMO thành 2 đầu việc độc lập cho Lê Tùng Chi</p>
+            <h1>DASHBOARD PHÂN CÔNG ĐÍCH DANH (CHUẨN FILE TRỢ LÝ TUẦN 1)</h1>
+            <p>Tối ưu chính xác 16 nhiệm vụ và 6 nhân sự trong file Trợ lý - Tuần 1.xlsx</p>
         </div>
     </div>
 
@@ -267,9 +349,24 @@
     </div>
 
     <script>
+        const DEFAULT_PASS = "RIVA2026"; // Default Passcode
         const dailyData = {"Thu2": {"title": "Thứ Hai (03/08/2026)", "tasks": [{"id": "t2_1", "task": "Sổ tay IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ biên soạn, thiết kế, duyệt nội dung", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Đang tiến hành biên soạn"}, {"id": "t2_2", "task": "Sổ tay NCKH", "who": "Thảo Nguyên", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung, hình ảnh, in ấn", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Kiểm tra trước khi in"}, {"id": "t2_3", "task": "Sổ tay AP & Song bằng", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung tư vấn, học bổng, lộ trình", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Review thông tin học bổng"}, {"id": "t2_4", "task": "Sổ tay Du học", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra thông tin trường, học phí, học bổng", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Review thông tin trường"}, {"id": "t2_5", "task": "Hồ sơ khóa học ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra đủ danh sách, giáo trình, slide, bài tập, đề thi", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Upload lên Drive"}, {"id": "t2_6", "task": "Hồ sơ khóa học AP", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra và lưu trên Drive", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Lưu trên Drive"}, {"id": "t2_7", "task": "Hồ sơ khóa học IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu, bài giảng, đề luyện", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Kiểm tra tài liệu"}, {"id": "t2_8", "task": "Hồ sơ khóa học NCKH", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu hướng dẫn nghiên cứu", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08)", "note": "Hoàn thiện tài liệu HĐ"}]}, "Thu3": {"title": "Thứ Ba (04/08/2026)", "tasks": [{"id": "t3_1", "task": "Sổ tay IAIO (Hạn chót 04/08)", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ biên soạn, thiết kế, duyệt nội dung", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Nộp bản thảo duyệt"}, {"id": "t3_2", "task": "Sổ tay NCKH (Hạn chót 04/08)", "who": "Thảo Nguyên", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung, hình ảnh, in ấn", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Bàn giao file in"}, {"id": "t3_3", "task": "Sổ tay AP & Song bằng (Hạn chót 04/08)", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung tư vấn, học bổng, lộ trình", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Chốt sổ tay tư vấn"}, {"id": "t3_4", "task": "Sổ tay Du học (Hạn chót 04/08)", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra thông tin trường, học phí, học bổng", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Chốt thông tin trường"}, {"id": "t3_5", "task": "Hồ sơ khóa học ASMO (Hạn chót 04/08)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra đủ danh sách, giáo trình, slide, bài tập, đề thi", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Lưu trữ đầy đủ"}, {"id": "t3_6", "task": "Hồ sơ khóa học AP (Hạn chót 04/08)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra và lưu trên Drive", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Lưu thư mục dùng chung"}, {"id": "t3_7", "task": "Hồ sơ khóa học IAIO (Hạn chót 04/08)", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu, bài giảng, đề luyện", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Lưu thư mục Đào tạo"}, {"id": "t3_8", "task": "Hồ sơ khóa học NCKH (Hạn chót 04/08)", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu hướng dẫn nghiên cứu", "dl": "04/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08)", "note": "Bàn giao tài liệu HĐ"}]}, "Thu4": {"title": "Thứ Tư (05/08/2026)", "tasks": [{"id": "t4_1", "task": "Sổ tay iENA (Hạn chót 05/08)", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung và phiên bản cuối", "dl": "05/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08)", "note": "Hoàn thiện bản in cuối"}, {"id": "t4_2", "task": "Sổ tay IPITEx (Đầu việc 1)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ hoàn thiện thiết kế & nội dung Sổ tay IPITEx", "dl": "05/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08)", "note": "Kiểm tra layout IPITEx"}, {"id": "t4_3", "task": "Sổ tay ASMO (Đầu việc 2)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ biên soạn, thiết kế & in ấn Sổ tay ASMO", "dl": "05/08/2026", "status": "Chưa bắt đầu", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08)", "note": "Kiểm tra layout Sổ tay ASMO"}]}, "Thu5": {"title": "Thứ Năm (06/08/2026)", "tasks": [{"id": "t5_1", "task": "Tuyển sinh lớp ASMO (03 lớp - 30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi số lượng đăng ký hằng ngày, cập nhật CRM", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "⚠️ CHUẨN BỊ DL 10/08", "note": "Mục tiêu 3 lớp ôn luyện"}, {"id": "t5_2", "task": "Tuyển sinh IAIO (03 lớp)", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi tiến độ mở lớp, danh sách trường, lịch khai giảng", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "⚠️ CHUẨN BỊ DL 10/08", "note": "Mục tiêu 02-03 lớp"}]}, "Thu6": {"title": "Thứ Sáu (07/08/2026)", "tasks": [{"id": "t6_1", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Chưa bắt đầu", "alert": "⚠️ CẦN RÀ SOÁT", "note": "Phối hợp trường Dewey"}]}, "Thu7": {"title": "Thứ Bảy (08/08/2026)", "tasks": [{"id": "t7_1", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ THÁNG 8", "note": "Tổ chức lớp tư vấn AP"}, {"id": "t7_2", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Chưa bắt đầu", "alert": "⚠️ KẾ HOẠCH THÁNG 9", "note": "Hồ sơ tuyển sinh đoàn"}, {"id": "t7_3", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Chưa bắt đầu", "alert": "⚠️ KẾ HOẠCH THÁNG 10", "note": "Tuyển sinh đoàn Thái Lan"}]}};
         let currentTab = 'Thu2';
         let syncState = JSON.parse(localStorage.getItem('sync_task_state_v3') || '{}');
+
+        function unlockApp() {
+            const val = document.getElementById('pass-input').value;
+            if (val === DEFAULT_PASS || localStorage.getItem('unlocked_riva') === 'true') {
+                document.getElementById('lock-screen').style.display = 'none';
+                localStorage.setItem('unlocked_riva', 'true');
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+
+        if (localStorage.getItem('unlocked_riva') === 'true') {
+            document.getElementById('lock-screen').style.display = 'none';
+        }
 
         function toggleTaskCheck(taskId, isChecked) {
             syncState[taskId] = isChecked;
