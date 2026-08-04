@@ -368,11 +368,11 @@
         </div>
         <div class="stat-card">
             <span class="label">☐ Đang Thực Hiện / Chưa Xong</span>
-            <span class="val" style="color: #eab308;" id="stat-doing">29</span>
+            <span class="val" style="color: #eab308;" id="stat-doing">23</span>
         </div>
         <div class="stat-card">
             <span class="label">🔴 Nhiệm Vụ Sắp Đến Hạn</span>
-            <span class="val" style="color: #ef4444;" id="stat-urgent">24</span>
+            <span class="val" style="color: #ef4444;" id="stat-urgent">0</span>
         </div>
         <div class="stat-card">
             <span class="label">Tỷ Lệ Hoàn Thành</span>
@@ -569,25 +569,40 @@
         }
 
         function updateStats() {
-            let total = 0;
-            let done = 0;
-            let urgent = 0;
+            let uniqueMap = {};
+            let uniqueList = [];
 
+            // Aggregate unique tasks across master project dataset
             Object.keys(dailyData).forEach(day => {
                 dailyData[day].tasks.forEach(t => {
-                    total++;
-                    if (isTaskCompleted(t)) {
-                        done++;
-                    } else {
-                        if (t.alert.includes('🔴')) urgent++;
+                    if (!uniqueMap[t.id]) {
+                        uniqueMap[t.id] = t;
+                        uniqueList.push(t);
                     }
                 });
             });
 
+            let total = uniqueList.length;
+            let done = 0;
+            let urgent = 0;
+
+            uniqueList.forEach(t => {
+                if (isTaskCompleted(t)) {
+                    done++;
+                } else {
+                    if (t.alert && t.alert.includes('🔴')) {
+                        urgent++;
+                    }
+                }
+            });
+
+            let doing = total - done;
+            let pct = total > 0 ? ((done / total) * 100).toFixed(1) + '%' : '0.0%';
+
             document.getElementById('stat-done').innerText = done;
-            document.getElementById('stat-doing').innerText = total - done;
+            document.getElementById('stat-doing').innerText = doing;
             document.getElementById('stat-urgent').innerText = urgent;
-            document.getElementById('stat-pct').innerText = total > 0 ? ((done / total) * 100).toFixed(1) + '%' : '0%';
+            document.getElementById('stat-pct').innerText = pct;
         }
 
         function renderTable() {
