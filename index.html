@@ -124,6 +124,15 @@
             margin-bottom: 6px;
         }
 
+        .live-clock-box {
+            text-align: right;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -296,6 +305,10 @@
             <h1>DASHBOARD PHÂN CÔNG ĐÍCH DANH & MỐC DEADLINE CÁC TUẦN TIẾP THEO</h1>
             <p>Tối ưu theo dõi mốc tiến độ Tuyển sinh ASMO & Tuyển sinh lớp AP (Deadline 06/09)</p>
         </div>
+        <div class="live-clock-box">
+            <div id="live-date" style="font-size: 14px; font-weight: 700; color: #60a5fa;">🗓️ Hôm nay: ...</div>
+            <div id="live-time" style="font-size: 18px; font-weight: 800; color: #34d399; margin-top: 2px;">⏰ 00:00:00</div>
+        </div>
     </div>
 
     <div class="stats-grid">
@@ -318,15 +331,15 @@
     </div>
 
     <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('Thu2', this)">🗓️ Thứ Hai (03/08)</button>
-        <button class="tab-btn" onclick="switchTab('Thu3', this)">🗓️ Thứ Ba (04/08)</button>
-        <button class="tab-btn" onclick="switchTab('Thu4', this)">🗓️ Thứ Tư (05/08)</button>
-        <button class="tab-btn" onclick="switchTab('Thu5', this)">🗓️ Thứ Năm (06/08)</button>
-        <button class="tab-btn" onclick="switchTab('Thu6', this)">🗓️ Thứ Sáu (07/08)</button>
-        <button class="tab-btn" onclick="switchTab('Thu7', this)">🗓️ Thứ Bảy (08/08)</button>
-        <button class="tab-btn future-tab" onclick="switchTab('Moc20_08', this)">🚩 Mốc 20/08 (AP Qualified List)</button>
-        <button class="tab-btn future-tab" onclick="switchTab('Moc25_08', this)">🚩 Mốc 25/08 (AP Chốt Pipeline)</button>
-        <button class="tab-btn future-tab" onclick="switchTab('Moc05_09', this)">🚀 Mốc 05/09 (AP Khai Giảng)</button>
+        <button class="tab-btn" data-tab="Thu2" onclick="switchTab('Thu2', this)">🗓️ Thứ Hai (03/08)</button>
+        <button class="tab-btn" data-tab="Thu3" onclick="switchTab('Thu3', this)">🗓️ Thứ Ba (04/08)</button>
+        <button class="tab-btn" data-tab="Thu4" onclick="switchTab('Thu4', this)">🗓️ Thứ Tư (05/08)</button>
+        <button class="tab-btn" data-tab="Thu5" onclick="switchTab('Thu5', this)">🗓️ Thứ Năm (06/08)</button>
+        <button class="tab-btn" data-tab="Thu6" onclick="switchTab('Thu6', this)">🗓️ Thứ Sáu (07/08)</button>
+        <button class="tab-btn" data-tab="Thu7" onclick="switchTab('Thu7', this)">🗓️ Thứ Bảy (08/08)</button>
+        <button class="tab-btn future-tab" data-tab="Moc20_08" onclick="switchTab('Moc20_08', this)">🚩 Mốc 20/08 (AP Qualified List)</button>
+        <button class="tab-btn future-tab" data-tab="Moc25_08" onclick="switchTab('Moc25_08', this)">🚩 Mốc 25/08 (AP Chốt Pipeline)</button>
+        <button class="tab-btn future-tab" data-tab="Moc05_09" onclick="switchTab('Moc05_09', this)">🚀 Mốc 05/09 (AP Khai Giảng)</button>
     </div>
 
     <div class="controls">
@@ -369,6 +382,60 @@
         let currentTab = 'Thu2';
         let syncState = JSON.parse(localStorage.getItem('sync_task_state_v10') || '{}');
         let syncDateState = JSON.parse(localStorage.getItem('sync_task_date_v10') || '{}');
+
+        function updateClock() {
+            const now = new Date();
+            const dateOptions = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+            const dateStr = now.toLocaleDateString('vi-VN', dateOptions);
+            const timeStr = now.toLocaleTimeString('vi-VN');
+            
+            document.getElementById('live-date').innerText = `🗓️ Hôm nay: ${dateStr}`;
+            document.getElementById('live-time').innerText = `⏰ ${timeStr}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function autoSelectTodayTab() {
+            const today = new Date();
+            const day = today.getDate();
+            const month = today.getMonth() + 1;
+
+            const dayToTabMap = {
+                3: 'Thu2',
+                4: 'Thu3',
+                5: 'Thu4',
+                6: 'Thu5',
+                7: 'Thu6',
+                8: 'Thu7'
+            };
+
+            if (month === 8 && dayToTabMap[day]) {
+                currentTab = dayToTabMap[day];
+            } else {
+                const dayOfWeek = today.getDay();
+                const dowToTabMap = {
+                    1: 'Thu2',
+                    2: 'Thu3',
+                    3: 'Thu4',
+                    4: 'Thu5',
+                    5: 'Thu6',
+                    6: 'Thu7'
+                };
+                if (dowToTabMap[dayOfWeek]) {
+                    currentTab = dowToTabMap[dayOfWeek];
+                }
+            }
+
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                if (b.getAttribute('data-tab') === currentTab) {
+                    b.classList.add('active');
+                } else {
+                    b.classList.remove('active');
+                }
+            });
+        }
+
+        autoSelectTodayTab();
 
         function unlockApp() {
             const val = document.getElementById('pass-input').value;
