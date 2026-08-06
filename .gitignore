@@ -1,11 +1,14 @@
-# Temporary Excel files
-~$*.xlsx
-*.tmp
+# Ignore all Excel files
+*.xlsx
+*.xls
+*.csv
 
-# Python cache
-__pycache__/
-*.pyc
+# Ignore all Batch scripts & Windows Executables
+*.bat
+*.cmd
+*.exe
 
-# OS generated files
+# Ignore temporary sync scripts & system files
+*.py
 .DS_Store
 Thumbs.db

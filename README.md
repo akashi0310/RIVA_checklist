@@ -21,15 +21,9 @@ Hệ thống Dashboard theo dõi tiến độ, phân công công việc & tra c�
 RIVA_checklist/
 ├── index.html           # File giao diện web chính (HTML/CSS/JavaScript)
 ├── dashboard_data.js    # Cơ sở dữ liệu 6 dự án & phân công nhân sự
-├── .env                 # File cấu hình mã hóa mật khẩu
+├── .env                 # File cấu hình mã hóa mật khẩu SHA-256
 └── README.md            # Tài liệu hướng dẫn sử dụng
 ```
-
----
-
-## 🔐 Hướng Dẫn Đăng Nhập
-
-Mật khẩu mặc định truy cập hệ thống: `riva2026`
 
 ---
 
