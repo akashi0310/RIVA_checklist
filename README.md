@@ -1,54 +1,38 @@
-# 🚀 RIVA Checklist - Hệ Thống Quản Lý Phân Công Công Việc 6 Dự Án Chiến Lược
+# 📋 RIVA Checklist & Dashboard Quản Lý Phân Công Công Việc 6 Dự Án
 
-Hệ thống Dashboard theo dõi phân công công việc trực quan, tự động làm sạch danh sách nhân sự và giám sát tiến độ dự án real-time cho 6 danh mục chiến lược của RIVA.
-
-🌐 **Trang Web Dashboard Trực Tuyến**: [https://akashi0310.github.io/RIVA_checklist/](https://akashi0310.github.io/RIVA_checklist/)
-
----
-
-## 🔒 Bảo Mật Truy Cập
-Trang Dashboard được trang bị màn hình khóa xác thực bảo mật nội bộ để tránh truy cập trái phép khi publish công khai trên GitHub Pages.
-- **Mật khẩu truy cập nội bộ**: `riva2026` hoặc `RIVA2026`
+Hệ thống Dashboard theo dõi tiến độ, phân công công việc & tra cứu nhân sự trực quan dành cho 6 dự án trọng điểm RIVA.
 
 ---
 
 ## 🌟 Tính Năng Nổi Bật
-1. **Tra Cứu Nhân Viên Toàn Hệ Thống**: Tìm kiếm & liệt kê 100% công việc của từng nhân viên trên cả 6 dự án cùng lúc.
-2. **Mã Màu Phân Loại Dự Án**: 
-   - 🏆 **AMSIO**: Tím Xanh (`#6366f1`)
-   - 🎓 **AP**: Xanh Lá (`#10b981`)
-   - ✈️ **IENA (Đức)**: Vàng Cam (`#f59e0b`)
-   - 🇹🇭 **IPITEX (Thái Lan)**: Hồng (`#ec4899`)
-   - 🔬 **NCKH**: Xanh Ngọc (`#06b6d4`)
-   - 📣 **Sản Phẩm Truyền Thông**: Tím (`#a855f7`)
-3. **Cảnh Báo Deadline Nóng (≤ 4 ngày)**: Công việc chưa hoàn thành có deadline sắp tới hoặc quá hạn sẽ được hiển thị **Màu Đỏ In Đậm kèm Biểu Tượng Cảnh Báo ⚠️**.
-4. **Lưu Trạng Thái Đã Xong/Chưa Xong**: Tự động lưu vào bộ nhớ trình duyệt `localStorage`.
-5. **Xuất Excel Báo Cáo Cá Nhân & Dự Án**: Hỗ trợ xuất file `.csv` chuẩn UTF-8 BOM.
+
+- **Báo Cáo Tổng Quan 6 Dự Án**: AMSIO Việt Nam, Tuyển Sinh AP, Đội Tuyển IENA (Đức), Đội Tuyển IPITEX (Thái Lan), NCKH (2026-2027), Sản Phẩm Truyền Thông.
+- **Tra Cứu Nhân Sự Hàng Đầu (Global Search Taskbar)**: Tìm kiếm & chọn nhanh nhân sự ngay ở hàng trên cùng của trang web.
+- **Tự Động Cảnh Báo Deadline (≤ 4 ngày & Quá hạn)**: Công việc gần deadline hiển thị màu đỏ in đậm kèm biểu tượng cảnh báo ⚠️ và được tự động đẩy lên đầu danh sách.
+- **Chế Độ Xem Hộp Ngang Khi Chọn 1 Nhân Sự (Horizontal Single Person Box)**: Hiển thị giao diện dàn ngang rộng rãi, dễ quan sát chi tiết từng nhiệm vụ.
+- **Tương Tác Tự Động Định Vị Công Việc (Jump & Flash Highlight)**: Nhấp vào bất kỳ công việc nào trong mục Phân Công Nhân Sự sẽ tự động chuyển sang Bảng Công Việc, cuộn màn hình và phát sáng dòng công việc đó.
+- **Bảo Mật Đăng Nhập An Toàn (SHA-256 Hashing & .env)**: Bảo mật phân quyền đăng nhập bằng thuật toán mã hóa SHA-256.
 
 ---
 
-## 📁 Cấu Trúc Thư Mục
-- `index.html`: Giao diện Web Dashboard chính tích hợp màn khóa bảo mật.
-- `dashboard_data.js`: Cơ sở dữ liệu 240 công việc đã xử lý.
-- `update_dashboard.py`: Script Python tự động đọc 6 file Excel & làm sạch dữ liệu.
-- `cap_nhat_du_lieu.bat`: File nhấp đôi chuột 1-click để cập nhật lại dữ liệu khi sửa Excel.
-- `*.xlsx`: 6 file dữ liệu Excel gốc (AMSIO, AP, IENA, IPITEX, NCKH, SẢN PHẨM TRUYỀN THÔNG).
+## 📁 Cấu Trúc File Dự Án
 
----
-
-## 🛠️ Hướng Dẫn Cập Nhật Dữ Liệu
-Khi bạn chỉnh sửa hoặc bổ sung bất kỳ file Excel nào trong thư mục này:
-1. Nhấp đôi chuột vào file `cap_nhat_du_lieu.bat`.
-2. Hệ thống sẽ tự động cập nhật file `dashboard_data.js`.
-3. Mở lại hoặc nhấn **F5** trên `index.html` để thấy dữ liệu mới!
-
----
-
-## 🌐 Hướng Dẫn Đẩy Code Lên GitHub `akashi0310/RIVA_checklist`
-Nếu bạn sử dụng Git:
-```bash
-git add .
-git commit -m "Update RIVA Checklist Dashboard with security password"
-git push origin main
+```text
+RIVA_checklist/
+├── index.html           # File giao diện web chính (HTML/CSS/JavaScript)
+├── dashboard_data.js    # Cơ sở dữ liệu 6 dự án & phân công nhân sự
+├── .env                 # File cấu hình mã hóa mật khẩu
+└── README.md            # Tài liệu hướng dẫn sử dụng
 ```
-Hoặc kéo thả trực tiếp các file trong thư mục `RIVA_checklist` vào giao diện Repository [https://github.com/akashi0310/RIVA_checklist](https://github.com/akashi0310/RIVA_checklist).
+
+---
+
+## 🔐 Hướng Dẫn Đăng Nhập
+
+Mật khẩu mặc định truy cập hệ thống: `riva2026`
+
+---
+
+## 🌐 Trải Nghiệm Trực Tuyến
+
+Truy cập hệ thống Dashboard tại: [https://akashi0310.github.io/RIVA_checklist/](https://akashi0310.github.io/RIVA_checklist/)

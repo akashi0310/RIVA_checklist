@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ Thống Quản Lý & Phân Công Toàn Diện RIVA (6 Danh Mục Chiến Lược)</title>
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Chart.js -->
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
@@ -46,7 +46,7 @@
             --role-executor: #2dd4bf;
             --role-executor-bg: rgba(45, 212, 191, 0.15);
 
-            /* PROJECT BRAND COLOR TOKENS */
+            
             --color-amsio: #6366f1;
             --color-amsio-bg: rgba(99, 102, 241, 0.18);
             --color-amsio-text: #a5b4fc;
@@ -101,7 +101,7 @@
             margin: 0 auto;
         }
 
-        /* SECURITY AUTH OVERLAY LOCK SCREEN */
+        
         #auth-overlay {
             position: fixed;
             inset: 0;
@@ -242,7 +242,7 @@
             border: 1px solid rgba(239, 68, 68, 0.3);
         }
 
-        /* STAFF SEARCH DEDICATED TASKBAR (ROW 1: HÀNG ĐẦU TIÊN TỔNG QUÁT) */
+        
         .staff-search-taskbar {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
             border: 1px solid rgba(236, 72, 153, 0.4);
@@ -303,7 +303,7 @@
             box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.25);
         }
 
-        /* PROJECT SWITCHER HEADER BAR (ROW 2: DỰ ÁN CỤ THỂ BÊN DƯỚI) */
+        
         .project-switcher-bar {
             display: flex;
             gap: 8px;
@@ -345,7 +345,7 @@
             box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
         }
 
-        /* HEADER */
+        
         header {
             display: flex;
             justify-content: space-between;
@@ -420,7 +420,7 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* PROJECT META BANNER */
+        
         .project-meta-banner {
             display: none;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -464,7 +464,7 @@
             margin-top: 2px;
         }
 
-        /* KPI METRICS GRID */
+        
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -553,7 +553,7 @@
             transition: width 0.8s ease;
         }
 
-        /* CONTROLS & FILTER SECTION */
+        
         .filter-panel {
             background: var(--bg-card);
             backdrop-filter: blur(16px);
@@ -620,7 +620,7 @@
             border-color: var(--primary);
         }
 
-        /* QUICK PERSONNEL PILLS */
+        
         .personnel-pills {
             display: flex;
             flex-wrap: wrap;
@@ -673,7 +673,7 @@
             font-weight: 700;
         }
 
-        /* NAVIGATION TABS */
+        
         .tab-nav {
             display: flex;
             gap: 8px;
@@ -708,7 +708,7 @@
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
         }
 
-        /* TAB CONTENT PANELS */
+        
         .tab-content {
             display: none;
         }
@@ -723,7 +723,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PERSONNEL WORKLOAD CARDS VIEW */
+        
         .people-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -838,7 +838,7 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
-        /* SINGLE PERSON HORIZONTAL BOX VIEW */
+        
         .person-card-horizontal {
             grid-column: 1 / -1 !important;
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%) !important;
@@ -884,7 +884,7 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* TABLE ROW FLASH HIGHLIGHT ANIMATION WHEN CLICKED FROM PERSONNEL VIEW */
+        
         @keyframes rowHighlightPulse {
             0% { background: rgba(99, 102, 241, 0.5); box-shadow: 0 0 25px rgba(99, 102, 241, 0.7); }
             50% { background: rgba(99, 102, 241, 0.7); box-shadow: 0 0 30px rgba(99, 102, 241, 0.9); }
@@ -895,7 +895,7 @@
             animation: rowHighlightPulse 2.5s ease-out;
         }
 
-        /* DATA TABLE VIEW */
+        
         .table-container {
             background: var(--bg-card);
             backdrop-filter: blur(16px);
@@ -958,7 +958,7 @@
             border: 1px solid rgba(99, 102, 241, 0.3);
         }
 
-        /* PROJECT COLOR BADGES WITH EXACT MATCHING COLORS */
+        
         .badge-proj-amsio { background: var(--color-amsio-bg); color: var(--color-amsio-text); border: 1px solid var(--color-amsio); font-weight: 700; }
         .badge-proj-ap { background: var(--color-ap-bg); color: var(--color-ap-text); border: 1px solid var(--color-ap); font-weight: 700; }
         .badge-proj-iena { background: var(--color-iena-bg); color: var(--color-iena-text); border: 1px solid var(--color-iena); font-weight: 700; }
@@ -1016,7 +1016,7 @@
             text-decoration: underline;
         }
 
-        /* URGENT DEADLINE WARNING STYLES (≤ 4 DAYS AWAY OR OVERDUE) */
+        
         .deadline-warning {
             color: #ef4444 !important;
             font-weight: 800 !important;
@@ -1036,7 +1036,7 @@
             100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
         }
 
-        /* CHARTS VIEW */
+        
         .charts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
@@ -1067,7 +1067,7 @@
             width: 100%;
         }
 
-        /* RESPONSIVE DESIGN */
+        
         @media (max-width: 900px) {
             .project-switcher-bar {
                 flex-direction: column;
@@ -1092,7 +1092,7 @@
 </head>
 <body>
 
-    <!-- SECURITY PASSWORD OVERLAY LOCK SCREEN -->
+    
     <div id="auth-overlay">
         <div class="auth-card">
             <div class="auth-icon">
@@ -1120,7 +1120,7 @@
     </div>
 
     <div class="container" id="main-app-container" style="display: none;">
-        <!-- STAFF SEARCH DEDICATED TASKBAR (ROW 1: THANH TRA CỨU NHÂN VIÊN ĐẶT LÊN TRÊN CÙNG ĐỂ SEARCH TỔNG QUÁT) -->
+        
         <div class="staff-search-taskbar">
             <div class="taskbar-row-top">
                 <div class="taskbar-title">
@@ -1143,14 +1143,14 @@
                 </select>
             </div>
 
-            <!-- QUICK SELECT PILLS FOR STAFF -->
+            
             <div class="personnel-pills" id="global-staff-pills" style="border-top: 1px dashed rgba(236, 72, 153, 0.25); padding-top: 10px;">
                 <span class="pill-label" style="color: #f472b6;"><i class="fa-solid fa-user-tag"></i> Chọn nhanh nhân viên:</span>
-                <!-- Pills generated dynamically -->
+                
             </div>
         </div>
 
-        <!-- TOP PROJECT SWITCHER BAR (ROW 2: DỰ ÁN CỤ THỂ BÊN DƯỚI) -->
+        
         <div class="project-switcher-bar">
             <button class="project-btn active" data-project="amsio">
                 <i class="fa-solid fa-trophy" style="color: var(--color-amsio-text);"></i> AMSIO
@@ -1172,7 +1172,7 @@
             </button>
         </div>
 
-        <!-- HEADER -->
+        
         <header>
             <div class="header-title-box">
                 <h1 id="header-title"><i class="fa-solid fa-square-check" style="color: #818cf8;"></i> AMSIO - Dashboard Phân Công Công Việc</h1>
@@ -1185,12 +1185,12 @@
             </div>
         </header>
 
-        <!-- PROJECT META BANNER -->
+        
         <div class="project-meta-banner" id="project-meta-banner">
-            <!-- Rendered dynamically -->
+            
         </div>
 
-        <!-- KPI METRICS OVERVIEW -->
+        
         <div class="metrics-grid" id="metrics-grid">
             <div class="metric-card" style="--card-accent: #6366f1; --icon-bg: rgba(99, 102, 241, 0.15);">
                 <div class="metric-header">
@@ -1232,7 +1232,7 @@
             </div>
         </div>
 
-        <!-- FILTER & CONTROLS PANEL -->
+        
         <div class="filter-panel" id="filter-panel">
             <div class="filter-row">
                 <div class="search-box">
@@ -1262,28 +1262,28 @@
                 </select>
             </div>
 
-            <!-- QUICK PERSONNEL PILLS -->
+            
             <div class="personnel-pills" id="personnel-pills">
                 <span class="pill-label"><i class="fa-solid fa-filter"></i> Chọn nhanh nhân sự trong dự án:</span>
-                <!-- Pills generated dynamically -->
+                
             </div>
         </div>
 
-        <!-- NAVIGATION TABS FOR PROJECT VIEWS -->
+        
         <div class="tab-nav" id="tab-nav">
             <button class="tab-btn active" data-tab="tab-people"><i class="fa-solid fa-users-viewfinder"></i> Phân Công Theo Nhân Sự</button>
             <button class="tab-btn" data-tab="tab-table"><i class="fa-solid fa-table-list"></i> Bảng Danh Sách Công Việc</button>
             <button class="tab-btn" data-tab="tab-analytics"><i class="fa-solid fa-chart-pie"></i> Biểu Đồ & Thống Kê</button>
         </div>
 
-        <!-- TAB 1: PERSONNEL WORKLOAD CARDS VIEW -->
+        
         <div id="tab-people" class="tab-content active">
             <div class="people-grid" id="people-grid">
-                <!-- Person cards rendered by JS -->
+                
             </div>
         </div>
 
-        <!-- TAB 2: DATA TABLE VIEW -->
+        
         <div id="tab-table" class="tab-content">
             <div class="table-container">
                 <table>
@@ -1301,13 +1301,13 @@
                         </tr>
                     </thead>
                     <tbody id="task-table-body">
-                        <!-- Table rows rendered by JS -->
+                        
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- TAB 3: ANALYTICS & CHARTS -->
+        
         <div id="tab-analytics" class="tab-content">
             <div class="charts-grid">
                 <div class="chart-card">
@@ -1326,14 +1326,14 @@
             </div>
         </div>
 
-        <!-- GLOBAL STAFF SEARCH VIEW -->
+        
         <div id="global-search-view" class="tab-content">
-            <!-- DOSSIER RESULT SUMMARY HEADER CARD -->
+            
             <div id="global-dossier-summary" style="display: none; margin-bottom: 20px;">
-                <!-- Dynamically rendered profile summary -->
+                
             </div>
 
-            <!-- TABLE OF ALL TASKS OF THIS PERSON ACROSS ALL PROJECTS (WITH MATCHING BRAND COLORS) -->
+            
             <div class="table-container" id="personal-tasks-table-container" style="display: none; margin-bottom: 30px;">
                 <div style="padding: 16px 20px; background: rgba(15,23,42,0.8); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
                     <h3 style="font-size: 15px; font-weight: 700; color: #fff;"><i class="fa-solid fa-list-check" style="color: #f472b6;"></i> Danh Sách Chi Tiết Công Việc Được Giao (Phân Loại Đúng Màu Dự Án)</h3>
@@ -1353,27 +1353,27 @@
                         </tr>
                     </thead>
                     <tbody id="global-search-table-body">
-                        <!-- Rendered by JS -->
+                        
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- MASTER VIEW CONTENT (CONTAINER FOR ROUTING) -->
+        
         <div id="master-view" class="tab-content">
-            <!-- Handled by global-search-view -->
+            
         </div>
     </div>
 
-    <!-- DATASET SCRIPT -->
+    
     <script src="dashboard_data.js"></script>
 
-    <!-- DASHBOARD CONTROLLER & AUTH LOGIC -->
+    
     <script>
-        // ENCRYPTED SHA-256 HASH OF 'riva2026' (STORED IN SECURE ENCRYPTED FORM)
+
         let VALID_PASSWORD_HASHES = ['6bc9fc7447b4eb99592cdd16a44465c383c41a445c86f7b42930c7568776ad26'];
 
-        // Helper to calculate SHA-256 hash in browser using Web Crypto API
+
         async function calculateSHA256(str) {
             const msgBuffer = new TextEncoder().encode(str);
             const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
@@ -1381,7 +1381,7 @@
             return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
         }
 
-        // Dynamically fetch .env file on load if available
+
         fetch('.env')
             .then(res => {
                 if (res.ok) return res.text();
@@ -1409,10 +1409,10 @@
                 });
             })
             .catch(() => {
-                // Fallback to default hashes
+
             });
 
-        // AUTH CHECK ON LOAD
+
         document.addEventListener('DOMContentLoaded', () => {
             const isAuth = sessionStorage.getItem('riva_auth') === 'true';
             if (isAuth) {
@@ -1463,12 +1463,12 @@
             location.reload();
         }
 
-        // LocalStorage status persistence
+
         const savedStatuses = JSON.parse(localStorage.getItem('amsio_task_statuses') || '{}');
 
-        // State initialization
+
         let state = {
-            currentProject: 'amsio', // 'amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media', 'global-search'
+            currentProject: 'amsio',
             search: '',
             person: '',
             role: '',
@@ -1484,7 +1484,7 @@
             if (appInitialized) return;
             appInitialized = true;
 
-            // Merge saved statuses across all 6 projects
+
             ['amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media'].forEach(proj => {
                 if (MULTI_PROJECT_DATA[proj]) {
                     MULTI_PROJECT_DATA[proj].tasks.forEach(t => {
@@ -1500,18 +1500,18 @@
             loadProjectView('amsio');
         }
 
-        // Global Charts
+
         let chartWorkloadInstance = null;
         let chartRolesInstance = null;
 
-        // Helper to check if deadline is within 4 days or overdue (for unfinished tasks)
+
         function checkDeadlineUrgent(deadlineStr, status) {
             if (!deadlineStr || status === '☑') return false;
 
             const today = new Date();
             today.setHours(0, 0, 0, 0);
 
-            // Match YYYY-MM-DD
+
             const isoMatch = deadlineStr.match(/(\d{4})-(\d{2})-(\d{2})/);
             if (isoMatch) {
                 const deadlineDate = new Date(isoMatch[1], isoMatch[2] - 1, isoMatch[3]);
@@ -1520,7 +1520,7 @@
                 return diffDays <= 4;
             }
 
-            // Match DD/MM/YYYY
+
             const vnMatch = deadlineStr.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);
             if (vnMatch) {
                 const deadlineDate = new Date(vnMatch[3], vnMatch[2] - 1, vnMatch[1]);
@@ -1532,7 +1532,7 @@
             return false;
         }
 
-        // Helper to render HTML for deadline with warning style
+
         function renderDeadlineHTML(deadlineStr, status) {
             if (!deadlineStr) return '<span style="font-size: 12px; color: var(--text-muted);">-</span>';
             const isUrgent = checkDeadlineUrgent(deadlineStr, status);
@@ -1544,7 +1544,7 @@
             return `<span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> ${deadlineStr}</span>`;
         }
 
-        // Helper to sort task list prioritizing urgent deadline tasks first
+
         function sortTasksWithUrgentFirst(taskList) {
             return [...taskList].sort((a, b) => {
                 const isUrgentA = checkDeadlineUrgent(a.deadline, a.status);
@@ -1555,7 +1555,7 @@
             });
         }
 
-        // Helper to jump to a specific task row in Tab 2 (Table View) and highlight it
+
         function jumpToTaskInTable(stt) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
@@ -1580,7 +1580,7 @@
             }, 80);
         }
 
-        // Setup Top Project Switcher
+
         function setupProjectSwitcher() {
             document.querySelectorAll('.project-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
@@ -1594,7 +1594,7 @@
             });
         }
 
-        // Initialize Global Staff Search Pills (Taskbar Row 1 Topmost)
+
         function initGlobalStaffSearchPills() {
             const container = document.getElementById('global-staff-pills');
             container.innerHTML = '<span class="pill-label" style="color: #f472b6;"><i class="fa-solid fa-user-tag"></i> Chọn nhanh nhân viên:</span>';
@@ -1630,7 +1630,7 @@
                     }
                     updateGlobalSearchPills();
 
-                    // Automatically switch to global search view
+
                     document.querySelectorAll('.project-btn').forEach(b => b.classList.remove('active'));
                     state.currentProject = 'global-search';
                     loadProjectView('global-search');
@@ -1649,7 +1649,7 @@
             });
         }
 
-        // Load project specific context & data
+
         function loadProjectView(proj) {
             const headerTitle = document.getElementById('header-title');
             const headerSub = document.getElementById('header-subtitle');
@@ -1676,7 +1676,7 @@
                 return;
             }
 
-            // Standard Project Mode
+
             metricsGrid.style.display = 'grid';
             filterPanel.style.display = 'flex';
             tabNav.style.display = 'flex';
@@ -1787,7 +1787,7 @@
             renderDashboard();
         }
 
-        // Initialize Category Dropdown
+
         function initCategoryDropdown(proj) {
             const selectCat = document.getElementById('filter-category');
             selectCat.innerHTML = '<option value="">-- Hạng Mục (Tất cả) --</option>';
@@ -1803,7 +1803,7 @@
             });
         }
 
-        // Initialize Personnel Filter
+
         function initPersonnelFilter(proj) {
             const selectPerson = document.getElementById('filter-person');
             const pillsContainer = document.getElementById('personnel-pills');
@@ -1847,7 +1847,7 @@
             });
         }
 
-        // Setup Event Listeners
+
         function setupEventListeners() {
             document.getElementById('search-input').addEventListener('input', (e) => {
                 state.search = e.target.value.toLowerCase().trim();
@@ -1894,12 +1894,12 @@
 
             document.getElementById('btn-export').addEventListener('click', exportToCSV);
 
-            // Global Personnel Search Taskbar Input Listener (LIVE INSTANT SEARCH ON ROW 1 TOPMOST)
+
             document.getElementById('global-search-input').addEventListener('input', (e) => {
                 state.globalSelectedPerson = e.target.value.trim();
                 updateGlobalSearchPills();
-                
-                // Automatically switch view if not already in global view
+
+
                 if (state.currentProject !== 'global-search') {
                     document.querySelectorAll('.project-btn').forEach(b => b.classList.remove('active'));
                     state.currentProject = 'global-search';
@@ -1918,7 +1918,7 @@
 
             document.getElementById('btn-export-personal-tasks').addEventListener('click', exportPersonalTasksToCSV);
 
-            // Tab Navigation
+
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1936,7 +1936,7 @@
             });
         }
 
-        // Project Badge Class Mapper (STRICT MATCHING COLOR PALETTE)
+
         function getProjectBadgeClass(pKey) {
             switch(pKey) {
                 case 'amsio': return 'badge-proj-amsio';
@@ -1949,7 +1949,7 @@
             }
         }
 
-        // Render Global Personnel Search across ALL 6 PROJECTS
+
         function renderGlobalSearch() {
             const query = state.globalSelectedPerson.toLowerCase().trim();
             const projFilter = state.globalProjectFilter;
@@ -2019,7 +2019,7 @@
                 return;
             }
 
-            // SORT URGENT DEADLINE WARNING TASKS (RED ALERT) TO THE VERY TOP
+
             matchedTasks.sort((a, b) => {
                 const isUrgentA = checkDeadlineUrgent(a.task.deadline, a.task.status);
                 const isUrgentB = checkDeadlineUrgent(b.task.deadline, b.task.status);
@@ -2030,7 +2030,7 @@
 
             tableContainer.style.display = 'block';
 
-            // Render Dossier Header Card
+
             const total = matchedTasks.length;
             const rate = Math.round((completedCount / total) * 100);
             const personName = exactMatchedName || state.globalSelectedPerson;
@@ -2057,7 +2057,7 @@
                 </div>
             `;
 
-            // Render Task Rows WITH MATCHING BRAND PROJECT COLORS & DEADLINE WARNING
+
             matchedTasks.forEach((item, index) => {
                 const t = item.task;
                 const tr = document.createElement('tr');
@@ -2092,7 +2092,7 @@
             });
         }
 
-        // Export Personal Tasks to CSV
+
         function exportPersonalTasksToCSV() {
             const query = state.globalSelectedPerson.toLowerCase().trim();
             if (!query) {
@@ -2175,10 +2175,10 @@
             document.body.removeChild(link);
         }
 
-        // Get Filtered Tasks for single project mode
+
         function getFilteredTasks() {
             if (!MULTI_PROJECT_DATA[state.currentProject]) return [];
-            
+
             const currentTasks = MULTI_PROJECT_DATA[state.currentProject].tasks;
 
             return currentTasks.filter(t => {
@@ -2213,7 +2213,7 @@
             });
         }
 
-        // Render Dashboard
+
         function renderDashboard() {
             if (state.currentProject === 'global-search') return;
 
@@ -2228,7 +2228,7 @@
             }
         }
 
-        // Update KPIs
+
         function updateKPIs(filteredTasks) {
             const total = filteredTasks.length;
             const completed = filteredTasks.filter(t => t.status === '☑').length;
@@ -2252,7 +2252,7 @@
             document.getElementById('kpi-total-people').textContent = activePeopleSet.size;
         }
 
-        // Helper to format short initials for avatar
+
         function getInitials(name) {
             if (!name) return '??';
             const parts = name.trim().split(' ');
@@ -2260,7 +2260,7 @@
             return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
         }
 
-        // Render Personnel Grid
+
         function renderPeopleGrid(filteredTasks) {
             const grid = document.getElementById('people-grid');
             grid.innerHTML = '';
@@ -2293,7 +2293,7 @@
                 });
             });
 
-            // Calculate urgent deadline counts for each person
+
             Object.values(peopleMap).forEach(p => {
                 p.urgentCount = p.tasks.filter(t => checkDeadlineUrgent(t.deadline, t.status)).length;
             });
@@ -2302,7 +2302,7 @@
             if (state.person) {
                 list = list.filter(p => p.name === state.person);
             } else {
-                // PRIORITIZE PEOPLE WITH URGENT RED DEADLINES FIRST
+
                 list = list.filter(p => p.total > 0).sort((a, b) => {
                     if (b.urgentCount !== a.urgentCount) {
                         return b.urgentCount - a.urgentCount;
@@ -2316,11 +2316,11 @@
                 return;
             }
 
-            // WHEN A SINGLE PERSON IS SELECTED -> RENDER SPACIOUS HORIZONTAL BOX LAYOUT
+
             if (state.person && list.length === 1) {
                 const p = list[0];
                 const rate = p.total > 0 ? Math.round((p.completed / p.total) * 100) : 0;
-                
+
                 const card = document.createElement('div');
                 card.className = 'person-card person-card-horizontal';
 
@@ -2416,7 +2416,7 @@
                 return;
             }
 
-            // WHEN MULTIPLE PEOPLE ARE DISPLAYED -> RENDER GRID OF CARDS
+
             list.forEach(p => {
                 const card = document.createElement('div');
                 card.className = 'person-card';
@@ -2473,7 +2473,7 @@
             });
         }
 
-        // Render Table View WITH DEADLINE WARNING & URGENT SORTING
+
         function renderTable(tasks) {
             const tbody = document.getElementById('task-table-body');
             tbody.innerHTML = '';
@@ -2527,7 +2527,7 @@
                 tr.querySelectorAll('.clickable-person').forEach(el => {
                     el.addEventListener('click', (e) => {
                         e.stopPropagation();
-                        // Jump to Global Personnel Search for instant complete view!
+
                         state.currentProject = 'global-search';
                         state.globalSelectedPerson = el.dataset.person;
                         document.getElementById('global-search-input').value = state.globalSelectedPerson;
@@ -2540,7 +2540,7 @@
             });
         }
 
-        // Render Charts View
+
         function renderCharts() {
             const filteredTasks = getFilteredTasks();
 
@@ -2617,7 +2617,7 @@
             });
         }
 
-        // Export Filtered View to CSV
+
         function exportToCSV() {
             const tasks = getFilteredTasks();
             if (tasks.length === 0) {
@@ -2652,6 +2652,6 @@
             link.click();
             document.body.removeChild(link);
         }
-    </script>
+</script>
 </body>
 </html>
