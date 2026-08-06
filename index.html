@@ -1180,8 +1180,6 @@
             </div>
             <div class="header-actions">
                 <button class="btn btn-outline" id="btn-export"><i class="fa-solid fa-file-excel"></i> Xuất Excel</button>
-                <button class="btn btn-primary" id="btn-reset-filter"><i class="fa-solid fa-rotate-left"></i> Đặt Lại Bộ Lọc</button>
-                <button class="btn btn-outline" onclick="logoutApp()" style="color: #ef4444; border-color: rgba(239,68,68,0.3);"><i class="fa-solid fa-lock"></i> Đăng Xuất</button>
             </div>
         </header>
 
@@ -1875,23 +1873,6 @@
                 renderDashboard();
             });
 
-            document.getElementById('btn-reset-filter').addEventListener('click', () => {
-                state.search = '';
-                state.person = '';
-                state.role = '';
-                state.category = '';
-                state.status = '';
-
-                document.getElementById('search-input').value = '';
-                document.getElementById('filter-person').value = '';
-                document.getElementById('filter-role').value = '';
-                document.getElementById('filter-category').value = '';
-                document.getElementById('filter-status').value = '';
-
-                updatePillSelection();
-                renderDashboard();
-            });
-
             document.getElementById('btn-export').addEventListener('click', exportToCSV);
 
 
@@ -1989,18 +1970,21 @@
                     const coords = t.coordinator.split(',').map(s => s.trim()).filter(Boolean);
                     const execs = t.executor.split(',').map(s => s.trim()).filter(Boolean);
 
-                    const allPeople = [...dirs, ...coords, ...execs];
-                    const matchedPerson = allPeople.find(pName => pName.toLowerCase().includes(query));
+                    const isMatchDir = dirs.some(d => d.toLowerCase().includes(query));
+                    const isMatchCoord = coords.some(c => c.toLowerCase().includes(query));
+                    const isMatchExec = execs.some(e => e.toLowerCase().includes(query));
 
-                    if (matchedPerson) {
-                        exactMatchedName = matchedPerson;
+                    if (isMatchDir || isMatchCoord || isMatchExec) {
+                        const matchedPerson = [...dirs, ...coords, ...execs].find(pName => pName.toLowerCase().includes(query));
+                        if (matchedPerson) exactMatchedName = matchedPerson;
+
                         projCounts[pKey]++;
                         if (t.status === '☑') completedCount++;
 
                         const roles = [];
-                        if (dirs.includes(matchedPerson)) roles.push('Phụ trách / Điều hành');
-                        if (coords.includes(matchedPerson)) roles.push('Điều phối');
-                        if (execs.includes(matchedPerson)) roles.push('Thực hiện');
+                        if (isMatchDir) roles.push('Phụ trách / Điều hành');
+                        if (isMatchCoord) roles.push('Điều phối');
+                        if (isMatchExec) roles.push('Thực hiện');
 
                         matchedTasks.push({
                             projectKey: pKey,
@@ -2095,11 +2079,6 @@
 
         function exportPersonalTasksToCSV() {
             const query = state.globalSelectedPerson.toLowerCase().trim();
-            if (!query) {
-                alert('Vui lòng chọn hoặc nhập tên nhân viên để xuất dữ liệu!');
-                return;
-            }
-
             const projects = ['amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media'];
             const projectTitles = {
                 amsio: 'AMSIO Việt Nam',
@@ -2111,7 +2090,7 @@
             };
 
             const matchedTasks = [];
-            let exactName = state.globalSelectedPerson;
+            let exactName = state.globalSelectedPerson || '6_DU_AN_TONG_HOP';
 
             projects.forEach(pKey => {
                 if (state.globalProjectFilter && state.globalProjectFilter !== pKey) return;
@@ -2123,28 +2102,50 @@
                     const coords = t.coordinator.split(',').map(s => s.trim()).filter(Boolean);
                     const execs = t.executor.split(',').map(s => s.trim()).filter(Boolean);
 
-                    const allPeople = [...dirs, ...coords, ...execs];
-                    const matchedPerson = allPeople.find(pName => pName.toLowerCase().includes(query));
-
-                    if (matchedPerson) {
-                        exactName = matchedPerson;
-                        const roles = [];
-                        if (dirs.includes(matchedPerson)) roles.push('Phụ trách / Điều hành');
-                        if (coords.includes(matchedPerson)) roles.push('Điều phối');
-                        if (execs.includes(matchedPerson)) roles.push('Thực hiện');
-
+                    if (!query) {
+                        const allPeople = [...new Set([...dirs, ...coords, ...execs])].join(', ');
                         matchedTasks.push({
                             projectTitle: projectTitles[pKey],
                             task: t,
-                            role: roles.join(', ')
+                            role: allPeople || 'Tất cả nhân sự'
                         });
+                    } else {
+                        const isMatchDir = dirs.some(d => d.toLowerCase().includes(query));
+                        const isMatchCoord = coords.some(c => c.toLowerCase().includes(query));
+                        const isMatchExec = execs.some(e => e.toLowerCase().includes(query));
+
+                        if (isMatchDir || isMatchCoord || isMatchExec) {
+                            const matchedPerson = [...dirs, ...coords, ...execs].find(pName => pName.toLowerCase().includes(query));
+                            if (matchedPerson) exactName = matchedPerson;
+
+                            const roles = [];
+                            if (isMatchDir) roles.push('Phụ trách / Điều hành');
+                            if (isMatchCoord) roles.push('Điều phối');
+                            if (isMatchExec) roles.push('Thực hiện');
+
+                            matchedTasks.push({
+                                projectTitle: projectTitles[pKey],
+                                task: t,
+                                role: roles.join(', ')
+                            });
+                        }
                     }
                 });
             });
 
             if (matchedTasks.length === 0) {
-                alert('Không có dữ liệu công việc để xuất Excel!');
-                return;
+                projects.forEach(pKey => {
+                    if (state.globalProjectFilter && state.globalProjectFilter !== pKey) return;
+                    const pData = MULTI_PROJECT_DATA[pKey];
+                    if (!pData) return;
+                    pData.tasks.forEach(t => {
+                        matchedTasks.push({
+                            projectTitle: projectTitles[pKey],
+                            task: t,
+                            role: [t.director, t.coordinator, t.executor].filter(Boolean).join(', ')
+                        });
+                    });
+                });
             }
 
             let csvContent = "\uFEFF";
@@ -2155,11 +2156,11 @@
                 const row = [
                     `"${index + 1}"`,
                     `"${item.projectTitle}"`,
-                    `"${t.task_name.replace(/"/g, '""')}"`,
-                    `"${t.category.replace(/"/g, '""')}"`,
-                    `"${item.role}"`,
-                    `"${t.product.replace(/"/g, '""')}"`,
-                    `"${t.deadline}"`,
+                    `"${(t.task_name || '').replace(/"/g, '""')}"`,
+                    `"${(t.category || '').replace(/"/g, '""')}"`,
+                    `"${(item.role || '').replace(/"/g, '""')}"`,
+                    `"${(t.product || '').replace(/"/g, '""')}"`,
+                    `"${t.deadline || ''}"`,
                     `"${t.status === '☑' ? 'Đã xong' : 'Chưa xong'}"`
                 ];
                 csvContent += row.join(',') + "\n";
@@ -2169,7 +2170,8 @@
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.setAttribute("href", url);
-            link.setAttribute("download", `DANH_SACH_VIEC_${exactName.toUpperCase()}_${new Date().toISOString().slice(0,10)}.csv`);
+            const safeFileName = exactName.replace(/[^\w\s\u00C0-\u024F\u1E00-\u1EFF]/gi, '_').replace(/\s+/g, '_');
+            link.setAttribute("download", `DANH_SACH_VIEC_${safeFileName.toUpperCase()}_${new Date().toISOString().slice(0,10)}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
