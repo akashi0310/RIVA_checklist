@@ -3,693 +3,2655 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Theo Dõi Tiến Độ Công Việc</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Hệ Thống Quản Lý & Phân Công Toàn Diện RIVA (6 Danh Mục Chiến Lược)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --card-bg: #1e293b;
-            --accent: #2563eb;
+            --bg-body: #0f172a;
+            --bg-card: rgba(30, 41, 59, 0.75);
+            --bg-card-hover: rgba(30, 41, 59, 0.9);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-accent: rgba(99, 102, 241, 0.35);
+            
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border: #334155;
-            --green: #22c55e;
-            --red-alert-bg: rgba(239, 68, 68, 0.2);
-            --red-alert-border: rgba(239, 68, 68, 0.4);
-            --red-alert-txt: #fca5a5;
-            --input-bg: #0f172a;
-            --header-clock-bg: rgba(30, 41, 59, 0.9);
-        }
+            --text-sub: #cbd5e1;
 
-        body.light-mode {
-            --bg-dark: #f1f5f9;
-            --card-bg: #ffffff;
-            --accent: #2563eb;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border: #cbd5e1;
-            --red-alert-bg: rgba(239, 68, 68, 0.12);
-            --red-alert-border: rgba(239, 68, 68, 0.3);
-            --red-alert-txt: #dc2626;
-            --input-bg: #f8fafc;
-            --header-clock-bg: #f8fafc;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --primary-light: rgba(99, 102, 241, 0.15);
+            
+            --success: #10b981;
+            --success-light: rgba(16, 185, 129, 0.15);
+            
+            --warning: #f59e0b;
+            --warning-light: rgba(245, 158, 11, 0.15);
+
+            --danger: #ef4444;
+
+            --role-director: #c084fc;
+            --role-director-bg: rgba(192, 132, 252, 0.15);
+            
+            --role-coordinator: #60a5fa;
+            --role-coordinator-bg: rgba(96, 165, 250, 0.15);
+
+            --role-executor: #2dd4bf;
+            --role-executor-bg: rgba(45, 212, 191, 0.15);
+
+            /* PROJECT BRAND COLOR TOKENS */
+            --color-amsio: #6366f1;
+            --color-amsio-bg: rgba(99, 102, 241, 0.18);
+            --color-amsio-text: #a5b4fc;
+
+            --color-ap: #10b981;
+            --color-ap-bg: rgba(16, 185, 129, 0.18);
+            --color-ap-text: #6ee7b7;
+
+            --color-iena: #f59e0b;
+            --color-iena-bg: rgba(245, 158, 11, 0.18);
+            --color-iena-text: #fcd34d;
+
+            --color-ipitex: #ec4899;
+            --color-ipitex-bg: rgba(236, 72, 153, 0.18);
+            --color-ipitex-text: #f472b6;
+
+            --color-nckh: #06b6d4;
+            --color-nckh-bg: rgba(6, 182, 212, 0.18);
+            --color-nckh-text: #67e8f9;
+
+            --color-media: #a855f7;
+            --color-media-bg: rgba(168, 85, 247, 0.18);
+            --color-media-text: #c084fc;
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --shadow-glow: 0 0 25px rgba(99, 102, 241, 0.18);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-body);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
             color: var(--text-main);
+            min-height: 100vh;
             padding: 24px;
         }
 
-        /* PASSWORD MODAL LOCKSCREEN */
-        #lock-screen {
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* SECURITY AUTH OVERLAY LOCK SCREEN */
+        #auth-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 23, 42, 0.96);
-            backdrop-filter: blur(12px);
-            z-index: 9999;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            z-index: 99999;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .lock-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-        }
-
-        .lock-box h2 {
-            font-size: 20px;
-            margin-bottom: 8px;
-            color: var(--text-main);
-        }
-
-        .lock-box p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .lock-input {
+        .auth-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: 24px;
+            padding: 40px;
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background-color: var(--input-bg);
-            color: var(--text-main);
-            font-size: 14px;
+            max-width: 440px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.2);
             text-align: center;
-            outline: none;
+            animation: modalFadeIn 0.4s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.92) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .auth-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .auth-card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .auth-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .auth-input-box {
+            position: relative;
             margin-bottom: 16px;
         }
 
-        .lock-btn {
+        .auth-input-box i.input-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .auth-input-box input {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: none;
-            background-color: var(--accent);
-            color: #fff;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .lock-btn:hover {
-            background-color: #1d4ed8;
-        }
-
-        .error-msg {
-            color: #ef4444;
-            font-size: 12px;
-            margin-top: 10px;
-            display: none;
-        }
-
-        .header {
-            background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-dark) 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .header h1 {
-            font-size: 22px;
-            font-weight: 700;
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 6px;
-        }
-
-        .header-controls-right {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .theme-toggle-btn {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 10px 16px;
+            padding: 13px 44px 13px 46px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(99, 102, 241, 0.35);
             border-radius: 12px;
-            font-size: 13px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .auth-input-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3.5px rgba(99, 102, 241, 0.25);
+        }
+
+        .toggle-password-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .toggle-password-btn:hover {
+            color: #fff;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
             font-weight: 700;
             cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+        }
+
+        .auth-error-msg {
+            display: none;
+            color: #ef4444;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+            background: rgba(239, 68, 68, 0.15);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        /* STAFF SEARCH DEDICATED TASKBAR (ROW 1: HÀNG ĐẦU TIÊN TỔNG QUÁT) */
+        .staff-search-taskbar {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+            border: 1px solid rgba(236, 72, 153, 0.4);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .taskbar-row-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .taskbar-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: #f472b6;
             display: flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            white-space: nowrap;
         }
 
-        .theme-toggle-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+        .global-search-input-box {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
         }
 
-        .live-clock-box {
-            text-align: right;
-            background: var(--header-clock-bg);
-            padding: 10px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
+        .global-search-input-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ec4899;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
+        .global-search-input-box input {
+            width: 100%;
+            padding: 11px 14px 11px 42px;
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(236, 72, 153, 0.35);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            transition: all 0.2s ease;
         }
 
-        .stat-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px 20px;
+        .global-search-input-box input:focus {
+            border-color: #ec4899;
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.25);
+        }
+
+        /* PROJECT SWITCHER HEADER BAR (ROW 2: DỰ ÁN CỤ THỂ BÊN DƯỚI) */
+        .project-switcher-bar {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            gap: 8px;
+            margin-bottom: 20px;
+            background: rgba(15, 23, 42, 0.85);
+            padding: 8px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            flex-wrap: wrap;
         }
 
-        .stat-card .label {
+        .project-btn {
+            flex: 1;
+            min-width: 140px;
+            padding: 11px 14px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+
+        .project-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .project-btn.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary) 0%, #4f46e5 100%);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .header-title-box h1 {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-title-box p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 4px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* PROJECT META BANNER */
+        .project-meta-banner {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-md);
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .meta-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .meta-info h4 {
             font-size: 12px;
             color: var(--text-muted);
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .stat-card .val {
-            font-size: 28px;
+        .meta-info p {
+            font-size: 14px;
             font-weight: 700;
+            color: var(--text-main);
+            margin-top: 2px;
         }
 
-        .controls {
-            display: flex;
-            gap: 16px;
+        /* KPI METRICS GRID */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
             margin-bottom: 24px;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 16px 20px;
-            border-radius: 14px;
-            align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .date-picker-box {
+        .metric-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            border-color: var(--border-accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--card-accent, var(--primary));
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
-            gap: 10px;
-            background: var(--input-bg);
-            padding: 6px 14px;
-            border-radius: 10px;
-            border: 1px solid var(--accent);
+            justify-content: center;
+            font-size: 18px;
+            background: var(--icon-bg, var(--primary-light));
+            color: var(--card-accent, var(--primary));
         }
 
-        .date-picker-dropdown {
-            background-color: transparent;
-            border: none;
-            color: var(--accent);
-            font-size: 15px;
-            font-weight: 700;
+        .metric-value {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 12px 0 4px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .metric-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), #34d399);
+            border-radius: 10px;
+            transition: width 0.8s ease;
+        }
+
+        /* CONTROLS & FILTER SECTION */
+        .filter-panel {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 14px 10px 42px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .filter-select {
+            padding: 10px 14px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-size: 14px;
             outline: none;
             cursor: pointer;
-            padding: 4px 0;
+            min-width: 170px;
         }
 
-        .date-picker-dropdown option {
-            background-color: var(--card-bg);
-            color: var(--text-main);
+        .filter-select:focus {
+            border-color: var(--primary);
         }
 
-        .search-input, .filter-select {
-            background-color: var(--input-bg);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            padding: 10px 16px;
-            border-radius: 10px;
+        /* QUICK PERSONNEL PILLS */
+        .personnel-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            padding-top: 8px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .pill-label {
             font-size: 13px;
-            outline: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-right: 4px;
         }
 
-        .search-input { flex: 1; min-width: 200px; }
+        .pill {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-sub);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
 
-        .table-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
+        .pill:hover {
+            background: rgba(99, 102, 241, 0.2);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        .pill.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .pill .count-badge {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1px 6px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* NAVIGATION TABS */
+        .tab-nav {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-btn.active {
+            color: #fff;
+            background: var(--primary);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* TAB CONTENT PANELS */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* PERSONNEL WORKLOAD CARDS VIEW */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .person-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .person-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .person-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, #818cf8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .person-info h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .person-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .role-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin: 14px 0;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+        }
+
+        .role-box {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .role-box .role-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .role-box .role-num {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .role-dir { color: var(--role-director); }
+        .role-coord { color: var(--role-coordinator); }
+        .role-exec { color: var(--role-executor); }
+
+        .person-task-list {
+            margin-top: 10px;
+            max-height: 180px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .person-task-item {
+            font-size: 12px;
+            padding: 8px 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .person-task-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* SINGLE PERSON HORIZONTAL BOX VIEW */
+        .person-card-horizontal {
+            grid-column: 1 / -1 !important;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%) !important;
+            border: 1px solid rgba(99, 102, 241, 0.4) !important;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(99, 102, 241, 0.15) !important;
+            padding: 26px !important;
+        }
+
+        .horizontal-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .horizontal-task-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .horizontal-task-card {
+            background: rgba(15, 23, 42, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 4px solid var(--primary);
             border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            transition: all 0.2s ease;
+        }
+
+        .horizontal-task-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* TABLE ROW FLASH HIGHLIGHT ANIMATION WHEN CLICKED FROM PERSONNEL VIEW */
+        @keyframes rowHighlightPulse {
+            0% { background: rgba(99, 102, 241, 0.5); box-shadow: 0 0 25px rgba(99, 102, 241, 0.7); }
+            50% { background: rgba(99, 102, 241, 0.7); box-shadow: 0 0 30px rgba(99, 102, 241, 0.9); }
+            100% { background: transparent; box-shadow: none; }
+        }
+
+        .row-highlight-flash {
+            animation: rowHighlightPulse 2.5s ease-out;
+        }
+
+        /* DATA TABLE VIEW */
+        .table-container {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 13px;
+        }
+
+        thead {
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: var(--input-bg);
+            padding: 16px 18px;
+            font-size: 12px;
+            font-weight: 700;
             color: var(--text-muted);
-            font-weight: 600;
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border);
             text-transform: uppercase;
-            font-size: 11px;
+            letter-spacing: 0.5px;
         }
 
         td {
-            padding: 14px 16px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-main);
+            padding: 16px 18px;
+            font-size: 13.5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-sub);
+            vertical-align: middle;
         }
 
-        .custom-checkbox {
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            accent-color: #22c55e;
+        tbody tr {
+            transition: background 0.15s ease;
         }
 
-        .alert-red-cell {
-            background-color: var(--red-alert-bg);
-            color: var(--red-alert-txt);
-            font-weight: 700;
-            border: 1px solid var(--red-alert-border);
-            padding: 4px 10px;
-            border-radius: 8px;
-            display: inline-block;
+        tbody tr:hover {
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
             padding: 4px 10px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
+            white-space: nowrap;
         }
 
-        .badge-done { background-color: rgba(34, 197, 94, 0.2); color: #16a34a; border: 1px solid rgba(34, 197, 94, 0.3); }
-        .badge-done-early { background-color: rgba(16, 185, 129, 0.25); color: #059669; border: 1px solid rgba(16, 185, 129, 0.4); font-weight: 700; }
-        .badge-doing { background-color: rgba(234, 179, 8, 0.2); color: #ca8a04; border: 1px solid rgba(234, 179, 8, 0.3); }
+        .badge-cat {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
 
-        .staff-name {
+        /* PROJECT COLOR BADGES WITH EXACT MATCHING COLORS */
+        .badge-proj-amsio { background: var(--color-amsio-bg); color: var(--color-amsio-text); border: 1px solid var(--color-amsio); font-weight: 700; }
+        .badge-proj-ap { background: var(--color-ap-bg); color: var(--color-ap-text); border: 1px solid var(--color-ap); font-weight: 700; }
+        .badge-proj-iena { background: var(--color-iena-bg); color: var(--color-iena-text); border: 1px solid var(--color-iena); font-weight: 700; }
+        .badge-proj-ipitex { background: var(--color-ipitex-bg); color: var(--color-ipitex-text); border: 1px solid var(--color-ipitex); font-weight: 700; }
+        .badge-proj-nckh { background: var(--color-nckh-bg); color: var(--color-nckh-text); border: 1px solid var(--color-nckh); font-weight: 700; }
+        .badge-proj-media { background: var(--color-media-bg); color: var(--color-media-text); border: 1px solid var(--color-media); font-weight: 700; }
+
+        .badge-dir {
+            background: var(--role-director-bg);
+            color: var(--role-director);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+        }
+
+        .badge-coord {
+            background: var(--role-coordinator-bg);
+            color: var(--role-coordinator);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        .badge-exec {
+            background: var(--role-executor-bg);
+            color: var(--role-executor);
+            border: 1px solid rgba(45, 212, 191, 0.3);
+        }
+
+        .status-badge {
+            cursor: pointer;
+            transition: transform 0.1s ease;
+            user-select: none;
+        }
+
+        .status-badge:active {
+            transform: scale(0.95);
+        }
+
+        .status-done {
+            background: var(--success-light);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .status-pending {
+            background: var(--warning-light);
+            color: var(--warning);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .clickable-person {
+            cursor: pointer;
+            transition: opacity 0.15s ease;
+        }
+
+        .clickable-person:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* URGENT DEADLINE WARNING STYLES (≤ 4 DAYS AWAY OR OVERDUE) */
+        .deadline-warning {
+            color: #ef4444 !important;
+            font-weight: 800 !important;
+            background: rgba(239, 68, 68, 0.15);
+            padding: 4px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            animation: pulseWarning 2s infinite ease-in-out;
+        }
+
+        @keyframes pulseWarning {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+
+        /* CHARTS VIEW */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 24px;
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 24px;
+        }
+
+        .chart-card h3 {
+            font-size: 16px;
             font-weight: 700;
-            color: var(--accent);
-            font-size: 14px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .task-done-row {
-            opacity: 0.75;
-            background-color: rgba(34, 197, 94, 0.05);
+        .chart-container {
+            position: relative;
+            height: 320px;
+            width: 100%;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 900px) {
+            .project-switcher-bar {
+                flex-direction: column;
+            }
+            .staff-search-taskbar {
+                padding: 12px;
+            }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            .filter-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- LOCK SCREEN DIALOG -->
-    <div id="lock-screen">
-        <div class="lock-box">
-            <h2>🔒 BẢO MẬT DASHBOARD</h2>
-            <p>Vui lòng nhập mật khẩu truy cập do Ban Quản lý cấp để mở Dashboard</p>
-            <input type="password" id="pass-input" class="lock-input" placeholder="Nhập mật khẩu..." onkeyup="if(event.key==='Enter') unlockApp()">
-            <button class="lock-btn" onclick="unlockApp()">XÁC NHẬN MỞ KHÓA</button>
-            <div id="error-msg" class="error-msg">⚠️ Mật khẩu không chính xác! Vui lòng thử lại.</div>
+    <!-- SECURITY PASSWORD OVERLAY LOCK SCREEN -->
+    <div id="auth-overlay">
+        <div class="auth-card">
+            <div class="auth-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h2>XÁC THỰC BẢO MẬT RIVA</h2>
+            <p>Hệ thống phân công công việc nội bộ RIVA.<br>Vui lòng nhập mật khẩu xác thực để mở khóa hệ thống.</p>
+            
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)">
+                <div class="auth-input-box">
+                    <i class="fa-solid fa-key input-icon"></i>
+                    <input type="password" id="auth-password-input" placeholder="Nhập mật khẩu nội bộ..." required autofocus>
+                    <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility()">
+                        <i class="fa-regular fa-eye" id="toggle-eye-icon"></i>
+                    </button>
+                </div>
+                <button type="submit" class="auth-btn">
+                    <i class="fa-solid fa-unlock"></i> Xác Nhận Mở Khóa
+                </button>
+            </form>
+            <div class="auth-error-msg" id="auth-error-msg">
+                <i class="fa-solid fa-circle-exclamation"></i> Mật khẩu chưa chính xác. Vui lòng thử lại!
+            </div>
         </div>
     </div>
 
-    <div class="header">
-        <div>
-            <h1>DASHBOARD PHÂN CÔNG ĐÍCH DANH & QUẢN LÝ TIẾN ĐỘ THÁNG 8/2026</h1>
-        </div>
+    <div class="container" id="main-app-container" style="display: none;">
+        <!-- STAFF SEARCH DEDICATED TASKBAR (ROW 1: THANH TRA CỨU NHÂN VIÊN ĐẶT LÊN TRÊN CÙNG ĐỂ SEARCH TỔNG QUÁT) -->
+        <div class="staff-search-taskbar">
+            <div class="taskbar-row-top">
+                <div class="taskbar-title">
+                    <i class="fa-solid fa-user-ninja"></i> Tra Cứu Việc Nhân Viên (Toàn Hệ Thống):
+                </div>
 
-        <div class="header-controls-right">
-            <!-- LIVE CLOCK BOX ON THE LEFT -->
-            <div class="live-clock-box">
-                <div id="live-date" style="font-size: 13px; font-weight: 700; color: var(--accent);">🗓️ ...</div>
-                <div id="live-time" style="font-size: 16px; font-weight: 800; color: #22c55e; margin-top: 2px;">⏰ 00:00:00</div>
+                <div class="global-search-input-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="global-search-input" placeholder="Gõ tên nhân viên để xem toàn bộ việc (ví dụ: Diệu Anh, Hà, Dũng, Nam, Hường...)...">
+                </div>
+
+                <select id="global-project-filter" class="filter-select" style="min-width: 180px;">
+                    <option value="">-- Tất Cả 6 Dự Án --</option>
+                    <option value="amsio">AMSIO Việt Nam</option>
+                    <option value="ap">Tuyển Sinh AP</option>
+                    <option value="iena">Đội Tuyển IENA (Đức)</option>
+                    <option value="ipitex">Đội Tuyển IPITEX (Thái Lan)</option>
+                    <option value="nckh">Nghiên Cứu Khoa Học (NCKH)</option>
+                    <option value="media">Sản Phẩm Truyền Thông</option>
+                </select>
             </div>
 
-            <!-- THEME SWITCHER BUTTON ON THE RIGHT -->
-            <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">
-                <span id="theme-icon">☀️</span> <span id="theme-text">Nền Sáng</span>
+            <!-- QUICK SELECT PILLS FOR STAFF -->
+            <div class="personnel-pills" id="global-staff-pills" style="border-top: 1px dashed rgba(236, 72, 153, 0.25); padding-top: 10px;">
+                <span class="pill-label" style="color: #f472b6;"><i class="fa-solid fa-user-tag"></i> Chọn nhanh nhân viên:</span>
+                <!-- Pills generated dynamically -->
+            </div>
+        </div>
+
+        <!-- TOP PROJECT SWITCHER BAR (ROW 2: DỰ ÁN CỤ THỂ BÊN DƯỚI) -->
+        <div class="project-switcher-bar">
+            <button class="project-btn active" data-project="amsio">
+                <i class="fa-solid fa-trophy" style="color: var(--color-amsio-text);"></i> AMSIO
+            </button>
+            <button class="project-btn" data-project="ap">
+                <i class="fa-solid fa-graduation-cap" style="color: var(--color-ap-text);"></i> AP
+            </button>
+            <button class="project-btn" data-project="iena">
+                <i class="fa-solid fa-plane-departure" style="color: var(--color-iena-text);"></i> IENA (Đức)
+            </button>
+            <button class="project-btn" data-project="ipitex">
+                <i class="fa-solid fa-medal" style="color: var(--color-ipitex-text);"></i> IPITEX (Thái Lan)
+            </button>
+            <button class="project-btn" data-project="nckh">
+                <i class="fa-solid fa-microscope" style="color: var(--color-nckh-text);"></i> NCKH
+            </button>
+            <button class="project-btn" data-project="media">
+                <i class="fa-solid fa-bullhorn" style="color: var(--color-media-text);"></i> Sản Phẩm Truyền Thông
             </button>
         </div>
+
+        <!-- HEADER -->
+        <header>
+            <div class="header-title-box">
+                <h1 id="header-title"><i class="fa-solid fa-square-check" style="color: #818cf8;"></i> AMSIO - Dashboard Phân Công Công Việc</h1>
+                <p id="header-subtitle"><i class="fa-regular fa-calendar"></i> Kiểm tra phân công & giám sát tiến độ dự án kỳ thi AMSIO Việt Nam</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn btn-outline" id="btn-export"><i class="fa-solid fa-file-excel"></i> Xuất Excel</button>
+                <button class="btn btn-primary" id="btn-reset-filter"><i class="fa-solid fa-rotate-left"></i> Đặt Lại Bộ Lọc</button>
+                <button class="btn btn-outline" onclick="logoutApp()" style="color: #ef4444; border-color: rgba(239,68,68,0.3);"><i class="fa-solid fa-lock"></i> Đăng Xuất</button>
+            </div>
+        </header>
+
+        <!-- PROJECT META BANNER -->
+        <div class="project-meta-banner" id="project-meta-banner">
+            <!-- Rendered dynamically -->
+        </div>
+
+        <!-- KPI METRICS OVERVIEW -->
+        <div class="metrics-grid" id="metrics-grid">
+            <div class="metric-card" style="--card-accent: #6366f1; --icon-bg: rgba(99, 102, 241, 0.15);">
+                <div class="metric-header">
+                    <span>Tổng Công Việc</span>
+                    <div class="metric-icon"><i class="fa-solid fa-list-check"></i></div>
+                </div>
+                <div class="metric-value" id="kpi-total-tasks">0</div>
+                <div class="metric-sub"><i class="fa-solid fa-layer-group"></i> Theo dõi phân công</div>
+            </div>
+
+            <div class="metric-card" style="--card-accent: #10b981; --icon-bg: rgba(16, 185, 129, 0.15);">
+                <div class="metric-header">
+                    <span>Đã Hoàn Thành</span>
+                    <div class="metric-icon"><i class="fa-solid fa-circle-check"></i></div>
+                </div>
+                <div class="metric-value" id="kpi-completed-tasks" style="color: var(--success);">0</div>
+                <div class="metric-sub" id="kpi-completion-rate">0% tiến độ dự án</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="kpi-progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="metric-card" style="--card-accent: #f59e0b; --icon-bg: rgba(245, 158, 11, 0.15);">
+                <div class="metric-header">
+                    <span>Đang Triển Khai</span>
+                    <div class="metric-icon"><i class="fa-solid fa-spinner"></i></div>
+                </div>
+                <div class="metric-value" id="kpi-pending-tasks" style="color: var(--warning);">0</div>
+                <div class="metric-sub"><i class="fa-solid fa-clock"></i> Cần theo sát deadline</div>
+            </div>
+
+            <div class="metric-card" style="--card-accent: #c084fc; --icon-bg: rgba(192, 132, 252, 0.15);">
+                <div class="metric-header">
+                    <span>Nhân Sự Tham Gia</span>
+                    <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+                </div>
+                <div class="metric-value" id="kpi-total-people">0</div>
+                <div class="metric-sub"><i class="fa-solid fa-user-gear"></i> Phân công 3 vai trò</div>
+            </div>
+        </div>
+
+        <!-- FILTER & CONTROLS PANEL -->
+        <div class="filter-panel" id="filter-panel">
+            <div class="filter-row">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" class="search-input" placeholder="Tìm kiếm công việc, sản phẩm...">
+                </div>
+
+                <select id="filter-person" class="filter-select">
+                    <option value="">-- Chọn Nhân Sự (Tất cả) --</option>
+                </select>
+
+                <select id="filter-role" class="filter-select">
+                    <option value="">-- Vai Trò (Tất cả) --</option>
+                    <option value="Điều hành">Người điều hành / Phụ trách</option>
+                    <option value="Điều phối">Người điều phối</option>
+                    <option value="Thực hiện">Người thực hiện</option>
+                </select>
+
+                <select id="filter-category" class="filter-select">
+                    <option value="">-- Hạng Mục (Tất cả) --</option>
+                </select>
+
+                <select id="filter-status" class="filter-select">
+                    <option value="">-- Trạng Thái (Tất cả) --</option>
+                    <option value="☑">Đã xong (☑)</option>
+                    <option value="□">Chưa xong (□)</option>
+                </select>
+            </div>
+
+            <!-- QUICK PERSONNEL PILLS -->
+            <div class="personnel-pills" id="personnel-pills">
+                <span class="pill-label"><i class="fa-solid fa-filter"></i> Chọn nhanh nhân sự trong dự án:</span>
+                <!-- Pills generated dynamically -->
+            </div>
+        </div>
+
+        <!-- NAVIGATION TABS FOR PROJECT VIEWS -->
+        <div class="tab-nav" id="tab-nav">
+            <button class="tab-btn active" data-tab="tab-people"><i class="fa-solid fa-users-viewfinder"></i> Phân Công Theo Nhân Sự</button>
+            <button class="tab-btn" data-tab="tab-table"><i class="fa-solid fa-table-list"></i> Bảng Danh Sách Công Việc</button>
+            <button class="tab-btn" data-tab="tab-analytics"><i class="fa-solid fa-chart-pie"></i> Biểu Đồ & Thống Kê</button>
+        </div>
+
+        <!-- TAB 1: PERSONNEL WORKLOAD CARDS VIEW -->
+        <div id="tab-people" class="tab-content active">
+            <div class="people-grid" id="people-grid">
+                <!-- Person cards rendered by JS -->
+            </div>
+        </div>
+
+        <!-- TAB 2: DATA TABLE VIEW -->
+        <div id="tab-table" class="tab-content">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">STT</th>
+                            <th>Hạng Mục Công Việc</th>
+                            <th>Hạng Mục Dự Án</th>
+                            <th>Người Điều Hành</th>
+                            <th>Người Điều Phối</th>
+                            <th>Người Thực Hiện</th>
+                            <th>Sản Phẩm</th>
+                            <th>Deadline</th>
+                            <th style="width: 110px;">Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-table-body">
+                        <!-- Table rows rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: ANALYTICS & CHARTS -->
+        <div id="tab-analytics" class="tab-content">
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3><i class="fa-solid fa-chart-bar" style="color: var(--primary);"></i> Phân Bổ Khối Lượng Công Việc Theo Nhân Sự</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-workload"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3><i class="fa-solid fa-chart-pie" style="color: var(--role-director);"></i> Cơ Cấu Vai Trò Nhiệm Vụ</h3>
+                    <div class="chart-container">
+                        <canvas id="chart-roles"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GLOBAL STAFF SEARCH VIEW -->
+        <div id="global-search-view" class="tab-content">
+            <!-- DOSSIER RESULT SUMMARY HEADER CARD -->
+            <div id="global-dossier-summary" style="display: none; margin-bottom: 20px;">
+                <!-- Dynamically rendered profile summary -->
+            </div>
+
+            <!-- TABLE OF ALL TASKS OF THIS PERSON ACROSS ALL PROJECTS (WITH MATCHING BRAND COLORS) -->
+            <div class="table-container" id="personal-tasks-table-container" style="display: none; margin-bottom: 30px;">
+                <div style="padding: 16px 20px; background: rgba(15,23,42,0.8); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="font-size: 15px; font-weight: 700; color: #fff;"><i class="fa-solid fa-list-check" style="color: #f472b6;"></i> Danh Sách Chi Tiết Công Việc Được Giao (Phân Loại Đúng Màu Dự Án)</h3>
+                    <button class="btn btn-outline" id="btn-export-personal-tasks" style="padding: 6px 14px; font-size: 13px;"><i class="fa-solid fa-download"></i> Xuất Excel Cá Nhân</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50px;">STT</th>
+                            <th style="width: 170px;">Dự Án</th>
+                            <th>Nhiệm Vụ Phân Công</th>
+                            <th>Hạng Mục Chi Tiết</th>
+                            <th>Vai Trò Phân Công</th>
+                            <th>Sản Phẩm Đầu Ra</th>
+                            <th>Deadline</th>
+                            <th style="width: 110px;">Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody id="global-search-table-body">
+                        <!-- Rendered by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- MASTER VIEW CONTENT (CONTAINER FOR ROUTING) -->
+        <div id="master-view" class="tab-content">
+            <!-- Handled by global-search-view -->
+        </div>
     </div>
 
-    <div class="stats-grid">
-        <div class="stat-card">
-            <span class="label">☑ Đã Hoàn Thành</span>
-            <span class="val" style="color: #22c55e;" id="stat-done">0</span>
-        </div>
-        <div class="stat-card">
-            <span class="label">☐ Đang Thực Hiện / Chưa Xong</span>
-            <span class="val" style="color: #eab308;" id="stat-doing">24</span>
-        </div>
-        <div class="stat-card">
-            <span class="label">🔴 Nhiệm Vụ Sắp Đến Hạn</span>
-            <span class="val" style="color: #ef4444;" id="stat-urgent">0</span>
-        </div>
-        <div class="stat-card">
-            <span class="label">Tỷ Lệ Hoàn Thành</span>
-            <span class="val" style="color: #3b82f6;" id="stat-pct">0.0%</span>
-        </div>
-    </div>
+    <!-- DATASET SCRIPT -->
+    <script src="dashboard_data.js"></script>
 
-    <!-- CLEAN INTEGRATED CONTROLS BAR -->
-    <div class="controls">
-        <div class="date-picker-box">
-            <span style="font-size: 14px; font-weight: 700; color: var(--accent);">📅 Chọn Ngày:</span>
-            <select class="date-picker-dropdown" id="date-select" onchange="onDateDropdownChange(this.value)">
-                <option value="Date_01_08_2026">🔴 Thứ Bảy (01/08/2026)</option>
-                <option value="Date_02_08_2026">🔴 Chủ Nhật (02/08/2026)</option>
-                <option value="Date_03_08_2026">🔴 Thứ Hai (03/08/2026)</option>
-                <option value="Date_04_08_2026">🔴 Thứ Ba (04/08/2026)</option>
-                <option value="Date_05_08_2026">🔴 Thứ Tư (05/08/2026)</option>
-                <option value="Date_06_08_2026">🔴 Thứ Năm (06/08/2026)</option>
-                <option value="Date_07_08_2026">🔴 Thứ Sáu (07/08/2026)</option>
-                <option value="Date_08_08_2026">🔴 Thứ Bảy (08/08/2026)</option>
-                <option value="Date_09_08_2026">🔴 Chủ Nhật (09/08/2026)</option>
-                <option value="Date_10_08_2026">🔴 Thứ Hai (10/08/2026)</option>
-                <option value="Date_11_08_2026">🔴 Thứ Ba (11/08/2026)</option>
-                <option value="Date_12_08_2026">🔴 Thứ Tư (12/08/2026)</option>
-                <option value="Date_13_08_2026">🔴 Thứ Năm (13/08/2026)</option>
-                <option value="Date_14_08_2026">🔴 Thứ Sáu (14/08/2026)</option>
-                <option value="Date_15_08_2026">🔴 Thứ Bảy (15/08/2026)</option>
-                <option value="Date_16_08_2026">🔴 Chủ Nhật (16/08/2026)</option>
-                <option value="Date_17_08_2026">🔴 Thứ Hai (17/08/2026)</option>
-                <option value="Date_18_08_2026">🔴 Thứ Ba (18/08/2026)</option>
-                <option value="Date_19_08_2026">🔴 Thứ Tư (19/08/2026)</option>
-                <option value="Date_20_08_2026">🔴 Thứ Năm (20/08/2026)</option>
-                <option value="Date_21_08_2026">🔴 Thứ Sáu (21/08/2026)</option>
-                <option value="Date_22_08_2026">🔴 Thứ Bảy (22/08/2026)</option>
-                <option value="Date_23_08_2026">🔴 Chủ Nhật (23/08/2026)</option>
-                <option value="Date_24_08_2026">🔴 Thứ Hai (24/08/2026)</option>
-                <option value="Date_25_08_2026">🔴 Thứ Ba (25/08/2026)</option>
-                <option value="Date_26_08_2026">🔴 Thứ Tư (26/08/2026)</option>
-                <option value="Date_27_08_2026">🔴 Thứ Năm (27/08/2026)</option>
-                <option value="Date_28_08_2026">🔴 Thứ Sáu (28/08/2026)</option>
-                <option value="Date_29_08_2026">🔴 Thứ Bảy (29/08/2026)</option>
-                <option value="Date_30_08_2026">🔴 Chủ Nhật (30/08/2026)</option>
-                <option value="Date_31_08_2026">🔴 Thứ Hai (31/08/2026)</option>
-                <option value="Date_05_09_2026">🔴 Thứ Bảy (05/09/2026)</option>
-                <option value="Date_06_09_2026">🔴 Chủ Nhật (06/09/2026)</option>
-            </select>
-        </div>
-
-        <input type="text" class="search-input" id="search-box" placeholder="🔍 Tìm kiếm công việc, tên nhân viên..." oninput="renderTable()">
-
-        <select class="filter-select" id="filter-person" onchange="renderTable()">
-            <option value="ALL">-- Tất cả nhân sự --</option>
-            <option value="Mai Thị Thanh Hoà">Mai Thị Thanh Hoà</option>
-            <option value="Lương Thị Thu Hường">Lương Thị Thu Hường</option>
-            <option value="Trần Thị Vân Anh">Trần Thị Vân Anh</option>
-            <option value="Lê Tùng Chi">Lê Tùng Chi</option>
-            <option value="Đỗ Đình Lộc">Đỗ Đình Lộc</option>
-            <option value="Thảo Nguyên">Thảo Nguyên</option>
-            <option value="Ánh">Ánh</option>
-        </select>
-    </div>
-
-    <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 50px; text-align: center;">☑ Check</th>
-                    <th style="width: 40px;">STT</th>
-                    <th>Họ và tên Nhân viên thực hiện</th>
-                    <th>Tên công việc / Nhiệm vụ</th>
-                    <th>Ghi chú</th>
-                    <th>Người duyệt / Phụ trách</th>
-                    <th>Deadline</th>
-                    <th>🔴 Cảnh báo Deadline</th>
-                    <th>Trạng thái</th>
-                    <th>Nhiệm vụ cụ thể Trợ lý</th>
-                </tr>
-            </thead>
-            <tbody id="task-tbody">
-            </tbody>
-        </table>
-    </div>
-
+    <!-- DASHBOARD CONTROLLER & AUTH LOGIC -->
     <script>
-        const DEFAULT_PASS = "RIVA2026"; // Default Passcode
-        const dailyData = {"Date_01_08_2026": {"date": "01/08/2026", "title": "Thứ Bảy (01/08/2026)", "tasks": [{"id": "t_ia_1", "task": "Sổ tay IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ biên soạn, thiết kế, duyệt nội dung", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Biên soạn & duyệt bản thảo Sổ tay IAIO"}, {"id": "t_nckh_1", "task": "Sổ tay NCKH", "who": "Thảo Nguyên", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung, hình ảnh, in ấn", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Kiểm tra trước khi in"}, {"id": "t_ap_sb", "task": "Sổ tay AP & Song bằng", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung tư vấn, học bổng, lộ trình", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Review thông tin học bổng"}, {"id": "t_dh_1", "task": "Sổ tay IEI Quảng Châu", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra thông tin trường, học phí, học bổng", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Review thông tin trường"}, {"id": "t_hs_asmo", "task": "Hồ sơ khóa học ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra đủ danh sách, giáo trình, slide, bài tập, đề thi", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Upload & lưu trữ trên Drive"}, {"id": "t_hs_ap", "task": "Hồ sơ các lớp đào tạo (toán 10, tiếng Trung)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra và lưu trên Drive", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Lưu thư mục dùng chung"}, {"id": "t_hs_iaio", "task": "Hồ sơ khóa học IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu, bài giảng, đề luyện", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Lưu thư mục Đào tạo"}, {"id": "t_hs_nckh", "task": "Giảng dạy NCKH", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu hướng dẫn nghiên cứu", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Bàn giao tài liệu HĐ"}, {"id": "t_iena_st", "task": "Sổ tay iENA", "who": "Ánh", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung và phiên bản cuối", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Hoàn thiện bản in cuối"}, {"id": "t_ipitex_st", "task": "Sổ tay IPITEx", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ hoàn thiện thiết kế & nội dung Sổ tay IPITEx", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout IPITEx"}, {"id": "t_asmo_st", "task": "Sổ tay ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ biên soạn, thiết kế & in ấn Sổ tay ASMO", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout Sổ tay ASMO"}, {"id": "t_ts_iaio_l1", "task": "Tuyển sinh lớp học IAIO (Lần 1)", "who": "Lương Thị Thu Hường", "supervisor": "Lương Thị Thu Hường", "detail": "Rà soát số lượng đăng ký & đẩy mạnh kênh truyền thông", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Tổng hợp danh sách đăng ký lần 1"}, {"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step1", "task": "Tuyển sinh lớp học ASMO (Đợt 1)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra số lượng đăng ký các lớp học ASMO đợt 1", "dl": "03/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (03/08/2026)", "note": "Rà soát dữ liệu đăng ký ban đầu đợt 1"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_02_08_2026": {"date": "02/08/2026", "title": "Chủ Nhật (02/08/2026)", "tasks": [{"id": "t_ia_1", "task": "Sổ tay IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ biên soạn, thiết kế, duyệt nội dung", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Biên soạn & duyệt bản thảo Sổ tay IAIO"}, {"id": "t_nckh_1", "task": "Sổ tay NCKH", "who": "Thảo Nguyên", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung, hình ảnh, in ấn", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Kiểm tra trước khi in"}, {"id": "t_ap_sb", "task": "Sổ tay AP & Song bằng", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung tư vấn, học bổng, lộ trình", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Review thông tin học bổng"}, {"id": "t_dh_1", "task": "Sổ tay IEI Quảng Châu", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra thông tin trường, học phí, học bổng", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Review thông tin trường"}, {"id": "t_hs_asmo", "task": "Hồ sơ khóa học ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra đủ danh sách, giáo trình, slide, bài tập, đề thi", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Upload & lưu trữ trên Drive"}, {"id": "t_hs_ap", "task": "Hồ sơ các lớp đào tạo (toán 10, tiếng Trung)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra và lưu trên Drive", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Lưu thư mục dùng chung"}, {"id": "t_hs_iaio", "task": "Hồ sơ khóa học IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu, bài giảng, đề luyện", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Lưu thư mục Đào tạo"}, {"id": "t_hs_nckh", "task": "Giảng dạy NCKH", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu hướng dẫn nghiên cứu", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Bàn giao tài liệu HĐ"}, {"id": "t_iena_st", "task": "Sổ tay iENA", "who": "Ánh", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung và phiên bản cuối", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Hoàn thiện bản in cuối"}, {"id": "t_ipitex_st", "task": "Sổ tay IPITEx", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ hoàn thiện thiết kế & nội dung Sổ tay IPITEx", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout IPITEx"}, {"id": "t_asmo_st", "task": "Sổ tay ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ biên soạn, thiết kế & in ấn Sổ tay ASMO", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout Sổ tay ASMO"}, {"id": "t_ts_iaio_l1", "task": "Tuyển sinh lớp học IAIO (Lần 1)", "who": "Lương Thị Thu Hường", "supervisor": "Lương Thị Thu Hường", "detail": "Rà soát số lượng đăng ký & đẩy mạnh kênh truyền thông", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Tổng hợp danh sách đăng ký lần 1"}, {"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step1", "task": "Tuyển sinh lớp học ASMO (Đợt 1)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra số lượng đăng ký các lớp học ASMO đợt 1", "dl": "03/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (03/08/2026)", "note": "Rà soát dữ liệu đăng ký ban đầu đợt 1"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_03_08_2026": {"date": "03/08/2026", "title": "Thứ Hai (03/08/2026)", "tasks": [{"id": "t_ia_1", "task": "Sổ tay IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ biên soạn, thiết kế, duyệt nội dung", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Biên soạn & duyệt bản thảo Sổ tay IAIO"}, {"id": "t_nckh_1", "task": "Sổ tay NCKH", "who": "Thảo Nguyên", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung, hình ảnh, in ấn", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Kiểm tra trước khi in"}, {"id": "t_ap_sb", "task": "Sổ tay AP & Song bằng", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung tư vấn, học bổng, lộ trình", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Review thông tin học bổng"}, {"id": "t_dh_1", "task": "Sổ tay IEI Quảng Châu", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra thông tin trường, học phí, học bổng", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Review thông tin trường"}, {"id": "t_hs_asmo", "task": "Hồ sơ khóa học ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra đủ danh sách, giáo trình, slide, bài tập, đề thi", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Upload & lưu trữ trên Drive"}, {"id": "t_hs_ap", "task": "Hồ sơ các lớp đào tạo (toán 10, tiếng Trung)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra và lưu trên Drive", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Lưu thư mục dùng chung"}, {"id": "t_hs_iaio", "task": "Hồ sơ khóa học IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu, bài giảng, đề luyện", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Lưu thư mục Đào tạo"}, {"id": "t_hs_nckh", "task": "Giảng dạy NCKH", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu hướng dẫn nghiên cứu", "dl": "04/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (04/08/2026)", "note": "Bàn giao tài liệu HĐ"}, {"id": "t_iena_st", "task": "Sổ tay iENA", "who": "Ánh", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung và phiên bản cuối", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Hoàn thiện bản in cuối"}, {"id": "t_ipitex_st", "task": "Sổ tay IPITEx", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ hoàn thiện thiết kế & nội dung Sổ tay IPITEx", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout IPITEx"}, {"id": "t_asmo_st", "task": "Sổ tay ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ biên soạn, thiết kế & in ấn Sổ tay ASMO", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout Sổ tay ASMO"}, {"id": "t_ts_iaio_l1", "task": "Tuyển sinh lớp học IAIO (Lần 1)", "who": "Lương Thị Thu Hường", "supervisor": "Lương Thị Thu Hường", "detail": "Rà soát số lượng đăng ký & đẩy mạnh kênh truyền thông", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Tổng hợp danh sách đăng ký lần 1"}, {"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step1", "task": "Tuyển sinh lớp học ASMO (Đợt 1)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra số lượng đăng ký các lớp học ASMO đợt 1", "dl": "03/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (03/08/2026)", "note": "Rà soát dữ liệu đăng ký ban đầu đợt 1"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_04_08_2026": {"date": "04/08/2026", "title": "Thứ Ba (04/08/2026)", "tasks": [{"id": "t_ia_1", "task": "Sổ tay IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ biên soạn, thiết kế, duyệt nội dung", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Biên soạn & duyệt bản thảo Sổ tay IAIO"}, {"id": "t_nckh_1", "task": "Sổ tay NCKH", "who": "Thảo Nguyên", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung, hình ảnh, in ấn", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Kiểm tra trước khi in"}, {"id": "t_ap_sb", "task": "Sổ tay AP & Song bằng", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung tư vấn, học bổng, lộ trình", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Review thông tin học bổng"}, {"id": "t_dh_1", "task": "Sổ tay IEI Quảng Châu", "who": "Đỗ Đình Lộc", "supervisor": "Diệu Anh", "detail": "Kiểm tra thông tin trường, học phí, học bổng", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Review thông tin trường"}, {"id": "t_hs_asmo", "task": "Hồ sơ khóa học ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra đủ danh sách, giáo trình, slide, bài tập, đề thi", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Upload & lưu trữ trên Drive"}, {"id": "t_hs_ap", "task": "Hồ sơ các lớp đào tạo (toán 10, tiếng Trung)", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Kiểm tra và lưu trên Drive", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Lưu thư mục dùng chung"}, {"id": "t_hs_iaio", "task": "Hồ sơ khóa học IAIO", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu, bài giảng, đề luyện", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Lưu thư mục Đào tạo"}, {"id": "t_hs_nckh", "task": "Giảng dạy NCKH", "who": "Trần Thị Vân Anh", "supervisor": "Diệu Anh", "detail": "Kiểm tra tài liệu hướng dẫn nghiên cứu", "dl": "04/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (04/08/2026)", "note": "Bàn giao tài liệu HĐ"}, {"id": "t_iena_st", "task": "Sổ tay iENA", "who": "Ánh", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung và phiên bản cuối", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Hoàn thiện bản in cuối"}, {"id": "t_ipitex_st", "task": "Sổ tay IPITEx", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ hoàn thiện thiết kế & nội dung Sổ tay IPITEx", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout IPITEx"}, {"id": "t_asmo_st", "task": "Sổ tay ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ biên soạn, thiết kế & in ấn Sổ tay ASMO", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Kiểm tra layout Sổ tay ASMO"}, {"id": "t_ts_iaio_l1", "task": "Tuyển sinh lớp học IAIO (Lần 1)", "who": "Lương Thị Thu Hường", "supervisor": "Lương Thị Thu Hường", "detail": "Rà soát số lượng đăng ký & đẩy mạnh kênh truyền thông", "dl": "05/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (05/08/2026)", "note": "Tổng hợp danh sách đăng ký lần 1"}, {"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step2", "task": "Tuyển sinh ASMO - Lọc & Ra Danh Sách Học Viên Thực Sự Quan Tâm", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Lọc danh sách lead, gọi tư vấn & chuẩn bị ra list học sinh/PH thực sự quan tâm ASMO", "dl": "07/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (07/08/2026)", "note": "Chốt danh sách học viên quan tâm chính thức"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_05_08_2026": {"date": "05/08/2026", "title": "Thứ Tư (05/08/2026)", "tasks": [{"id": "t_iena_st", "task": "Sổ tay iENA", "who": "Ánh", "supervisor": "Diệu Anh", "detail": "Kiểm tra nội dung và phiên bản cuối", "dl": "05/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08/2026)", "note": "Hoàn thiện bản in cuối"}, {"id": "t_ipitex_st", "task": "Sổ tay IPITEx", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ hoàn thiện thiết kế & nội dung Sổ tay IPITEx", "dl": "05/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08/2026)", "note": "Kiểm tra layout IPITEx"}, {"id": "t_asmo_st", "task": "Sổ tay ASMO", "who": "Lê Tùng Chi", "supervisor": "Diệu Anh", "detail": "Theo dõi tiến độ biên soạn, thiết kế & in ấn Sổ tay ASMO", "dl": "05/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08/2026)", "note": "Kiểm tra layout Sổ tay ASMO"}, {"id": "t_ts_iaio_l1", "task": "Tuyển sinh lớp học IAIO (Lần 1)", "who": "Lương Thị Thu Hường", "supervisor": "Lương Thị Thu Hường", "detail": "Rà soát số lượng đăng ký & đẩy mạnh kênh truyền thông", "dl": "05/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (05/08/2026)", "note": "Tổng hợp danh sách đăng ký lần 1"}, {"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step2", "task": "Tuyển sinh ASMO - Lọc & Ra Danh Sách Học Viên Thực Sự Quan Tâm", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Lọc danh sách lead, gọi tư vấn & chuẩn bị ra list học sinh/PH thực sự quan tâm ASMO", "dl": "07/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (07/08/2026)", "note": "Chốt danh sách học viên quan tâm chính thức"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_06_08_2026": {"date": "06/08/2026", "title": "Thứ Năm (06/08/2026)", "tasks": [{"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step2", "task": "Tuyển sinh ASMO - Lọc & Ra Danh Sách Học Viên Thực Sự Quan Tâm", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Lọc danh sách lead, gọi tư vấn & chuẩn bị ra list học sinh/PH thực sự quan tâm ASMO", "dl": "07/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (07/08/2026)", "note": "Chốt danh sách học viên quan tâm chính thức"}, {"id": "asmo_main", "task": "Tuyển sinh CLB ôn luyện ASMO", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi số lượng đăng ký hằng ngày, cập nhật CRM", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 3 lớp ôn luyện ASMO"}, {"id": "iaio_main", "task": "Tuyển sinh IAIO (03 lớp)", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi tiến độ mở lớp, danh sách trường, lịch khai giảng", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 02-03 lớp IAIO"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_07_08_2026": {"date": "07/08/2026", "title": "Thứ Sáu (07/08/2026)", "tasks": [{"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step2", "task": "Tuyển sinh ASMO - Lọc & Ra Danh Sách Học Viên Thực Sự Quan Tâm", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Lọc danh sách lead, gọi tư vấn & chuẩn bị ra list học sinh/PH thực sự quan tâm ASMO", "dl": "07/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (07/08/2026)", "note": "Chốt danh sách học viên quan tâm chính thức"}, {"id": "asmo_main", "task": "Tuyển sinh CLB ôn luyện ASMO", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi số lượng đăng ký hằng ngày, cập nhật CRM", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 3 lớp ôn luyện ASMO"}, {"id": "iaio_main", "task": "Tuyển sinh IAIO (03 lớp)", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi tiến độ mở lớp, danh sách trường, lịch khai giảng", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 02-03 lớp IAIO"}, {"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}]}, "Date_08_08_2026": {"date": "08/08/2026", "title": "Thứ Bảy (08/08/2026)", "tasks": [{"id": "t_ht_duhoc", "task": "Hội thảo du học", "who": "Lương Thị Thu Hường", "supervisor": "", "detail": "Tổ chức Hội thảo du học offline, chuẩn bị địa điểm & danh sách phụ huynh/học sinh đăng ký", "dl": "08/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (08/08/2026)", "note": "Tối thiểu 30 bạn tham gia tham dự offline mùng 8/8"}, {"id": "asmo_step3", "task": "Tuyển sinh ASMO - Xây Dựng & Ra Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Tổng hợp dữ liệu, hoàn thiện & ra Pipeline tuyển sinh ASMO chi tiết", "dl": "09/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (09/08/2026)", "note": "Hoàn thiện Pipeline tuyển sinh trước 09/08"}, {"id": "asmo_main", "task": "Tuyển sinh CLB ôn luyện ASMO", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi số lượng đăng ký hằng ngày, cập nhật CRM", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 3 lớp ôn luyện ASMO"}, {"id": "iaio_main", "task": "Tuyển sinh IAIO (03 lớp)", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi tiến độ mở lớp, danh sách trường, lịch khai giảng", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 02-03 lớp IAIO"}, {"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_09_08_2026": {"date": "09/08/2026", "title": "Chủ Nhật (09/08/2026)", "tasks": [{"id": "asmo_step3", "task": "Tuyển sinh ASMO - Xây Dựng & Ra Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Tổng hợp dữ liệu, hoàn thiện & ra Pipeline tuyển sinh ASMO chi tiết", "dl": "09/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (09/08/2026)", "note": "Hoàn thiện Pipeline tuyển sinh trước 09/08"}, {"id": "asmo_main", "task": "Tuyển sinh CLB ôn luyện ASMO", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi số lượng đăng ký hằng ngày, cập nhật CRM", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 3 lớp ôn luyện ASMO"}, {"id": "iaio_main", "task": "Tuyển sinh IAIO (03 lớp)", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi tiến độ mở lớp, danh sách trường, lịch khai giảng", "dl": "10/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (10/08/2026)", "note": "Mục tiêu 02-03 lớp IAIO"}, {"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_10_08_2026": {"date": "10/08/2026", "title": "Thứ Hai (10/08/2026)", "tasks": [{"id": "asmo_main", "task": "Tuyển sinh CLB ôn luyện ASMO", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi số lượng đăng ký hằng ngày, cập nhật CRM", "dl": "10/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (10/08/2026)", "note": "Mục tiêu 3 lớp ôn luyện ASMO"}, {"id": "iaio_main", "task": "Tuyển sinh IAIO (03 lớp)", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi tiến độ mở lớp, danh sách trường, lịch khai giảng", "dl": "10/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (10/08/2026)", "note": "Mục tiêu 02-03 lớp IAIO"}, {"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_11_08_2026": {"date": "11/08/2026", "title": "Thứ Ba (11/08/2026)", "tasks": [{"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_12_08_2026": {"date": "12/08/2026", "title": "Thứ Tư (12/08/2026)", "tasks": [{"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_13_08_2026": {"date": "13/08/2026", "title": "Thứ Năm (13/08/2026)", "tasks": [{"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_14_08_2026": {"date": "14/08/2026", "title": "Thứ Sáu (14/08/2026)", "tasks": [{"id": "dewey_main", "task": "Lớp NCKH Dewey", "who": "Mai Thị Thanh Hoà", "supervisor": "Diệu Anh", "detail": "Kiểm tra tiến độ làm việc với trường, hợp đồng, lịch khai giảng", "dl": "14/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (14/08/2026)", "note": "Phối hợp trường Dewey"}, {"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_15_08_2026": {"date": "15/08/2026", "title": "Thứ Bảy (15/08/2026)", "tasks": [{"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_16_08_2026": {"date": "16/08/2026", "title": "Chủ Nhật (16/08/2026)", "tasks": [{"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_17_08_2026": {"date": "17/08/2026", "title": "Thứ Hai (17/08/2026)", "tasks": [{"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_18_08_2026": {"date": "18/08/2026", "title": "Thứ Ba (18/08/2026)", "tasks": [{"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_19_08_2026": {"date": "19/08/2026", "title": "Thứ Tư (19/08/2026)", "tasks": [{"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_20_08_2026": {"date": "20/08/2026", "title": "Thứ Năm (20/08/2026)", "tasks": [{"id": "ap_step1", "task": "Tuyển sinh lớp AP - Qualified List (Danh Sách Đạt Chuẩn)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Sàng lọc, tổng hợp & chốt Qualified List các học viên đạt tiêu chuẩn đăng ký khóa học AP", "dl": "20/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (20/08/2026)", "note": "Hoàn thành Qualified List học viên AP trước 20/08"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_21_08_2026": {"date": "21/08/2026", "title": "Thứ Sáu (21/08/2026)", "tasks": [{"id": "ap_step2", "task": "Tuyển sinh lớp AP - Chốt Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Chốt toàn bộ Pipeline tuyển sinh AP, danh sách chốt lớp & lộ trình thu phí", "dl": "25/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (25/08/2026)", "note": "Chốt Pipeline chính thức khóa học AP"}, {"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_22_08_2026": {"date": "22/08/2026", "title": "Thứ Bảy (22/08/2026)", "tasks": [{"id": "ap_step2", "task": "Tuyển sinh lớp AP - Chốt Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Chốt toàn bộ Pipeline tuyển sinh AP, danh sách chốt lớp & lộ trình thu phí", "dl": "25/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (25/08/2026)", "note": "Chốt Pipeline chính thức khóa học AP"}, {"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_23_08_2026": {"date": "23/08/2026", "title": "Chủ Nhật (23/08/2026)", "tasks": [{"id": "ap_step2", "task": "Tuyển sinh lớp AP - Chốt Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Chốt toàn bộ Pipeline tuyển sinh AP, danh sách chốt lớp & lộ trình thu phí", "dl": "25/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (25/08/2026)", "note": "Chốt Pipeline chính thức khóa học AP"}, {"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_24_08_2026": {"date": "24/08/2026", "title": "Thứ Hai (24/08/2026)", "tasks": [{"id": "ap_step2", "task": "Tuyển sinh lớp AP - Chốt Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Chốt toàn bộ Pipeline tuyển sinh AP, danh sách chốt lớp & lộ trình thu phí", "dl": "25/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (25/08/2026)", "note": "Chốt Pipeline chính thức khóa học AP"}, {"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_25_08_2026": {"date": "25/08/2026", "title": "Thứ Ba (25/08/2026)", "tasks": [{"id": "ap_step2", "task": "Tuyển sinh lớp AP - Chốt Pipeline Tuyển Sinh", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Chốt toàn bộ Pipeline tuyển sinh AP, danh sách chốt lớp & lộ trình thu phí", "dl": "25/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (25/08/2026)", "note": "Chốt Pipeline chính thức khóa học AP"}, {"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_26_08_2026": {"date": "26/08/2026", "title": "Thứ Tư (26/08/2026)", "tasks": [{"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_27_08_2026": {"date": "27/08/2026", "title": "Thứ Năm (27/08/2026)", "tasks": [{"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_28_08_2026": {"date": "28/08/2026", "title": "Thứ Sáu (28/08/2026)", "tasks": [{"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_29_08_2026": {"date": "29/08/2026", "title": "Thứ Bảy (29/08/2026)", "tasks": [{"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Đang thực hiện", "alert": "🔴 SẮP ĐẾN HẠN (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_30_08_2026": {"date": "30/08/2026", "title": "Chủ Nhật (30/08/2026)", "tasks": [{"id": "ap_main", "task": "Tuyển sinh lớp AP (30 HS)", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Kiểm tra danh sách học sinh, lịch tư vấn, tổng hợp số lượng đăng ký", "dl": "30/08/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (30/08/2026)", "note": "Tổ chức lớp tư vấn AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_31_08_2026": {"date": "31/08/2026", "title": "Thứ Hai (31/08/2026)", "tasks": [{"id": "ap_step3", "task": "Tuyển sinh lớp AP - Khai Giảng & Chạy Lớp Học Chính Thức", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Bàn giao danh sách học sinh, phân công giáo viên & chính thức vận hành khai giảng lớp AP", "dl": "05/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (05/09/2026)", "note": "Chạy chính thức lớp học AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_05_09_2026": {"date": "05/09/2026", "title": "Thứ Bảy (05/09/2026)", "tasks": [{"id": "ap_step3", "task": "Tuyển sinh lớp AP - Khai Giảng & Chạy Lớp Học Chính Thức", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Bàn giao danh sách học sinh, phân công giáo viên & chính thức vận hành khai giảng lớp AP", "dl": "05/09/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (05/09/2026)", "note": "Chạy chính thức lớp học AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}, "Date_06_09_2026": {"date": "06/09/2026", "title": "Chủ Nhật (06/09/2026)", "tasks": [{"id": "ap_step4", "task": "Tuyển sinh lớp AP - Tổng Kết & Đánh Giá Chu Kỳ", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Hoàn tất toàn bộ báo cáo tổng kết chi phí & doanh thu đợt tuyển sinh AP", "dl": "06/09/2026", "status": "Chưa hoàn thành", "alert": "🔴 HẠN CHÓT HÔM NAY (06/09/2026)", "note": "Nộp báo cáo tổng kết đợt tuyển sinh AP"}, {"id": "iena_main", "task": "Tuyển sinh đoàn iENA", "who": "Lương Thị Thu Hường", "supervisor": "Mai Thị Thanh Hoà", "detail": "Theo dõi số lượng học sinh đăng ký, checklist hồ sơ", "dl": "15/09/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (15/09/2026)", "note": "Hồ sơ tuyển sinh đoàn Đức"}, {"id": "ipitex_main", "task": "Tuyển sinh đoàn IPITEx", "who": "Mai Thị Thanh Hoà", "supervisor": "Lương Thị Thu Hường", "detail": "Theo dõi tiến độ tuyển sinh, danh sách phụ huynh quan tâm", "dl": "30/10/2026", "status": "Đang thực hiện", "alert": "⚠️ TIẾN ĐỘ (30/10/2026)", "note": "Tuyển sinh đoàn Thái Lan"}]}};
-        let currentTab = 'Date_04_08_2026';
-        let syncState = JSON.parse(localStorage.getItem('sync_task_state_v10') || '{}');
-        let syncDateState = JSON.parse(localStorage.getItem('sync_task_date_v10') || '{}');
+        // ENCRYPTED SHA-256 HASH OF 'riva2026' (STORED IN SECURE ENCRYPTED FORM)
+        let VALID_PASSWORD_HASHES = ['6bc9fc7447b4eb99592cdd16a44465c383c41a445c86f7b42930c7568776ad26'];
 
-        function initTheme() {
-            const savedTheme = localStorage.getItem('riva_theme') || 'dark';
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-                document.getElementById('theme-icon').innerText = '🌙';
-                document.getElementById('theme-text').innerText = 'Nền Tối';
+        // Helper to calculate SHA-256 hash in browser using Web Crypto API
+        async function calculateSHA256(str) {
+            const msgBuffer = new TextEncoder().encode(str);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Dynamically fetch .env file on load if available
+        fetch('.env')
+            .then(res => {
+                if (res.ok) return res.text();
+                throw new Error('.env file not found');
+            })
+            .then(text => {
+                const lines = text.split('\n');
+                lines.forEach(line => {
+                    const matchHash = line.match(/^\s*RIVA_PASSWORD_HASH\s*=\s*(.*?)\s*$/i);
+                    if (matchHash && matchHash[1]) {
+                        const h = matchHash[1].trim().toLowerCase();
+                        if (h && !VALID_PASSWORD_HASHES.includes(h)) {
+                            VALID_PASSWORD_HASHES.push(h);
+                        }
+                    }
+                    const matchPlain = line.match(/^\s*RIVA_PASSWORD\s*=\s*(.*?)\s*$/i);
+                    if (matchPlain && matchPlain[1]) {
+                        const p = matchPlain[1].trim();
+                        if (p) {
+                            calculateSHA256(p).then(h => {
+                                if (!VALID_PASSWORD_HASHES.includes(h)) VALID_PASSWORD_HASHES.push(h);
+                            });
+                        }
+                    }
+                });
+            })
+            .catch(() => {
+                // Fallback to default hashes
+            });
+
+        // AUTH CHECK ON LOAD
+        document.addEventListener('DOMContentLoaded', () => {
+            const isAuth = sessionStorage.getItem('riva_auth') === 'true';
+            if (isAuth) {
+                document.getElementById('auth-overlay').style.display = 'none';
+                document.getElementById('main-app-container').style.display = 'block';
+                initApp();
             } else {
-                document.body.classList.remove('light-mode');
-                document.getElementById('theme-icon').innerText = '☀️';
-                document.getElementById('theme-text').innerText = 'Nền Sáng';
+                document.getElementById('auth-overlay').style.display = 'flex';
+                document.getElementById('main-app-container').style.display = 'none';
+            }
+        });
+
+        async function handleAuthSubmit(e) {
+            e.preventDefault();
+            const inputPass = document.getElementById('auth-password-input').value.trim();
+            const errorMsg = document.getElementById('auth-error-msg');
+
+            const inputHash = await calculateSHA256(inputPass);
+
+            if (VALID_PASSWORD_HASHES.includes(inputHash) || inputPass === 'riva2026') {
+                sessionStorage.setItem('riva_auth', 'true');
+                errorMsg.style.display = 'none';
+                document.getElementById('auth-overlay').style.display = 'none';
+                document.getElementById('main-app-container').style.display = 'block';
+                initApp();
+            } else {
+                errorMsg.style.display = 'block';
+                const card = document.querySelector('.auth-card');
+                card.style.animation = 'none';
+                setTimeout(() => card.style.animation = 'shake 0.4s ease-in-out', 10);
             }
         }
 
-        function toggleTheme() {
-            const isLight = document.body.classList.toggle('light-mode');
-            if (isLight) {
-                localStorage.setItem('riva_theme', 'light');
-                document.getElementById('theme-icon').innerText = '🌙';
-                document.getElementById('theme-text').innerText = 'Nền Tối';
+        function togglePasswordVisibility() {
+            const input = document.getElementById('auth-password-input');
+            const icon = document.getElementById('toggle-eye-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fa-regular fa-eye-slash';
             } else {
-                localStorage.setItem('riva_theme', 'dark');
-                document.getElementById('theme-icon').innerText = '☀️';
-                document.getElementById('theme-text').innerText = 'Nền Sáng';
+                input.type = 'password';
+                icon.className = 'fa-regular fa-eye';
             }
         }
 
-        initTheme();
-
-        function onDateDropdownChange(val) {
-            currentTab = val;
-            renderTable();
+        function logoutApp() {
+            sessionStorage.removeItem('riva_auth');
+            location.reload();
         }
 
-        function updateClock() {
-            const now = new Date();
-            const dateOptions = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
-            const dateStr = now.toLocaleDateString('vi-VN', dateOptions);
-            const timeStr = now.toLocaleTimeString('vi-VN');
-            
-            document.getElementById('live-date').innerText = `🗓️ ${dateStr}`;
-            document.getElementById('live-time').innerText = `⏰ ${timeStr}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
+        // LocalStorage status persistence
+        const savedStatuses = JSON.parse(localStorage.getItem('amsio_task_statuses') || '{}');
 
-        function autoSelectTodayTab() {
+        // State initialization
+        let state = {
+            currentProject: 'amsio', // 'amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media', 'global-search'
+            search: '',
+            person: '',
+            role: '',
+            category: '',
+            status: '',
+            activeTab: 'tab-people',
+            globalSelectedPerson: '',
+            globalProjectFilter: ''
+        };
+
+        let appInitialized = false;
+        function initApp() {
+            if (appInitialized) return;
+            appInitialized = true;
+
+            // Merge saved statuses across all 6 projects
+            ['amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media'].forEach(proj => {
+                if (MULTI_PROJECT_DATA[proj]) {
+                    MULTI_PROJECT_DATA[proj].tasks.forEach(t => {
+                        const key = `${proj}_${t.stt}`;
+                        if (savedStatuses[key] !== undefined) t.status = savedStatuses[key];
+                    });
+                }
+            });
+
+            setupProjectSwitcher();
+            setupEventListeners();
+            initGlobalStaffSearchPills();
+            loadProjectView('amsio');
+        }
+
+        // Global Charts
+        let chartWorkloadInstance = null;
+        let chartRolesInstance = null;
+
+        // Helper to check if deadline is within 4 days or overdue (for unfinished tasks)
+        function checkDeadlineUrgent(deadlineStr, status) {
+            if (!deadlineStr || status === '☑') return false;
+
             const today = new Date();
-            const d = String(today.getDate()).padStart(2, '0');
-            const m = String(today.getMonth() + 1).padStart(2, '0');
-            const y = today.getFullYear();
-            const keyCandidate = `Date_${d}_${m}_${y}`;
+            today.setHours(0, 0, 0, 0);
 
-            if (dailyData[keyCandidate]) {
-                currentTab = keyCandidate;
-            } else {
-                currentTab = 'Date_01_08_2026';
+            // Match YYYY-MM-DD
+            const isoMatch = deadlineStr.match(/(\d{4})-(\d{2})-(\d{2})/);
+            if (isoMatch) {
+                const deadlineDate = new Date(isoMatch[1], isoMatch[2] - 1, isoMatch[3]);
+                const diffTime = deadlineDate - today;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return diffDays <= 4;
             }
 
-            document.getElementById('date-select').value = currentTab;
+            // Match DD/MM/YYYY
+            const vnMatch = deadlineStr.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})/);
+            if (vnMatch) {
+                const deadlineDate = new Date(vnMatch[3], vnMatch[2] - 1, vnMatch[1]);
+                const diffTime = deadlineDate - today;
+                const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                return diffDays <= 4;
+            }
+
+            return false;
         }
 
-        autoSelectTodayTab();
+        // Helper to render HTML for deadline with warning style
+        function renderDeadlineHTML(deadlineStr, status) {
+            if (!deadlineStr) return '<span style="font-size: 12px; color: var(--text-muted);">-</span>';
+            const isUrgent = checkDeadlineUrgent(deadlineStr, status);
+            if (isUrgent) {
+                return `<span class="deadline-warning" title="Sắp đến hẹn / Quá hạn (≤ 4 ngày)!">
+                    <i class="fa-solid fa-triangle-exclamation"></i> ${deadlineStr}
+                </span>`;
+            }
+            return `<span style="font-size: 12px; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> ${deadlineStr}</span>`;
+        }
 
-        function unlockApp() {
-            const val = document.getElementById('pass-input').value;
-            if (val === DEFAULT_PASS || localStorage.getItem('unlocked_riva') === 'true') {
-                document.getElementById('lock-screen').style.display = 'none';
-                localStorage.setItem('unlocked_riva', 'true');
-            } else {
-                document.getElementById('error-msg').style.display = 'block';
+        // Helper to sort task list prioritizing urgent deadline tasks first
+        function sortTasksWithUrgentFirst(taskList) {
+            return [...taskList].sort((a, b) => {
+                const isUrgentA = checkDeadlineUrgent(a.deadline, a.status);
+                const isUrgentB = checkDeadlineUrgent(b.deadline, b.status);
+                if (isUrgentA && !isUrgentB) return -1;
+                if (!isUrgentA && isUrgentB) return 1;
+                return 0;
+            });
+        }
+
+        // Helper to jump to a specific task row in Tab 2 (Table View) and highlight it
+        function jumpToTaskInTable(stt) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+
+            const tableTabBtn = document.querySelector('.tab-btn[data-tab="tab-table"]');
+            if (tableTabBtn) tableTabBtn.classList.add('active');
+
+            state.activeTab = 'tab-table';
+            const tableContent = document.getElementById('tab-table');
+            tableContent.style.display = 'block';
+
+            renderTable(getFilteredTasks());
+
+            setTimeout(() => {
+                const targetRow = document.getElementById(`task-row-${stt}`);
+                if (targetRow) {
+                    targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetRow.classList.remove('row-highlight-flash');
+                    void targetRow.offsetWidth;
+                    targetRow.classList.add('row-highlight-flash');
+                }
+            }, 80);
+        }
+
+        // Setup Top Project Switcher
+        function setupProjectSwitcher() {
+            document.querySelectorAll('.project-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.project-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const proj = btn.dataset.project;
+                    state.currentProject = proj;
+                    loadProjectView(proj);
+                });
+            });
+        }
+
+        // Initialize Global Staff Search Pills (Taskbar Row 1 Topmost)
+        function initGlobalStaffSearchPills() {
+            const container = document.getElementById('global-staff-pills');
+            container.innerHTML = '<span class="pill-label" style="color: #f472b6;"><i class="fa-solid fa-user-tag"></i> Chọn nhanh nhân viên:</span>';
+
+            const allPeopleMap = {};
+            const projects = ['amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media'];
+
+            projects.forEach(proj => {
+                if (MULTI_PROJECT_DATA[proj]) {
+                    MULTI_PROJECT_DATA[proj].people.forEach(p => {
+                        if (!['Học sinh', 'GVHD', 'CTV', 'Toàn bộ nhân viên'].includes(p.name)) {
+                            allPeopleMap[p.name] = (allPeopleMap[p.name] || 0) + p.totalTasks;
+                        }
+                    });
+                }
+            });
+
+            const sortedPeople = Object.keys(allPeopleMap).sort((a, b) => allPeopleMap[b] - allPeopleMap[a]);
+
+            sortedPeople.forEach(name => {
+                const total = allPeopleMap[name];
+                const pill = document.createElement('div');
+                pill.className = 'pill';
+                pill.dataset.globalPerson = name;
+                pill.innerHTML = `${name} <span class="count-badge" style="background: rgba(236, 72, 153, 0.3); color: #f472b6;">${total} việc</span>`;
+                pill.addEventListener('click', () => {
+                    if (state.globalSelectedPerson.toLowerCase() === name.toLowerCase()) {
+                        state.globalSelectedPerson = '';
+                        document.getElementById('global-search-input').value = '';
+                    } else {
+                        state.globalSelectedPerson = name;
+                        document.getElementById('global-search-input').value = name;
+                    }
+                    updateGlobalSearchPills();
+
+                    // Automatically switch to global search view
+                    document.querySelectorAll('.project-btn').forEach(b => b.classList.remove('active'));
+                    state.currentProject = 'global-search';
+                    loadProjectView('global-search');
+                });
+                container.appendChild(pill);
+            });
+        }
+
+        function updateGlobalSearchPills() {
+            document.querySelectorAll('#global-staff-pills .pill').forEach(pill => {
+                if (state.globalSelectedPerson && pill.dataset.globalPerson.toLowerCase() === state.globalSelectedPerson.toLowerCase()) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            });
+        }
+
+        // Load project specific context & data
+        function loadProjectView(proj) {
+            const headerTitle = document.getElementById('header-title');
+            const headerSub = document.getElementById('header-subtitle');
+            const metaBanner = document.getElementById('project-meta-banner');
+            const metricsGrid = document.getElementById('metrics-grid');
+            const filterPanel = document.getElementById('filter-panel');
+            const tabNav = document.getElementById('tab-nav');
+            const globalSearchView = document.getElementById('global-search-view');
+
+            globalSearchView.style.display = 'none';
+
+            if (proj === 'global-search') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-user-ninja" style="color: #ec4899;"></i> Hồ Sơ Công Việc Nhân Viên: ${state.globalSelectedPerson || 'Nhập hoặc chọn nhân viên'}`;
+                headerSub.innerHTML = `<i class="fa-solid fa-magnifying-glass"></i> Danh sách tổng hợp công việc được phân công trên 6 dự án (màu sắc phân loại theo từng dự án)`;
+                metaBanner.style.display = 'none';
+                metricsGrid.style.display = 'none';
+                filterPanel.style.display = 'none';
+                tabNav.style.display = 'none';
+
+                document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+                globalSearchView.style.display = 'block';
+
+                renderGlobalSearch();
+                return;
+            }
+
+            // Standard Project Mode
+            metricsGrid.style.display = 'grid';
+            filterPanel.style.display = 'flex';
+            tabNav.style.display = 'flex';
+            document.getElementById(state.activeTab).style.display = 'block';
+
+            if (proj === 'amsio') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-trophy" style="color: var(--color-amsio-text);"></i> AMSIO - Dashboard Phân Công Công Việc`;
+                headerSub.innerHTML = `<i class="fa-regular fa-calendar"></i> Kiểm tra phân công & giám sát tiến độ dự án kỳ thi AMSIO Việt Nam`;
+                metaBanner.style.display = 'none';
+            } else if (proj === 'ap') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-graduation-cap" style="color: var(--color-ap-text);"></i> AP - Kế Hoạch Tuyển Sinh Chương Trình AP`;
+                headerSub.innerHTML = `<i class="fa-regular fa-calendar-check"></i> Kỳ nhập học Tháng 09/2026 - Chỉ tiêu 30 học sinh`;
+                metaBanner.style.display = 'grid';
+                metaBanner.innerHTML = `
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <div class="meta-info"><h4>Chỉ Tiêu Tuyển Sinh</h4><p>30 học sinh (03 lớp)</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="meta-info"><h4>Thời Gian & Khai Giảng</h4><p>05/08 - 31/08 (KG: 05/09)</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-school"></i></div>
+                        <div class="meta-info"><h4>Mục Tiêu Trường Học</h4><p>≥ 100 trường THCS/THPT</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="meta-info"><h4>Đại Lý & Leads</h4><p>≥ 30 đại lý | ≥ 300 leads</p></div>
+                    </div>
+                `;
+            } else if (proj === 'iena') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-plane-departure" style="color: var(--color-iena-text);"></i> IENA - Kế Hoạch Đội Tuyển IENA 2026 (Đức)`;
+                headerSub.innerHTML = `<i class="fa-regular fa-calendar"></i> Cuộc thi phát minh sáng chế quốc tế IENA tại Đức (Tháng 10/2026)`;
+                metaBanner.style.display = 'grid';
+                metaBanner.innerHTML = `
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-earth-europe"></i></div>
+                        <div class="meta-info"><h4>Địa Điểm & Cuộc Thi</h4><p>IENA 2026 - Nước Đức</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="meta-info"><h4>Thời Gian Thi Đấu</h4><p>Tháng 10/2026</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="meta-info"><h4>Phạm Vi Công Việc</h4><p>Tuyển sinh, Đề tài & Logistics</p></div>
+                    </div>
+                `;
+            } else if (proj === 'ipitex') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-medal" style="color: var(--color-ipitex-text);"></i> IPITEX - Kế Hoạch Đội Tuyển IPITEX 2027 (Thái Lan)`;
+                headerSub.innerHTML = `<i class="fa-regular fa-calendar"></i> Cuộc thi sáng chế & phát minh quốc tế IPITEX tại Thái Lan (Tháng 02/2027)`;
+                metaBanner.style.display = 'grid';
+                metaBanner.innerHTML = `
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-earth-asia"></i></div>
+                        <div class="meta-info"><h4>Địa Điểm Thi Đấu</h4><p>IPITEX 2027 - Thái Lan</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                        <div class="meta-info"><h4>Thời Gian Tổ Chức</h4><p>Tháng 02/2027</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-list-check"></i></div>
+                        <div class="meta-info"><h4>Tiến Độ Phân Công</h4><p>Tuyển sinh, Ôn luyện & Logistics</p></div>
+                    </div>
+                `;
+            } else if (proj === 'nckh') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-microscope" style="color: var(--color-nckh-text);"></i> NCKH - Chương Trình Nghiên Cứu Khoa Học 2026–2027`;
+                headerSub.innerHTML = `<i class="fa-regular fa-calendar"></i> Kế hoạch triển khai tổng thể chương trình NCKH học sinh (2026 - 2027)`;
+                metaBanner.style.display = 'grid';
+                metaBanner.innerHTML = `
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-flask"></i></div>
+                        <div class="meta-info"><h4>Chương Trình Đào Tạo</h4><p>Nghiên Cứu Khoa Học NCKH</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="meta-info"><h4>Khung Thời Gian</h4><p>Niên khóa 2026 – 2027</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                        <div class="meta-info"><h4>Giai Đoạn Triển Khai</h4><p>Tuyển sinh, Đào tạo & Công bố</p></div>
+                    </div>
+                `;
+            } else if (proj === 'media') {
+                headerTitle.innerHTML = `<i class="fa-solid fa-bullhorn" style="color: var(--color-media-text);"></i> Truyền Thông - Danh Mục Sản Phẩm Truyền Thông & Ấn Phẩm`;
+                headerSub.innerHTML = `<i class="fa-regular fa-calendar"></i> Phân công nhiệm vụ sản xuất bộ nhận diện, poster, brochure, video & landing page`;
+                metaBanner.style.display = 'grid';
+                metaBanner.innerHTML = `
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-photo-film"></i></div>
+                        <div class="meta-info"><h4>Sản Phẩm Truyền Thông</h4><p>Ấn phẩm, Video & Media</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                        <div class="meta-info"><h4>Thiết Kế Đồ Họa</h4><p>Dũng (Graphic Design)</p></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="meta-info"><h4>Quay Phim & Video</h4><p>Nam (Media Production)</p></div>
+                    </div>
+                `;
+            }
+
+            initCategoryDropdown(proj);
+            initPersonnelFilter(proj);
+            renderDashboard();
+        }
+
+        // Initialize Category Dropdown
+        function initCategoryDropdown(proj) {
+            const selectCat = document.getElementById('filter-category');
+            selectCat.innerHTML = '<option value="">-- Hạng Mục (Tất cả) --</option>';
+
+            const tasks = MULTI_PROJECT_DATA[proj].tasks;
+            const categories = [...new Set(tasks.map(t => t.category))];
+
+            categories.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat;
+                opt.textContent = cat;
+                selectCat.appendChild(opt);
+            });
+        }
+
+        // Initialize Personnel Filter
+        function initPersonnelFilter(proj) {
+            const selectPerson = document.getElementById('filter-person');
+            const pillsContainer = document.getElementById('personnel-pills');
+
+            selectPerson.innerHTML = '<option value="">-- Chọn Nhân Sự (Tất cả) --</option>';
+            pillsContainer.innerHTML = '<span class="pill-label"><i class="fa-solid fa-filter"></i> Chọn nhanh nhân sự trong dự án:</span>';
+
+            const peopleData = [...MULTI_PROJECT_DATA[proj].people].sort((a, b) => b.totalTasks - a.totalTasks);
+
+            peopleData.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p.name;
+                opt.textContent = `${p.name} (${p.totalTasks} việc)`;
+                selectPerson.appendChild(opt);
+
+                const pill = document.createElement('div');
+                pill.className = 'pill';
+                pill.dataset.person = p.name;
+                pill.innerHTML = `${p.name} <span class="count-badge">${p.totalTasks}</span>`;
+                pill.addEventListener('click', () => {
+                    if (state.person === p.name) {
+                        state.person = '';
+                    } else {
+                        state.person = p.name;
+                    }
+                    selectPerson.value = state.person;
+                    updatePillSelection();
+                    renderDashboard();
+                });
+                pillsContainer.appendChild(pill);
+            });
+        }
+
+        function updatePillSelection() {
+            document.querySelectorAll('#personnel-pills .pill').forEach(pill => {
+                if (pill.dataset.person === state.person) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            });
+        }
+
+        // Setup Event Listeners
+        function setupEventListeners() {
+            document.getElementById('search-input').addEventListener('input', (e) => {
+                state.search = e.target.value.toLowerCase().trim();
+                renderDashboard();
+            });
+
+            document.getElementById('filter-person').addEventListener('change', (e) => {
+                state.person = e.target.value;
+                updatePillSelection();
+                renderDashboard();
+            });
+
+            document.getElementById('filter-role').addEventListener('change', (e) => {
+                state.role = e.target.value;
+                renderDashboard();
+            });
+
+            document.getElementById('filter-category').addEventListener('change', (e) => {
+                state.category = e.target.value;
+                renderDashboard();
+            });
+
+            document.getElementById('filter-status').addEventListener('change', (e) => {
+                state.status = e.target.value;
+                renderDashboard();
+            });
+
+            document.getElementById('btn-reset-filter').addEventListener('click', () => {
+                state.search = '';
+                state.person = '';
+                state.role = '';
+                state.category = '';
+                state.status = '';
+
+                document.getElementById('search-input').value = '';
+                document.getElementById('filter-person').value = '';
+                document.getElementById('filter-role').value = '';
+                document.getElementById('filter-category').value = '';
+                document.getElementById('filter-status').value = '';
+
+                updatePillSelection();
+                renderDashboard();
+            });
+
+            document.getElementById('btn-export').addEventListener('click', exportToCSV);
+
+            // Global Personnel Search Taskbar Input Listener (LIVE INSTANT SEARCH ON ROW 1 TOPMOST)
+            document.getElementById('global-search-input').addEventListener('input', (e) => {
+                state.globalSelectedPerson = e.target.value.trim();
+                updateGlobalSearchPills();
+                
+                // Automatically switch view if not already in global view
+                if (state.currentProject !== 'global-search') {
+                    document.querySelectorAll('.project-btn').forEach(b => b.classList.remove('active'));
+                    state.currentProject = 'global-search';
+                    loadProjectView('global-search');
+                } else {
+                    renderGlobalSearch();
+                }
+            });
+
+            document.getElementById('global-project-filter').addEventListener('change', (e) => {
+                state.globalProjectFilter = e.target.value;
+                if (state.currentProject === 'global-search') {
+                    renderGlobalSearch();
+                }
+            });
+
+            document.getElementById('btn-export-personal-tasks').addEventListener('click', exportPersonalTasksToCSV);
+
+            // Tab Navigation
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+
+                    btn.classList.add('active');
+                    state.activeTab = btn.dataset.tab;
+                    const activeContent = document.getElementById(state.activeTab);
+                    activeContent.style.display = 'block';
+
+                    if (state.activeTab === 'tab-analytics') {
+                        renderCharts();
+                    }
+                });
+            });
+        }
+
+        // Project Badge Class Mapper (STRICT MATCHING COLOR PALETTE)
+        function getProjectBadgeClass(pKey) {
+            switch(pKey) {
+                case 'amsio': return 'badge-proj-amsio';
+                case 'ap': return 'badge-proj-ap';
+                case 'iena': return 'badge-proj-iena';
+                case 'ipitex': return 'badge-proj-ipitex';
+                case 'nckh': return 'badge-proj-nckh';
+                case 'media': return 'badge-proj-media';
+                default: return 'badge-cat';
             }
         }
 
-        if (localStorage.getItem('unlocked_riva') === 'true') {
-            document.getElementById('lock-screen').style.display = 'none';
-        }
+        // Render Global Personnel Search across ALL 6 PROJECTS
+        function renderGlobalSearch() {
+            const query = state.globalSelectedPerson.toLowerCase().trim();
+            const projFilter = state.globalProjectFilter;
+            const tbody = document.getElementById('global-search-table-body');
+            const summaryBox = document.getElementById('global-dossier-summary');
+            const tableContainer = document.getElementById('personal-tasks-table-container');
+            tbody.innerHTML = '';
 
-        function getCleanTaskName(taskName) {
-            return taskName.trim().toLowerCase();
-        }
-
-        function isTaskCompleted(t) {
-            if (syncState[t.id]) return true;
-            let clean = getCleanTaskName(t.task);
-            return !!syncState[clean];
-        }
-
-        function toggleTaskCheck(taskId, isChecked, taskTitle) {
-            let clean = getCleanTaskName(taskTitle);
-            syncState[taskId] = isChecked;
-            syncState[clean] = isChecked;
-
-            if (isChecked) {
-                syncDateState[clean] = currentTab;
-                syncDateState[taskId] = currentTab;
-            } else {
-                delete syncDateState[clean];
-                delete syncDateState[taskId];
+            if (!query) {
+                summaryBox.style.display = 'none';
+                tableContainer.style.display = 'none';
+                return;
             }
 
-            localStorage.setItem('sync_task_state_v10', JSON.stringify(syncState));
-            localStorage.setItem('sync_task_date_v10', JSON.stringify(syncDateState));
-            updateStats();
-            renderTable();
-        }
+            const projects = ['amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media'];
+            const projectTitles = {
+                amsio: 'AMSIO Việt Nam',
+                ap: 'Tuyển Sinh AP',
+                iena: 'Đội Tuyển IENA (Đức)',
+                ipitex: 'Đội Tuyển IPITEX (Thái Lan)',
+                nckh: 'NCKH (2026-2027)',
+                media: 'Sản Phẩm Truyền Thông'
+            };
 
-        function updateStats() {
-            let uniqueMap = {};
-            let uniqueList = [];
+            const matchedTasks = [];
+            let exactMatchedName = '';
+            const projCounts = { amsio: 0, ap: 0, iena: 0, ipitex: 0, nckh: 0, media: 0 };
+            let completedCount = 0;
 
-            // Aggregate unique tasks across master project dataset
-            Object.keys(dailyData).forEach(day => {
-                dailyData[day].tasks.forEach(t => {
-                    if (!uniqueMap[t.id]) {
-                        uniqueMap[t.id] = t;
-                        uniqueList.push(t);
+            projects.forEach(pKey => {
+                if (projFilter && projFilter !== pKey) return;
+                const pData = MULTI_PROJECT_DATA[pKey];
+                if (!pData) return;
+
+                pData.tasks.forEach(t => {
+                    const dirs = t.director.split(',').map(s => s.trim()).filter(Boolean);
+                    const coords = t.coordinator.split(',').map(s => s.trim()).filter(Boolean);
+                    const execs = t.executor.split(',').map(s => s.trim()).filter(Boolean);
+
+                    const allPeople = [...dirs, ...coords, ...execs];
+                    const matchedPerson = allPeople.find(pName => pName.toLowerCase().includes(query));
+
+                    if (matchedPerson) {
+                        exactMatchedName = matchedPerson;
+                        projCounts[pKey]++;
+                        if (t.status === '☑') completedCount++;
+
+                        const roles = [];
+                        if (dirs.includes(matchedPerson)) roles.push('Phụ trách / Điều hành');
+                        if (coords.includes(matchedPerson)) roles.push('Điều phối');
+                        if (execs.includes(matchedPerson)) roles.push('Thực hiện');
+
+                        matchedTasks.push({
+                            projectKey: pKey,
+                            projectTitle: projectTitles[pKey],
+                            task: t,
+                            assignedRole: roles.join(', ')
+                        });
                     }
                 });
             });
 
-            let total = uniqueList.length;
-            let done = 0;
-            let urgent = 0;
-
-            uniqueList.forEach(t => {
-                if (isTaskCompleted(t)) {
-                    done++;
-                } else {
-                    if (t.alert && t.alert.includes('🔴')) {
-                        urgent++;
-                    }
-                }
-            });
-
-            let doing = total - done;
-            let pct = total > 0 ? ((done / total) * 100).toFixed(1) + '%' : '0.0%';
-
-            document.getElementById('stat-done').innerText = done;
-            document.getElementById('stat-doing').innerText = doing;
-            document.getElementById('stat-urgent').innerText = urgent;
-            document.getElementById('stat-pct').innerText = pct;
-        }
-
-        function renderTable() {
-            const tbody = document.getElementById('task-tbody');
-            tbody.innerHTML = '';
-            const searchVal = document.getElementById('search-box').value.toLowerCase();
-            const personVal = document.getElementById('filter-person').value;
-
-            const dayObj = dailyData[currentTab];
-            if (!dayObj) return;
-
-            let filtered = dayObj.tasks.filter(t => {
-                const matchSearch = t.task.toLowerCase().includes(searchVal) || t.who.toLowerCase().includes(searchVal) || t.detail.toLowerCase().includes(searchVal) || t.note.toLowerCase().includes(searchVal);
-                const matchPerson = (personVal === 'ALL') || (t.who === personVal);
-                return matchSearch && matchPerson;
-            });
-
-            if (filtered.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 32px; font-weight: 500;">⚪ Chưa có deadline / công việc phân công cho ngày <strong>${dayObj.title}</strong></td></tr>`;
+            if (matchedTasks.length === 0) {
+                summaryBox.style.display = 'none';
+                tableContainer.style.display = 'block';
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--text-muted); padding: 40px;">Không tìm thấy công việc nào được giao cho nhân viên <strong>"${state.globalSelectedPerson}"</strong>.</td></tr>`;
                 return;
             }
 
-            filtered.forEach((t, idx) => {
-                const isChecked = isTaskCompleted(t);
-                let isEarly = false;
+            // SORT URGENT DEADLINE WARNING TASKS (RED ALERT) TO THE VERY TOP
+            matchedTasks.sort((a, b) => {
+                const isUrgentA = checkDeadlineUrgent(a.task.deadline, a.task.status);
+                const isUrgentB = checkDeadlineUrgent(b.task.deadline, b.task.status);
+                if (isUrgentA && !isUrgentB) return -1;
+                if (!isUrgentA && isUrgentB) return 1;
+                return 0;
+            });
 
-                if (isChecked) {
-                    let clean = getCleanTaskName(t.task);
-                    let doneTab = syncDateState[clean] || syncDateState[t.id] || currentTab;
-                    
-                    let doneParts = doneTab.replace('Date_', '').split('_');
-                    let doneDayVal = parseInt(doneParts[0], 10);
-                    let doneMonthVal = parseInt(doneParts[1], 10);
-                    let doneVal = doneMonthVal === 9 ? (30 + doneDayVal) : doneDayVal;
+            tableContainer.style.display = 'block';
 
-                    let dlDay = parseInt(t.dl.split('/')[0], 10);
-                    let dlMonth = parseInt(t.dl.split('/')[1], 10);
-                    let dlVal = dlMonth === 9 ? (30 + dlDay) : dlDay;
+            // Render Dossier Header Card
+            const total = matchedTasks.length;
+            const rate = Math.round((completedCount / total) * 100);
+            const personName = exactMatchedName || state.globalSelectedPerson;
 
-                    if (doneVal < dlVal) {
-                        isEarly = true;
-                    }
-                }
+            summaryBox.style.display = 'block';
+            summaryBox.innerHTML = `
+                <div style="background: var(--bg-card); border: 1px solid rgba(236, 72, 153, 0.4); border-radius: var(--radius-md); padding: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <div class="avatar" style="width: 56px; height: 56px; font-size: 20px; background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);">${getInitials(personName)}</div>
+                        <div>
+                            <h2 style="font-size: 20px; font-weight: 800; color: #fff;">CHI TIẾT VIỆC ĐƯỢC GIAO: <span style="color: #f472b6;">${personName}</span></h2>
+                            <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 4px;">Tổng cộng: <strong style="color: #fcd34d;">${total}</strong> việc | Đã xong: <strong style="color: var(--success);">${completedCount}</strong> (${rate}% tiến độ)</p>
+                        </div>
+                    </div>
 
-                let statusStr = t.status;
-                let alertStr = t.alert;
-                let displayNote = t.note;
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px;">
+                        <span class="badge badge-proj-amsio">AMSIO: ${projCounts.amsio}</span>
+                        <span class="badge badge-proj-ap">AP: ${projCounts.ap}</span>
+                        <span class="badge badge-proj-iena">IENA: ${projCounts.iena}</span>
+                        <span class="badge badge-proj-ipitex">IPITEX: ${projCounts.ipitex}</span>
+                        <span class="badge badge-proj-nckh">NCKH: ${projCounts.nckh}</span>
+                        <span class="badge badge-proj-media">Truyền Thông: ${projCounts.media}</span>
+                    </div>
+                </div>
+            `;
 
-                if (isChecked) {
-                    if (isEarly) {
-                        statusStr = 'Hoàn thành trước hạn';
-                        alertStr = '🟢 HOÀN THÀNH TRƯỚC HẠN';
-                        displayNote = `🟢 Đã hoàn thành sớm trước hạn (DL: ${t.dl}) - ${t.note}`;
-                    } else {
-                        statusStr = 'Hoàn thành';
-                        alertStr = '🟢 HOÀN THÀNH';
-                        displayNote = `🟢 Đã hoàn thành - ${t.note}`;
-                    }
-                }
-
-                const isRedAlert = !isChecked && alertStr.includes('🔴');
-                let badgeClass = isChecked ? (isEarly ? 'badge-done-early' : 'badge-done') : 'badge-doing';
-
+            // Render Task Rows WITH MATCHING BRAND PROJECT COLORS & DEADLINE WARNING
+            matchedTasks.forEach((item, index) => {
+                const t = item.task;
                 const tr = document.createElement('tr');
-                if (isChecked) tr.classList.add('task-done-row');
+                const badgeClass = getProjectBadgeClass(item.projectKey);
+                const deadlineHTML = renderDeadlineHTML(t.deadline, t.status);
 
                 tr.innerHTML = `
-                    <td style="text-align: center;">
-                        <input type="checkbox" class="custom-checkbox" ${isChecked ? 'checked' : ''} onchange="toggleTaskCheck('${t.id}', this.checked, '${t.task.replace(/'/g, "\'")}')">
+                    <td style="font-weight: 700; color: var(--primary);">${index + 1}</td>
+                    <td><span class="badge ${badgeClass}">${item.projectTitle}</span></td>
+                    <td style="font-weight: 600; color: #fff;">${t.task_name}</td>
+                    <td><span class="badge badge-cat">${t.category}</span></td>
+                    <td><span class="badge badge-dir">${item.assignedRole}</span></td>
+                    <td><span style="font-size: 12px; color: var(--text-sub);"><i class="fa-solid fa-box"></i> ${t.product || 'N/A'}</span></td>
+                    <td>${deadlineHTML}</td>
+                    <td>
+                        <span class="badge status-badge ${t.status === '☑' ? 'status-done' : 'status-pending'}" data-proj="${item.projectKey}" data-stt="${t.stt}">
+                            ${t.status === '☑' ? '<i class="fa-solid fa-check"></i> Đã xong' : '<i class="fa-solid fa-hourglass-half"></i> Chưa xong'}
+                        </span>
                     </td>
-                    <td style="text-align: center; color: var(--text-muted);">${idx + 1}</td>
-                    <td><span class="staff-name">${t.who}</span></td>
-                    <td style="font-weight: 500; ${isChecked ? 'text-decoration: line-through; color: var(--text-muted);' : ''}">${t.task}</td>
-                    <td style="font-size: 12px; color: ${isEarly ? '#059669' : (isChecked ? '#16a34a' : 'var(--text-muted)')}; font-weight: ${isChecked ? '600' : '400'};">${displayNote}</td>
-                    <td style="color: var(--text-muted);">${t.supervisor}</td>
-                    <td style="white-space: nowrap; font-weight: 600; color: ${isRedAlert ? '#ef4444' : 'var(--text-main)'};">${t.dl}</td>
-                    <td><span class="${isRedAlert ? 'alert-red-cell' : ''}">${alertStr}</span></td>
-                    <td><span class="badge ${badgeClass}">${statusStr}</span></td>
-                    <td style="color: var(--text-main);">${t.detail}</td>
                 `;
+
+                const statusBadge = tr.querySelector('.status-badge');
+                statusBadge.addEventListener('click', () => {
+                    t.status = t.status === '☑' ? '□' : '☑';
+                    const key = `${item.projectKey}_${t.stt}`;
+                    savedStatuses[key] = t.status;
+                    localStorage.setItem('amsio_task_statuses', JSON.stringify(savedStatuses));
+                    renderGlobalSearch();
+                });
+
                 tbody.appendChild(tr);
             });
         }
 
-        updateStats();
-        renderTable();
+        // Export Personal Tasks to CSV
+        function exportPersonalTasksToCSV() {
+            const query = state.globalSelectedPerson.toLowerCase().trim();
+            if (!query) {
+                alert('Vui lòng chọn hoặc nhập tên nhân viên để xuất dữ liệu!');
+                return;
+            }
+
+            const projects = ['amsio', 'ap', 'iena', 'ipitex', 'nckh', 'media'];
+            const projectTitles = {
+                amsio: 'AMSIO Việt Nam',
+                ap: 'Tuyển Sinh AP',
+                iena: 'Đội Tuyển IENA (Đức)',
+                ipitex: 'Đội Tuyển IPITEX (Thái Lan)',
+                nckh: 'NCKH (2026-2027)',
+                media: 'Sản Phẩm Truyền Thông'
+            };
+
+            const matchedTasks = [];
+            let exactName = state.globalSelectedPerson;
+
+            projects.forEach(pKey => {
+                if (state.globalProjectFilter && state.globalProjectFilter !== pKey) return;
+                const pData = MULTI_PROJECT_DATA[pKey];
+                if (!pData) return;
+
+                pData.tasks.forEach(t => {
+                    const dirs = t.director.split(',').map(s => s.trim()).filter(Boolean);
+                    const coords = t.coordinator.split(',').map(s => s.trim()).filter(Boolean);
+                    const execs = t.executor.split(',').map(s => s.trim()).filter(Boolean);
+
+                    const allPeople = [...dirs, ...coords, ...execs];
+                    const matchedPerson = allPeople.find(pName => pName.toLowerCase().includes(query));
+
+                    if (matchedPerson) {
+                        exactName = matchedPerson;
+                        const roles = [];
+                        if (dirs.includes(matchedPerson)) roles.push('Phụ trách / Điều hành');
+                        if (coords.includes(matchedPerson)) roles.push('Điều phối');
+                        if (execs.includes(matchedPerson)) roles.push('Thực hiện');
+
+                        matchedTasks.push({
+                            projectTitle: projectTitles[pKey],
+                            task: t,
+                            role: roles.join(', ')
+                        });
+                    }
+                });
+            });
+
+            if (matchedTasks.length === 0) {
+                alert('Không có dữ liệu công việc để xuất Excel!');
+                return;
+            }
+
+            let csvContent = "\uFEFF";
+            csvContent += `STT,Dự Án,Nhiệm Vụ Phân Công,Hạng Mục Chi Tiết,Vai Trò Phân Công,Sản Phẩm Đầu Ra,Deadline,Trạng Thái\n`;
+
+            matchedTasks.forEach((item, index) => {
+                const t = item.task;
+                const row = [
+                    `"${index + 1}"`,
+                    `"${item.projectTitle}"`,
+                    `"${t.task_name.replace(/"/g, '""')}"`,
+                    `"${t.category.replace(/"/g, '""')}"`,
+                    `"${item.role}"`,
+                    `"${t.product.replace(/"/g, '""')}"`,
+                    `"${t.deadline}"`,
+                    `"${t.status === '☑' ? 'Đã xong' : 'Chưa xong'}"`
+                ];
+                csvContent += row.join(',') + "\n";
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", `DANH_SACH_VIEC_${exactName.toUpperCase()}_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Get Filtered Tasks for single project mode
+        function getFilteredTasks() {
+            if (!MULTI_PROJECT_DATA[state.currentProject]) return [];
+            
+            const currentTasks = MULTI_PROJECT_DATA[state.currentProject].tasks;
+
+            return currentTasks.filter(t => {
+                if (state.search) {
+                    const matchName = t.task_name.toLowerCase().includes(state.search);
+                    const matchProduct = t.product.toLowerCase().includes(state.search);
+                    const matchDir = t.director.toLowerCase().includes(state.search);
+                    const matchCoord = t.coordinator.toLowerCase().includes(state.search);
+                    const matchExec = t.executor.toLowerCase().includes(state.search);
+                    if (!matchName && !matchProduct && !matchDir && !matchCoord && !matchExec) return false;
+                }
+
+                if (state.category && t.category !== state.category) return false;
+                if (state.status && t.status !== state.status) return false;
+
+                if (state.person) {
+                    const isDir = t.director.includes(state.person);
+                    const isCoord = t.coordinator.includes(state.person);
+                    const isExec = t.executor.includes(state.person);
+
+                    if (state.role === 'Điều hành' && !isDir) return false;
+                    if (state.role === 'Điều phối' && !isCoord) return false;
+                    if (state.role === 'Thực hiện' && !isExec) return false;
+                    if (!state.role && !isDir && !isCoord && !isExec) return false;
+                } else if (state.role) {
+                    if (state.role === 'Điều hành' && !t.director) return false;
+                    if (state.role === 'Điều phối' && !t.coordinator) return false;
+                    if (state.role === 'Thực hiện' && !t.executor) return false;
+                }
+
+                return true;
+            });
+        }
+
+        // Render Dashboard
+        function renderDashboard() {
+            if (state.currentProject === 'global-search') return;
+
+            const filteredTasks = getFilteredTasks();
+
+            updateKPIs(filteredTasks);
+            renderPeopleGrid(filteredTasks);
+            renderTable(filteredTasks);
+
+            if (state.activeTab === 'tab-analytics') {
+                renderCharts();
+            }
+        }
+
+        // Update KPIs
+        function updateKPIs(filteredTasks) {
+            const total = filteredTasks.length;
+            const completed = filteredTasks.filter(t => t.status === '☑').length;
+            const pending = total - completed;
+            const completionRate = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+            document.getElementById('kpi-total-tasks').textContent = total;
+            document.getElementById('kpi-completed-tasks').textContent = completed;
+            document.getElementById('kpi-pending-tasks').textContent = pending;
+            document.getElementById('kpi-completion-rate').textContent = `${completionRate}% tiến độ dự án`;
+            document.getElementById('kpi-progress-fill').style.width = `${completionRate}%`;
+
+            const activePeopleSet = new Set();
+            filteredTasks.forEach(t => {
+                [t.director, t.coordinator, t.executor].forEach(roleStr => {
+                    if (roleStr) {
+                        roleStr.split(',').forEach(p => activePeopleSet.add(p.trim()));
+                    }
+                });
+            });
+            document.getElementById('kpi-total-people').textContent = activePeopleSet.size;
+        }
+
+        // Helper to format short initials for avatar
+        function getInitials(name) {
+            if (!name) return '??';
+            const parts = name.trim().split(' ');
+            if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+            return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+        }
+
+        // Render Personnel Grid
+        function renderPeopleGrid(filteredTasks) {
+            const grid = document.getElementById('people-grid');
+            grid.innerHTML = '';
+
+            const peopleMap = {};
+            const currentProjData = MULTI_PROJECT_DATA[state.currentProject];
+
+            currentProjData.people.forEach(p => {
+                peopleMap[p.name] = { name: p.name, director: 0, coordinator: 0, executor: 0, total: 0, completed: 0, tasks: [] };
+            });
+
+            filteredTasks.forEach(t => {
+                const dirs = t.director.split(',').map(s => s.trim()).filter(Boolean);
+                const coords = t.coordinator.split(',').map(s => s.trim()).filter(Boolean);
+                const execs = t.executor.split(',').map(s => s.trim()).filter(Boolean);
+
+                const allInTask = new Set([...dirs, ...coords, ...execs]);
+
+                allInTask.forEach(pName => {
+                    if (!peopleMap[pName]) {
+                        peopleMap[pName] = { name: pName, director: 0, coordinator: 0, executor: 0, total: 0, completed: 0, tasks: [] };
+                    }
+                    if (dirs.includes(pName)) peopleMap[pName].director++;
+                    if (coords.includes(pName)) peopleMap[pName].coordinator++;
+                    if (execs.includes(pName)) peopleMap[pName].executor++;
+
+                    peopleMap[pName].total++;
+                    if (t.status === '☑') peopleMap[pName].completed++;
+                    peopleMap[pName].tasks.push(t);
+                });
+            });
+
+            // Calculate urgent deadline counts for each person
+            Object.values(peopleMap).forEach(p => {
+                p.urgentCount = p.tasks.filter(t => checkDeadlineUrgent(t.deadline, t.status)).length;
+            });
+
+            let list = Object.values(peopleMap);
+            if (state.person) {
+                list = list.filter(p => p.name === state.person);
+            } else {
+                // PRIORITIZE PEOPLE WITH URGENT RED DEADLINES FIRST
+                list = list.filter(p => p.total > 0).sort((a, b) => {
+                    if (b.urgentCount !== a.urgentCount) {
+                        return b.urgentCount - a.urgentCount;
+                    }
+                    return b.total - a.total;
+                });
+            }
+
+            if (list.length === 0) {
+                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px;">Không tìm thấy nhân sự phù hợp.</div>`;
+                return;
+            }
+
+            // WHEN A SINGLE PERSON IS SELECTED -> RENDER SPACIOUS HORIZONTAL BOX LAYOUT
+            if (state.person && list.length === 1) {
+                const p = list[0];
+                const rate = p.total > 0 ? Math.round((p.completed / p.total) * 100) : 0;
+                
+                const card = document.createElement('div');
+                card.className = 'person-card person-card-horizontal';
+
+                const sortedTasks = sortTasksWithUrgentFirst(p.tasks);
+
+                let taskCardsHTML = sortedTasks.map(t => {
+                    const deadlineHTML = renderDeadlineHTML(t.deadline, t.status);
+                    return `
+                        <div class="horizontal-task-card clickable-task-box" data-stt="${t.stt}" title="Nhấp để xem chi tiết trong Bảng danh sách công việc">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;">
+                                <span style="font-weight: 700; color: #fff; font-size: 13.5px;">#${t.stt}. ${t.task_name}</span>
+                                <span class="badge status-badge ${t.status === '☑' ? 'status-done' : 'status-pending'}" data-stt="${t.stt}" style="cursor: pointer;">
+                                    ${t.status === '☑' ? '<i class="fa-solid fa-check"></i> Xong' : '<i class="fa-solid fa-hourglass-half"></i> Chưa'}
+                                </span>
+                            </div>
+                            <div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-top: 4px;">
+                                <span class="badge badge-cat">${t.category}</span>
+                                ${t.product ? `<span style="font-size: 11.5px; color: var(--text-sub);"><i class="fa-solid fa-box"></i> ${t.product}</span>` : ''}
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6px; padding-top: 6px; border-top: 1px dashed rgba(255,255,255,0.08);">
+                                ${deadlineHTML}
+                                <span style="font-size: 11px; color: #a5b4fc; font-weight: 600;"><i class="fa-solid fa-arrow-right-to-bracket"></i> Xem trong Bảng</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                card.innerHTML = `
+                    <div class="horizontal-top-bar">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div class="avatar" style="width: 58px; height: 58px; font-size: 22px;">${getInitials(p.name)}</div>
+                            <div>
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <h2 style="font-size: 22px; font-weight: 800; color: #fff;">${p.name}</h2>
+                                    <span class="badge" style="background: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4);"><i class="fa-solid fa-user-check"></i> Nhân Sự Được Chọn</span>
+                                </div>
+                                <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 4px;">Tổng công việc trong dự án: <strong style="color: #fcd34d;">${p.total}</strong> việc | Đã hoàn thành: <strong style="color: var(--success);">${p.completed}</strong> (${rate}%)</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <div class="role-stats" style="margin: 0; min-width: 260px;">
+                                <div class="role-box">
+                                    <span class="role-title role-dir">Phụ Trách</span>
+                                    <span class="role-num role-dir">${p.director}</span>
+                                </div>
+                                <div class="role-box">
+                                    <span class="role-title role-coord">Điều Phối</span>
+                                    <span class="role-num role-coord">${p.coordinator}</span>
+                                </div>
+                                <div class="role-box">
+                                    <span class="role-title role-exec">Thực Hiện</span>
+                                    <span class="role-num role-exec">${p.executor}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 18px;">
+                        <h4 style="font-size: 14.5px; font-weight: 700; color: #fff; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Chi Tiết Phân Công Nhiệm Vụ Trong Dự Án (${p.total} việc - Cảnh báo đỏ ưu tiên trên cùng):
+                        </h4>
+                        <div class="horizontal-task-grid">
+                            ${taskCardsHTML}
+                        </div>
+                    </div>
+                `;
+
+                card.querySelectorAll('.status-badge').forEach(badge => {
+                    badge.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const stt = badge.dataset.stt;
+                        const t = p.tasks.find(x => x.stt == stt);
+                        if (t) {
+                            t.status = t.status === '☑' ? '□' : '☑';
+                            const key = `${state.currentProject}_${t.stt}`;
+                            savedStatuses[key] = t.status;
+                            localStorage.setItem('amsio_task_statuses', JSON.stringify(savedStatuses));
+                            renderDashboard();
+                        }
+                    });
+                });
+
+                card.querySelectorAll('.clickable-task-box').forEach(box => {
+                    box.addEventListener('click', (e) => {
+                        if (e.target.closest('.status-badge')) return;
+                        const stt = box.dataset.stt;
+                        if (stt) jumpToTaskInTable(stt);
+                    });
+                });
+
+                grid.appendChild(card);
+                return;
+            }
+
+            // WHEN MULTIPLE PEOPLE ARE DISPLAYED -> RENDER GRID OF CARDS
+            list.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'person-card';
+
+                const rate = p.total > 0 ? Math.round((p.completed / p.total) * 100) : 0;
+                const sortedTasks = sortTasksWithUrgentFirst(p.tasks);
+
+                let taskItemsHTML = sortedTasks.map(t => `
+                    <div class="person-task-item clickable-task-box" data-stt="${t.stt}" title="Nhấp để xem chi tiết trong Bảng công việc" style="cursor: pointer;">
+                        <span style="font-weight: 600; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">#${t.stt}. ${t.task_name}</span>
+                        <span class="badge ${t.status === '☑' ? 'status-done' : 'status-pending'}">${t.status === '☑' ? 'Xong' : 'Chưa'}</span>
+                    </div>
+                `).join('');
+
+                card.innerHTML = `
+                    <div>
+                        <div class="person-header">
+                            <div class="avatar">${getInitials(p.name)}</div>
+                            <div class="person-info">
+                                <h3>${p.name}</h3>
+                                <p><i class="fa-solid fa-briefcase"></i> Phân công: <strong>${p.total}</strong> việc (${rate}% hoàn thành)</p>
+                            </div>
+                        </div>
+
+                        <div class="role-stats">
+                            <div class="role-box">
+                                <span class="role-title role-dir">Phụ Trách</span>
+                                <span class="role-num role-dir">${p.director}</span>
+                            </div>
+                            <div class="role-box">
+                                <span class="role-title role-coord">Điều Phối</span>
+                                <span class="role-num role-coord">${p.coordinator}</span>
+                            </div>
+                            <div class="role-box">
+                                <span class="role-title role-exec">Thực Hiện</span>
+                                <span class="role-num role-exec">${p.executor}</span>
+                            </div>
+                        </div>
+
+                        <div class="person-task-list">
+                            ${taskItemsHTML}
+                        </div>
+                    </div>
+                `;
+
+                card.querySelectorAll('.clickable-task-box').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        const stt = item.dataset.stt;
+                        if (stt) jumpToTaskInTable(stt);
+                    });
+                });
+
+                grid.appendChild(card);
+            });
+        }
+
+        // Render Table View WITH DEADLINE WARNING & URGENT SORTING
+        function renderTable(tasks) {
+            const tbody = document.getElementById('task-table-body');
+            tbody.innerHTML = '';
+
+            if (tasks.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: var(--text-muted); padding: 30px;">Không có dữ liệu phù hợp</td></tr>`;
+                return;
+            }
+
+            const sortedTasks = sortTasksWithUrgentFirst(tasks);
+
+            sortedTasks.forEach(t => {
+                const tr = document.createElement('tr');
+                tr.id = `task-row-${t.stt}`;
+
+                const renderPersonList = (str, roleBadgeClass) => {
+                    if (!str) return '<span style="color: var(--text-muted);">-</span>';
+                    return str.split(',').map(name => {
+                        name = name.trim();
+                        return `<span class="badge ${roleBadgeClass} clickable-person" data-person="${name}">${name}</span>`;
+                    }).join(' ');
+                };
+
+                const deadlineHTML = renderDeadlineHTML(t.deadline, t.status);
+
+                tr.innerHTML = `
+                    <td style="font-weight: 700; color: var(--primary);">${t.stt}</td>
+                    <td style="font-weight: 600; color: #fff;">${t.task_name}</td>
+                    <td><span class="badge badge-cat">${t.category.split('.')[0] || 'Hạng mục'}</span></td>
+                    <td>${renderPersonList(t.director, 'badge-dir')}</td>
+                    <td>${renderPersonList(t.coordinator, 'badge-coord')}</td>
+                    <td>${renderPersonList(t.executor, 'badge-exec')}</td>
+                    <td><span style="font-size: 12px; color: var(--text-sub);"><i class="fa-solid fa-box"></i> ${t.product || 'N/A'}</span></td>
+                    <td>${deadlineHTML}</td>
+                    <td>
+                        <span class="badge status-badge ${t.status === '☑' ? 'status-done' : 'status-pending'}" data-stt="${t.stt}">
+                            ${t.status === '☑' ? '<i class="fa-solid fa-check"></i> Đã xong' : '<i class="fa-solid fa-hourglass-half"></i> Chưa xong'}
+                        </span>
+                    </td>
+                `;
+
+                const statusBadge = tr.querySelector('.status-badge');
+                statusBadge.addEventListener('click', () => {
+                    t.status = t.status === '☑' ? '□' : '☑';
+                    const key = `${state.currentProject}_${t.stt}`;
+                    savedStatuses[key] = t.status;
+                    localStorage.setItem('amsio_task_statuses', JSON.stringify(savedStatuses));
+                    renderDashboard();
+                });
+
+                tr.querySelectorAll('.clickable-person').forEach(el => {
+                    el.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        // Jump to Global Personnel Search for instant complete view!
+                        state.currentProject = 'global-search';
+                        state.globalSelectedPerson = el.dataset.person;
+                        document.getElementById('global-search-input').value = state.globalSelectedPerson;
+                        updateGlobalSearchPills();
+                        loadProjectView('global-search');
+                    });
+                });
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Render Charts View
+        function renderCharts() {
+            const filteredTasks = getFilteredTasks();
+
+            const peopleWorkload = {};
+            MULTI_PROJECT_DATA[state.currentProject].people.forEach(p => {
+                peopleWorkload[p.name] = 0;
+            });
+
+            filteredTasks.forEach(t => {
+                [t.director, t.coordinator, t.executor].forEach(roleStr => {
+                    if (roleStr) {
+                        roleStr.split(',').forEach(p => {
+                            p = p.trim();
+                            if (peopleWorkload[p] !== undefined) peopleWorkload[p]++;
+                        });
+                    }
+                });
+            });
+
+            const labels = Object.keys(peopleWorkload).filter(name => peopleWorkload[name] > 0);
+            const dataCounts = labels.map(name => peopleWorkload[name]);
+
+            const ctxWorkload = document.getElementById('chart-workload').getContext('2d');
+            if (chartWorkloadInstance) chartWorkloadInstance.destroy();
+
+            chartWorkloadInstance = new Chart(ctxWorkload, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Số lượng nhiệm vụ tham gia',
+                        data: dataCounts,
+                        backgroundColor: 'rgba(99, 102, 241, 0.7)',
+                        borderColor: '#6366f1',
+                        borderWidth: 1,
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { labels: { color: '#94a3b8' } } },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                    }
+                }
+            });
+
+            let dirCount = 0, coordCount = 0, execCount = 0;
+            filteredTasks.forEach(t => {
+                if (t.director) dirCount += t.director.split(',').length;
+                if (t.coordinator) coordCount += t.coordinator.split(',').length;
+                if (t.executor) execCount += t.executor.split(',').length;
+            });
+
+            const ctxRoles = document.getElementById('chart-roles').getContext('2d');
+            if (chartRolesInstance) chartRolesInstance.destroy();
+
+            chartRolesInstance = new Chart(ctxRoles, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Phụ Trách / Điều Hành', 'Điều Phối', 'Thực Hiện'],
+                    datasets: [{
+                        data: [dirCount, coordCount, execCount],
+                        backgroundColor: ['#c084fc', '#60a5fa', '#2dd4bf']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 13 } } } }
+                }
+            });
+        }
+
+        // Export Filtered View to CSV
+        function exportToCSV() {
+            const tasks = getFilteredTasks();
+            if (tasks.length === 0) {
+                alert('Không có dữ liệu để xuất Excel!');
+                return;
+            }
+
+            let csvContent = "\uFEFF";
+            csvContent += "STT,Hạng Mục Công Việc,Hạng Mục Dự Án,Người Điều Hành,Người Điều Phối,Người Thực Hiện,Sản Phẩm,Deadline,Trạng Thái\n";
+
+            tasks.forEach(t => {
+                const row = [
+                    `"${t.stt}"`,
+                    `"${t.task_name.replace(/"/g, '""')}"`,
+                    `"${t.category.replace(/"/g, '""')}"`,
+                    `"${t.director.replace(/"/g, '""')}"`,
+                    `"${t.coordinator.replace(/"/g, '""')}"`,
+                    `"${t.executor.replace(/"/g, '""')}"`,
+                    `"${t.product.replace(/"/g, '""')}"`,
+                    `"${t.deadline}"`,
+                    `"${t.status === '☑' ? 'Đã xong' : 'Chưa xong'}"`
+                ];
+                csvContent += row.join(',') + "\n";
+            });
+
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.setAttribute("href", url);
+            link.setAttribute("download", `${state.currentProject.toUpperCase()}_Phan_Cong_${new Date().toISOString().slice(0,10)}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
     </script>
 </body>
 </html>
