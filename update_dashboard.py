@@ -7,14 +7,23 @@ import re
 if sys.platform == 'win32':
     sys.stdout.reconfigure(encoding='utf-8')
 
-print("=== HỆ THỐNG CẬP NHẬT DỮ LIỆU TỰ ĐỘNG - LÀM SẠCH TÊN BỎ MR/MS ===")
+print("=== HỆ THỐNG CẬP NHẬT DỮ LIỆU DASHBOARD CHÍNH (5 DỰ ÁN) ===")
 
-VALID_PEOPLE = ['Hà', 'Diệu Anh', 'Hường', 'Hải', 'Hảo', 'Dũng', 'Vân Anh', 'Chi', 'Thảo Nguyên', 'Hòa', 'Nam', 'Lộc', 'Toàn bộ nhân viên', 'GVHD', 'CTV', 'Học sinh']
+VALID_PEOPLE = ['Hà', 'Diệu Anh', 'Hường', 'Hải', 'Hảo', 'Dũng', 'Vân Anh', 'Chi', 'Thảo Nguyên', 'Hòa', 'Nam', 'Lộc', 'Ánh', 'Phương', 'Toàn bộ nhân viên', 'GVHD', 'CTV', 'Học sinh']
+
+def find_excel_file(filename):
+    paths = [
+        os.path.join('Excel_file', filename),
+        filename
+    ]
+    for p in paths:
+        if os.path.exists(p):
+            return p
+    return None
 
 def clean_and_extract_names(text):
     if not text or str(text) == 'nan': return []
     s = str(text)
-    # Fix typos like "Hòa. Mr" or "Chi. Ms"
     s = re.sub(r'(\w+)\.\s*(Mr|Ms|mr|ms)\b', r'\1, \2', s)
     s = s.replace(';', ',')
     
@@ -23,22 +32,22 @@ def clean_and_extract_names(text):
     for p in parts:
         p = p.strip()
         if not p: continue
-        # Strip Mr / Ms prefix
         p_clean = re.sub(r'^(mr|ms)\.?\s*', '', p, flags=re.IGNORECASE).strip()
         
-        # Match against standard names
         if p_clean in ['Hà', 'Ms Hà', 'Ms. Hà']: p_clean = 'Hà'
-        elif p_clean in ['Diệu Anh', 'Ms Diệu Anh']: p_clean = 'Diệu Anh'
-        elif p_clean in ['Hường', 'Ms Hường']: p_clean = 'Hường'
-        elif p_clean in ['Hải', 'Ms Hải']: p_clean = 'Hải'
-        elif p_clean in ['Hảo', 'Mr Hảo']: p_clean = 'Hảo'
-        elif p_clean in ['Dũng', 'Mr Dũng']: p_clean = 'Dũng'
-        elif p_clean in ['Vân Anh', 'Ms Vân Anh']: p_clean = 'Vân Anh'
-        elif p_clean in ['Chi', 'Ms Chi']: p_clean = 'Chi'
-        elif p_clean in ['Thảo Nguyên', 'Ms Thảo Nguyên']: p_clean = 'Thảo Nguyên'
-        elif p_clean in ['Hòa', 'Ms Hòa']: p_clean = 'Hòa'
-        elif p_clean in ['Nam', 'Mr Nam']: p_clean = 'Nam'
-        elif p_clean in ['Lộc', 'Mr Lộc']: p_clean = 'Lộc'
+        elif p_clean in ['Diệu Anh', 'Ms Diệu Anh', 'Ms. Diệu Anh']: p_clean = 'Diệu Anh'
+        elif p_clean in ['Hường', 'Ms Hường', 'Ms. Hường']: p_clean = 'Hường'
+        elif p_clean in ['Hải', 'Ms Hải', 'Ms. Hải']: p_clean = 'Hải'
+        elif p_clean in ['Hảo', 'Mr Hảo', 'Mr. Hảo']: p_clean = 'Hảo'
+        elif p_clean in ['Dũng', 'Mr Dũng', 'Mr. Dũng']: p_clean = 'Dũng'
+        elif p_clean in ['Vân Anh', 'Ms Vân Anh', 'Ms. Vân Anh']: p_clean = 'Vân Anh'
+        elif p_clean in ['Chi', 'Ms Chi', 'Ms. Chi']: p_clean = 'Chi'
+        elif p_clean in ['Thảo Nguyên', 'Ms Thảo Nguyên', 'Ms. Thảo Nguyên']: p_clean = 'Thảo Nguyên'
+        elif p_clean in ['Hòa', 'Ms Hòa', 'Ms. Hòa']: p_clean = 'Hòa'
+        elif p_clean in ['Nam', 'Mr Nam', 'Mr. Nam']: p_clean = 'Nam'
+        elif p_clean in ['Lộc', 'Mr Lộc', 'Mr. Lộc']: p_clean = 'Lộc'
+        elif p_clean in ['Ánh', 'Ms Ánh', 'Ms. Ánh']: p_clean = 'Ánh'
+        elif p_clean in ['Phương', 'Ms Phương', 'Ms. Phương']: p_clean = 'Phương'
 
         if p_clean and p_clean in VALID_PEOPLE:
             if p_clean not in names:
@@ -48,8 +57,9 @@ def clean_and_extract_names(text):
 
 # 1. AMSIO
 amsio_tasks = []
-if os.path.exists('AMSIO.xlsx'):
-    df_amsio = pd.read_excel('AMSIO.xlsx')
+amsio_file = find_excel_file('AMSIO.xlsx')
+if amsio_file:
+    df_amsio = pd.read_excel(amsio_file)
     current_cat = "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM"
     for row in df_amsio.to_dict(orient='records'):
         v0 = row.get("CHECKLIST TRIỂN KHAI HỆ THỐNG & TRUYỀN THÔNG KỲ THI XÃ HỘI HÓA")
@@ -94,8 +104,9 @@ ap_meta = {
     "target": "Học sinh lớp 8–11 có định hướng du học và săn học bổng."
 }
 
-if os.path.exists('AP.xlsx'):
-    df_ap = pd.read_excel('AP.xlsx')
+ap_file = find_excel_file('AP.xlsx')
+if ap_file:
+    df_ap = pd.read_excel(ap_file)
     current_cat = "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ"
     for row in df_ap.to_dict(orient='records'):
         v0 = row.get("Unnamed: 0")
@@ -138,8 +149,9 @@ iena_meta = {
     "location": "Đức (Germany)"
 }
 
-if os.path.exists('IENA.xlsx'):
-    df_iena = pd.read_excel('IENA.xlsx')
+iena_file = find_excel_file('IENA.xlsx')
+if iena_file:
+    df_iena = pd.read_excel(iena_file)
     col_name = "KẾ HOẠCH TRIỂN KHAI ĐỘI TUYỂN IENA 2026 (ĐỨC)"
     current_cat = "I. TUYỂN SINH"
     for row in df_iena.to_dict(orient='records'):
@@ -183,8 +195,9 @@ ipitex_meta = {
     "location": "Thái Lan (Thailand)"
 }
 
-if os.path.exists('IPITEX.xlsx'):
-    df_ipitex = pd.read_excel('IPITEX.xlsx')
+ipitex_file = find_excel_file('IPITEX.xlsx')
+if ipitex_file:
+    df_ipitex = pd.read_excel(ipitex_file)
     col_name = "KẾ HOẠCH TRIỂN KHAI ĐỘI TUYỂN IPITEX 2027 (THÁI LAN)"
     current_cat = "I. TUYỂN SINH"
     for row in df_ipitex.to_dict(orient='records'):
@@ -228,8 +241,9 @@ nckh_meta = {
     "scope": "Tuyển sinh, Đào tạo & Hướng dẫn NCKH, Thi đấu & Công bố"
 }
 
-if os.path.exists('NCKH.xlsx'):
-    df_nckh = pd.read_excel('NCKH.xlsx')
+nckh_file = find_excel_file('NCKH.xlsx')
+if nckh_file:
+    df_nckh = pd.read_excel(nckh_file)
     current_cat = "I. TUYỂN SINH"
     for row in df_nckh.to_dict(orient='records'):
         v0 = row.get("Unnamed: 0")
@@ -263,57 +277,6 @@ if os.path.exists('NCKH.xlsx'):
                 "product": str(v5).strip() if v5 and str(v5) != 'nan' else '',
                 "deadline": str(v6).split(' ')[0] if v6 and str(v6) != 'nan' else '',
                 "status": str(v7).strip() if v7 and str(v7) != 'nan' else '□'
-            })
-
-# 6. SẢN PHẨM TRUYỀN THÔNG
-media_tasks = []
-media_file = 'SẢN PHẨM TRUYỀN THÔNG.xlsx'
-if os.path.exists(media_file):
-    df_media = pd.read_excel(media_file)
-    col_title = "DANH MỤC SẢN PHẨM TRUYỀN THÔNG VÀ PHÂN CÔNG NHÂN SỰ"
-    current_cat = "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG"
-    for row in df_media.to_dict(orient='records'):
-        v0 = row.get(col_title)
-        v1 = row.get("Unnamed: 1")
-        v2 = row.get("Unnamed: 2")
-        v3 = row.get("Unnamed: 3")
-        v4 = row.get("Unnamed: 4")
-        v5 = row.get("Unnamed: 5")
-
-        if v0 == "STT" or (v0 is None and v1 is None and v2 is None): continue
-        if isinstance(v0, str) and not str(v0).isdigit():
-            if str(v0).startswith(('I.', 'II.', 'III.', 'IV.', 'V.', 'Gợi ý')):
-                current_cat = str(v0).strip()
-            continue
-
-        v2_str = str(v2).strip() if v2 and str(v2) != 'nan' else ''
-        v3_str = str(v3).strip() if v3 and str(v3) != 'nan' else ''
-
-        if any(prefix in v2_str for prefix in ['Ms', 'Mr']):
-            task_title = str(v1).strip() if v1 else ''
-            dirs = clean_and_extract_names(v2)
-            execs = clean_and_extract_names(v3)
-            prod_output = str(v4).strip() if v4 and str(v4) != 'nan' else ''
-        elif any(prefix in v3_str for prefix in ['Ms', 'Mr']):
-            task_title = str(v2).strip() if v2 else (str(v1).strip() if v1 else '')
-            dirs = clean_and_extract_names(v3)
-            execs = clean_and_extract_names(v4)
-            prod_output = str(v5).strip() if v5 and str(v5) != 'nan' else ''
-        else:
-            continue
-
-        if task_title:
-            stt_val = v0 if (v0 is not None and str(v0) != 'nan') else len(media_tasks) + 1
-            media_tasks.append({
-                "stt": stt_val,
-                "category": current_cat,
-                "task_name": task_title,
-                "director": ', '.join(dirs),
-                "coordinator": '',
-                "executor": ', '.join(execs),
-                "product": prod_output,
-                "deadline": "Theo tiến độ",
-                "status": '□'
             })
 
 def build_people_stats(task_list):
@@ -383,12 +346,6 @@ final_dataset = {
         "meta": nckh_meta,
         "tasks": nckh_tasks,
         "people": build_people_stats(nckh_tasks)
-    },
-    "media": {
-        "title": "SẢN PHẨM TRUYỀN THÔNG & ẤN PHẨM",
-        "meta": {"title": "DANH MỤC SẢN PHẨM TRUYỀN THÔNG VÀ PHÂN CÔNG NHÂN SỰ", "scope": "Ấn phẩm truyền thông, bộ nhận diện, brochure, poster & video"},
-        "tasks": media_tasks,
-        "people": build_people_stats(media_tasks)
     }
 }
 
@@ -397,5 +354,5 @@ js_content = f"const MULTI_PROJECT_DATA = {json.dumps(final_dataset, ensure_asci
 with open('dashboard_data.js', 'w', encoding='utf-8') as f:
     f.write(js_content)
 
-print(f"OK! AMSIO: {len(amsio_tasks)} | AP: {len(ap_tasks)} | IENA: {len(iena_tasks)} | IPITEX: {len(ipitex_tasks)} | NCKH: {len(nckh_tasks)} | MEDIA: {len(media_tasks)}.")
-print("-> Đã làm sạch toàn bộ danh sách nhân sự (loại bỏ hoàn toàn xưng danh Mr/Ms).")
+print(f"OK! AMSIO: {len(amsio_tasks)} | AP: {len(ap_tasks)} | IENA: {len(iena_tasks)} | IPITEX: {len(ipitex_tasks)} | NCKH: {len(nckh_tasks)}.")
+print("-> DONE ")

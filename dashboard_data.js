@@ -467,6 +467,378 @@ const MULTI_PROJECT_DATA = {
     ],
     "people": [
       {
+        "name": "Hà",
+        "directorCount": 25,
+        "coordinatorCount": 5,
+        "executorCount": 4,
+        "totalTasks": 30,
+        "tasks": [
+          {
+            "stt": 1,
+            "task_name": "Phê duyệt kế hoạch triển khai kỳ thi",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-05",
+            "status": "□"
+          },
+          {
+            "stt": 2,
+            "task_name": "Hoàn thiện bộ nhận diện thương hiệu kỳ thi",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-06",
+            "status": "□"
+          },
+          {
+            "stt": 3,
+            "task_name": "Thiết kế Brochure, Flyer, Profile",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-08",
+            "status": "□"
+          },
+          {
+            "stt": 4,
+            "task_name": "Hoàn thiện Website chính thức",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-12",
+            "status": "□"
+          },
+          {
+            "stt": 5,
+            "task_name": "Xây dựng Landing Page đăng ký",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-13",
+            "status": "□"
+          },
+          {
+            "stt": 6,
+            "task_name": "Hoàn thiện Form đăng ký trực tuyến",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-14",
+            "status": "□"
+          },
+          {
+            "stt": 7,
+            "task_name": "Thiết lập CRM và Pipeline",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-15",
+            "status": "□"
+          },
+          {
+            "stt": 8,
+            "task_name": "Kết nối Email Automation",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-16",
+            "status": "□"
+          },
+          {
+            "stt": 9,
+            "task_name": "Thiết lập hệ thống thanh toán",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-18",
+            "status": "□"
+          },
+          {
+            "stt": 10,
+            "task_name": "Thiết lập Dashboard quản lý dữ liệu",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-19",
+            "status": "□"
+          },
+          {
+            "stt": 13,
+            "task_name": "Chuẩn hóa báo giá, hợp đồng, MOU",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-22",
+            "status": "□"
+          },
+          {
+            "stt": 14,
+            "task_name": "Kiểm thử toàn bộ hệ thống",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-25",
+            "status": "□"
+          },
+          {
+            "stt": 15,
+            "task_name": "Xây dựng kế hoạch truyền thông tổng thể",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-24",
+            "status": "□"
+          },
+          {
+            "stt": 16,
+            "task_name": "Xây dựng IMC",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-24",
+            "status": "□"
+          },
+          {
+            "stt": 17,
+            "task_name": "Thiết kế bộ ấn phẩm truyền thông",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-25",
+            "status": "□"
+          },
+          {
+            "stt": 18,
+            "task_name": "Sản xuất video giới thiệu kỳ thi",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-25",
+            "status": "□"
+          },
+          {
+            "stt": 19,
+            "task_name": "Công bố Website và Fanpage",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-26",
+            "status": "□"
+          },
+          {
+            "stt": 20,
+            "task_name": "Gửi Email giới thiệu đến trường học",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-26",
+            "status": "□"
+          },
+          {
+            "stt": 21,
+            "task_name": "Gửi thư mời hợp tác đến đối tác",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-26",
+            "status": "□"
+          },
+          {
+            "stt": 22,
+            "task_name": "Họp trực tuyến/Webinar giới thiệu kỳ thi",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-27",
+            "status": "□"
+          },
+          {
+            "stt": 23,
+            "task_name": "Triển khai Facebook Ads",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-27",
+            "status": "□"
+          },
+          {
+            "stt": 24,
+            "task_name": "Triển khai Google Ads",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-27",
+            "status": "□"
+          },
+          {
+            "stt": 25,
+            "task_name": "Triển khai TikTok Ads",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-28",
+            "status": "□"
+          },
+          {
+            "stt": 36,
+            "task_name": "Kiểm tra Website lần cuối",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-29",
+            "status": "□"
+          },
+          {
+            "stt": 37,
+            "task_name": "Kiểm tra CRM",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-29",
+            "status": "□"
+          },
+          {
+            "stt": 38,
+            "task_name": "Kiểm tra Email Automation",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-29",
+            "status": "□"
+          },
+          {
+            "stt": 39,
+            "task_name": "Kiểm tra thanh toán",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-30",
+            "status": "□"
+          },
+          {
+            "stt": 40,
+            "task_name": "Kiểm tra Hotline & CSKH",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-30",
+            "status": "□"
+          },
+          {
+            "stt": 41,
+            "task_name": "Họp rà soát toàn dự án",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-30",
+            "status": "□"
+          },
+          {
+            "stt": 42,
+            "task_name": "Chính thức mở cổng đăng ký",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "27/102026",
+            "status": "□"
+          }
+        ]
+      },
+      {
+        "name": "Hải",
+        "directorCount": 5,
+        "coordinatorCount": 0,
+        "executorCount": 0,
+        "totalTasks": 5,
+        "tasks": [
+          {
+            "stt": 1,
+            "task_name": "Phê duyệt kế hoạch triển khai kỳ thi",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-05",
+            "status": "□"
+          },
+          {
+            "stt": 2,
+            "task_name": "Hoàn thiện bộ nhận diện thương hiệu kỳ thi",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-06",
+            "status": "□"
+          },
+          {
+            "stt": 3,
+            "task_name": "Thiết kế Brochure, Flyer, Profile",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-08",
+            "status": "□"
+          },
+          {
+            "stt": 9,
+            "task_name": "Thiết lập hệ thống thanh toán",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-18",
+            "status": "□"
+          },
+          {
+            "stt": 13,
+            "task_name": "Chuẩn hóa báo giá, hợp đồng, MOU",
+            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "2026-08-22",
+            "status": "□"
+          }
+        ]
+      },
+      {
         "name": "Diệu Anh",
         "directorCount": 2,
         "coordinatorCount": 29,
@@ -877,378 +1249,6 @@ const MULTI_PROJECT_DATA = {
               "Thực hiện"
             ],
             "deadline": "27/102026",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Hà",
-        "directorCount": 25,
-        "coordinatorCount": 5,
-        "executorCount": 4,
-        "totalTasks": 30,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Phê duyệt kế hoạch triển khai kỳ thi",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-05",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hoàn thiện bộ nhận diện thương hiệu kỳ thi",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-06",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Thiết kế Brochure, Flyer, Profile",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-08",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Hoàn thiện Website chính thức",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-12",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Xây dựng Landing Page đăng ký",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-13",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Hoàn thiện Form đăng ký trực tuyến",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-14",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Thiết lập CRM và Pipeline",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-15",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Kết nối Email Automation",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-16",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Thiết lập hệ thống thanh toán",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-18",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Thiết lập Dashboard quản lý dữ liệu",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-19",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Chuẩn hóa báo giá, hợp đồng, MOU",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-22",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Kiểm thử toàn bộ hệ thống",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-25",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Xây dựng kế hoạch truyền thông tổng thể",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-24",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Xây dựng IMC",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-24",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Thiết kế bộ ấn phẩm truyền thông",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-25",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Sản xuất video giới thiệu kỳ thi",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-25",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Công bố Website và Fanpage",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-26",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Gửi Email giới thiệu đến trường học",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-26",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Gửi thư mời hợp tác đến đối tác",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-26",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Họp trực tuyến/Webinar giới thiệu kỳ thi",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-27",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Triển khai Facebook Ads",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-27",
-            "status": "□"
-          },
-          {
-            "stt": 24,
-            "task_name": "Triển khai Google Ads",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-27",
-            "status": "□"
-          },
-          {
-            "stt": 25,
-            "task_name": "Triển khai TikTok Ads",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-28",
-            "status": "□"
-          },
-          {
-            "stt": 36,
-            "task_name": "Kiểm tra Website lần cuối",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-29",
-            "status": "□"
-          },
-          {
-            "stt": 37,
-            "task_name": "Kiểm tra CRM",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-29",
-            "status": "□"
-          },
-          {
-            "stt": 38,
-            "task_name": "Kiểm tra Email Automation",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-29",
-            "status": "□"
-          },
-          {
-            "stt": 39,
-            "task_name": "Kiểm tra thanh toán",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-30",
-            "status": "□"
-          },
-          {
-            "stt": 40,
-            "task_name": "Kiểm tra Hotline & CSKH",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-30",
-            "status": "□"
-          },
-          {
-            "stt": 41,
-            "task_name": "Họp rà soát toàn dự án",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-30",
-            "status": "□"
-          },
-          {
-            "stt": 42,
-            "task_name": "Chính thức mở cổng đăng ký",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "27/102026",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Hải",
-        "directorCount": 5,
-        "coordinatorCount": 0,
-        "executorCount": 0,
-        "totalTasks": 5,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Phê duyệt kế hoạch triển khai kỳ thi",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-05",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hoàn thiện bộ nhận diện thương hiệu kỳ thi",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-06",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Thiết kế Brochure, Flyer, Profile",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-08",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Thiết lập hệ thống thanh toán",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-18",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Chuẩn hóa báo giá, hợp đồng, MOU",
-            "category": "A. TRIỂN KHAI HỆ THỐNG AMSIO VIỆT NAM",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-22",
             "status": "□"
           }
         ]
@@ -2109,6 +2109,245 @@ const MULTI_PROJECT_DATA = {
         ]
       },
       {
+        "name": "Hòa",
+        "directorCount": 0,
+        "coordinatorCount": 0,
+        "executorCount": 23,
+        "totalTasks": 23,
+        "tasks": [
+          {
+            "stt": 15,
+            "task_name": "Xây dựng kế hoạch truyền thông tổng thể",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-24",
+            "status": "□"
+          },
+          {
+            "stt": 16,
+            "task_name": "Xây dựng IMC",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-24",
+            "status": "□"
+          },
+          {
+            "stt": 17,
+            "task_name": "Thiết kế bộ ấn phẩm truyền thông",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-25",
+            "status": "□"
+          },
+          {
+            "stt": 18,
+            "task_name": "Sản xuất video giới thiệu kỳ thi",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-25",
+            "status": "□"
+          },
+          {
+            "stt": 19,
+            "task_name": "Công bố Website và Fanpage",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-26",
+            "status": "□"
+          },
+          {
+            "stt": 20,
+            "task_name": "Gửi Email giới thiệu đến trường học",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-26",
+            "status": "□"
+          },
+          {
+            "stt": 21,
+            "task_name": "Gửi thư mời hợp tác đến đối tác",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-26",
+            "status": "□"
+          },
+          {
+            "stt": 22,
+            "task_name": "Họp trực tuyến/Webinar giới thiệu kỳ thi",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-27",
+            "status": "□"
+          },
+          {
+            "stt": 23,
+            "task_name": "Triển khai Facebook Ads",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-27",
+            "status": "□"
+          },
+          {
+            "stt": 24,
+            "task_name": "Triển khai Google Ads",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-27",
+            "status": "□"
+          },
+          {
+            "stt": 25,
+            "task_name": "Triển khai TikTok Ads",
+            "category": "B. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-28",
+            "status": "□"
+          },
+          {
+            "stt": 27,
+            "task_name": "Lập danh sách trường mục tiêu",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-07",
+            "status": "□"
+          },
+          {
+            "stt": 28,
+            "task_name": "Lập danh sách đại lý",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-07",
+            "status": "□"
+          },
+          {
+            "stt": 29,
+            "task_name": "Gửi thư mời hợp tác",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-10",
+            "status": "□"
+          },
+          {
+            "stt": 30,
+            "task_name": "Gọi điện giới thiệu chương trình",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 31,
+            "task_name": "Đặt lịch gặp trực tiếp",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 36,
+            "task_name": "Kiểm tra Website lần cuối",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-29",
+            "status": "□"
+          },
+          {
+            "stt": 37,
+            "task_name": "Kiểm tra CRM",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-29",
+            "status": "□"
+          },
+          {
+            "stt": 38,
+            "task_name": "Kiểm tra Email Automation",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-29",
+            "status": "□"
+          },
+          {
+            "stt": 39,
+            "task_name": "Kiểm tra thanh toán",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-30",
+            "status": "□"
+          },
+          {
+            "stt": 40,
+            "task_name": "Kiểm tra Hotline & CSKH",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-30",
+            "status": "□"
+          },
+          {
+            "stt": 41,
+            "task_name": "Họp rà soát toàn dự án",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-30",
+            "status": "□"
+          },
+          {
+            "stt": 42,
+            "task_name": "Chính thức mở cổng đăng ký",
+            "category": "D. MỞ CỔNG ĐĂNG KÝ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "27/102026",
+            "status": "□"
+          }
+        ]
+      },
+      {
         "name": "Hường",
         "directorCount": 9,
         "coordinatorCount": 1,
@@ -2361,245 +2600,6 @@ const MULTI_PROJECT_DATA = {
             "category": "D. MỞ CỔNG ĐĂNG KÝ",
             "roles": [
               "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-30",
-            "status": "□"
-          },
-          {
-            "stt": 41,
-            "task_name": "Họp rà soát toàn dự án",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-30",
-            "status": "□"
-          },
-          {
-            "stt": 42,
-            "task_name": "Chính thức mở cổng đăng ký",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "27/102026",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Hòa",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 23,
-        "totalTasks": 23,
-        "tasks": [
-          {
-            "stt": 15,
-            "task_name": "Xây dựng kế hoạch truyền thông tổng thể",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-24",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Xây dựng IMC",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-24",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Thiết kế bộ ấn phẩm truyền thông",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-25",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Sản xuất video giới thiệu kỳ thi",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-25",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Công bố Website và Fanpage",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-26",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Gửi Email giới thiệu đến trường học",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-26",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Gửi thư mời hợp tác đến đối tác",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-26",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Họp trực tuyến/Webinar giới thiệu kỳ thi",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-27",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Triển khai Facebook Ads",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-27",
-            "status": "□"
-          },
-          {
-            "stt": 24,
-            "task_name": "Triển khai Google Ads",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-27",
-            "status": "□"
-          },
-          {
-            "stt": 25,
-            "task_name": "Triển khai TikTok Ads",
-            "category": "B. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-28",
-            "status": "□"
-          },
-          {
-            "stt": 27,
-            "task_name": "Lập danh sách trường mục tiêu",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-07",
-            "status": "□"
-          },
-          {
-            "stt": 28,
-            "task_name": "Lập danh sách đại lý",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-07",
-            "status": "□"
-          },
-          {
-            "stt": 29,
-            "task_name": "Gửi thư mời hợp tác",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-10",
-            "status": "□"
-          },
-          {
-            "stt": 30,
-            "task_name": "Gọi điện giới thiệu chương trình",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 31,
-            "task_name": "Đặt lịch gặp trực tiếp",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 36,
-            "task_name": "Kiểm tra Website lần cuối",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-29",
-            "status": "□"
-          },
-          {
-            "stt": 37,
-            "task_name": "Kiểm tra CRM",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-29",
-            "status": "□"
-          },
-          {
-            "stt": 38,
-            "task_name": "Kiểm tra Email Automation",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-29",
-            "status": "□"
-          },
-          {
-            "stt": 39,
-            "task_name": "Kiểm tra thanh toán",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-30",
-            "status": "□"
-          },
-          {
-            "stt": 40,
-            "task_name": "Kiểm tra Hotline & CSKH",
-            "category": "D. MỞ CỔNG ĐĂNG KÝ",
-            "roles": [
               "Thực hiện"
             ],
             "deadline": "2026-08-30",
@@ -3066,195 +3066,6 @@ const MULTI_PROJECT_DATA = {
     ],
     "people": [
       {
-        "name": "Hường",
-        "directorCount": 11,
-        "coordinatorCount": 3,
-        "executorCount": 4,
-        "totalTasks": 18,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Phê duyệt kế hoạch tuyển sinh AP",
-            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-05",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hoàn thiện Sổ tay AP",
-            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-06",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Hoàn thiện chính sách học phí và ưu đãi",
-            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-06",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Chuẩn hóa hồ sơ tuyển sinh, hợp đồng, báo giá",
-            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-07",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Thiết lập CRM và Email Automation",
-            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-09",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Hội thảo tại trường học",
-            "category": "B. SẢN XUẤT TÀI LIỆU & TRUYỀN THÔNG",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Lập danh sách trường THCS/THPT mục tiêu",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-07",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Lập danh sách đại lý, đối tác",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-07",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Gửi thư ngỏ hợp tác",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-08",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Gọi điện giới thiệu chương trình",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "10/08–31/08",
-            "status": "□"
-          },
-          {
-            "stt": 24,
-            "task_name": "Gặp trực tiếp/Webinar với đối tác",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 25,
-            "task_name": "Ký MOU/Hợp đồng hợp tác",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 26,
-            "task_name": "Tiếp nhận khách hàng tiềm năng",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Hằng",
-            "status": "□"
-          },
-          {
-            "stt": 27,
-            "task_name": "Tư vấn phụ huynh và học sinh",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Hằng",
-            "status": "□"
-          },
-          {
-            "stt": 28,
-            "task_name": "Tổ chức kiểm tra đầu vào",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 29,
-            "task_name": "Xây dựng lộ trình học cá nhân",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Sau",
-            "status": "□"
-          },
-          {
-            "stt": 30,
-            "task_name": "Chốt nhập học",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "2026-08-31",
-            "status": "□"
-          },
-          {
-            "stt": 37,
-            "task_name": "Chăm sóc học viên sau khai giảng",
-            "category": "D. KHAI GIẢNG & VẬN HÀNH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Sau",
-            "status": "□"
-          }
-        ]
-      },
-      {
         "name": "Hà",
         "directorCount": 17,
         "coordinatorCount": 0,
@@ -3429,6 +3240,195 @@ const MULTI_PROJECT_DATA = {
               "Điều hành"
             ],
             "deadline": "Theo",
+            "status": "□"
+          }
+        ]
+      },
+      {
+        "name": "Hòa",
+        "directorCount": 0,
+        "coordinatorCount": 12,
+        "executorCount": 6,
+        "totalTasks": 18,
+        "tasks": [
+          {
+            "stt": 1,
+            "task_name": "Phê duyệt kế hoạch tuyển sinh AP",
+            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-05",
+            "status": "□"
+          },
+          {
+            "stt": 2,
+            "task_name": "Hoàn thiện Sổ tay AP",
+            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-06",
+            "status": "□"
+          },
+          {
+            "stt": 3,
+            "task_name": "Hoàn thiện chính sách học phí và ưu đãi",
+            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-06",
+            "status": "□"
+          },
+          {
+            "stt": 4,
+            "task_name": "Chuẩn hóa hồ sơ tuyển sinh, hợp đồng, báo giá",
+            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-07",
+            "status": "□"
+          },
+          {
+            "stt": 5,
+            "task_name": "Thiết lập CRM và Email Automation",
+            "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-09",
+            "status": "□"
+          },
+          {
+            "stt": 20,
+            "task_name": "Lập danh sách trường THCS/THPT mục tiêu",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-07",
+            "status": "□"
+          },
+          {
+            "stt": 21,
+            "task_name": "Lập danh sách đại lý, đối tác",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-07",
+            "status": "□"
+          },
+          {
+            "stt": 22,
+            "task_name": "Gửi thư ngỏ hợp tác",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-08",
+            "status": "□"
+          },
+          {
+            "stt": 23,
+            "task_name": "Gọi điện giới thiệu chương trình",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "10/08–31/08",
+            "status": "□"
+          },
+          {
+            "stt": 24,
+            "task_name": "Gặp trực tiếp/Webinar với đối tác",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 25,
+            "task_name": "Ký MOU/Hợp đồng hợp tác",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 26,
+            "task_name": "Tiếp nhận khách hàng tiềm năng",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Hằng",
+            "status": "□"
+          },
+          {
+            "stt": 27,
+            "task_name": "Tư vấn phụ huynh và học sinh",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Hằng",
+            "status": "□"
+          },
+          {
+            "stt": 28,
+            "task_name": "Tổ chức kiểm tra đầu vào",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 29,
+            "task_name": "Xây dựng lộ trình học cá nhân",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Sau",
+            "status": "□"
+          },
+          {
+            "stt": 30,
+            "task_name": "Chốt nhập học",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-31",
+            "status": "□"
+          },
+          {
+            "stt": 31,
+            "task_name": "Thu học phí và hoàn thiện hồ sơ",
+            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-31",
+            "status": "□"
+          },
+          {
+            "stt": 37,
+            "task_name": "Chăm sóc học viên sau khai giảng",
+            "category": "D. KHAI GIẢNG & VẬN HÀNH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Sau",
             "status": "□"
           }
         ]
@@ -3623,10 +3623,10 @@ const MULTI_PROJECT_DATA = {
         ]
       },
       {
-        "name": "Hòa",
-        "directorCount": 0,
-        "coordinatorCount": 12,
-        "executorCount": 6,
+        "name": "Hường",
+        "directorCount": 11,
+        "coordinatorCount": 3,
+        "executorCount": 4,
         "totalTasks": 18,
         "tasks": [
           {
@@ -3634,7 +3634,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Phê duyệt kế hoạch tuyển sinh AP",
             "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
             "roles": [
-              "Thực hiện"
+              "Điều phối"
             ],
             "deadline": "2026-08-05",
             "status": "□"
@@ -3654,7 +3654,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Hoàn thiện chính sách học phí và ưu đãi",
             "category": "A. CHUẨN BỊ CHƯƠNG TRÌNH & HỒ SƠ",
             "roles": [
-              "Thực hiện"
+              "Điều phối"
             ],
             "deadline": "2026-08-06",
             "status": "□"
@@ -3680,11 +3680,21 @@ const MULTI_PROJECT_DATA = {
             "status": "□"
           },
           {
+            "stt": 19,
+            "task_name": "Hội thảo tại trường học",
+            "category": "B. SẢN XUẤT TÀI LIỆU & TRUYỀN THÔNG",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
             "stt": 20,
             "task_name": "Lập danh sách trường THCS/THPT mục tiêu",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "2026-08-07",
             "status": "□"
@@ -3694,7 +3704,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Lập danh sách đại lý, đối tác",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "2026-08-07",
             "status": "□"
@@ -3704,7 +3714,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Gửi thư ngỏ hợp tác",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "2026-08-08",
             "status": "□"
@@ -3714,7 +3724,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Gọi điện giới thiệu chương trình",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "10/08–31/08",
             "status": "□"
@@ -3724,7 +3734,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Gặp trực tiếp/Webinar với đối tác",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "Theo",
             "status": "□"
@@ -3734,7 +3744,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Ký MOU/Hợp đồng hợp tác",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "Theo",
             "status": "□"
@@ -3744,7 +3754,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Tiếp nhận khách hàng tiềm năng",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "Hằng",
             "status": "□"
@@ -3754,7 +3764,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Tư vấn phụ huynh và học sinh",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "Hằng",
             "status": "□"
@@ -3764,7 +3774,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Tổ chức kiểm tra đầu vào",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "Theo",
             "status": "□"
@@ -3774,7 +3784,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Xây dựng lộ trình học cá nhân",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "Sau",
             "status": "□"
@@ -3784,17 +3794,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Chốt nhập học",
             "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
             "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-31",
-            "status": "□"
-          },
-          {
-            "stt": 31,
-            "task_name": "Thu học phí và hoàn thiện hồ sơ",
-            "category": "C. PHÁT TRIỂN ĐỐI TÁC & TUYỂN SINH",
-            "roles": [
-              "Điều phối"
+              "Điều hành"
             ],
             "deadline": "2026-08-31",
             "status": "□"
@@ -4760,45 +4760,6 @@ const MULTI_PROJECT_DATA = {
     ],
     "people": [
       {
-        "name": "Hường",
-        "directorCount": 0,
-        "coordinatorCount": 3,
-        "executorCount": 0,
-        "totalTasks": 3,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Xây dựng kế hoạch tuyển sinh IENA",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-10",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Tiếp nhận hồ sơ đăng ký",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "10–20/08",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Tư vấn và chốt học viên",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-20",
-            "status": "□"
-          }
-        ]
-      },
-      {
         "name": "Hà",
         "directorCount": 4,
         "coordinatorCount": 0,
@@ -4910,6 +4871,45 @@ const MULTI_PROJECT_DATA = {
             "category": "I. TUYỂN SINH",
             "roles": [
               "Thực hiện"
+            ],
+            "deadline": "2026-08-20",
+            "status": "□"
+          }
+        ]
+      },
+      {
+        "name": "Hường",
+        "directorCount": 0,
+        "coordinatorCount": 3,
+        "executorCount": 0,
+        "totalTasks": 3,
+        "tasks": [
+          {
+            "stt": 1,
+            "task_name": "Xây dựng kế hoạch tuyển sinh IENA",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-10",
+            "status": "□"
+          },
+          {
+            "stt": 5,
+            "task_name": "Tiếp nhận hồ sơ đăng ký",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "10–20/08",
+            "status": "□"
+          },
+          {
+            "stt": 6,
+            "task_name": "Tư vấn và chốt học viên",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều phối"
             ],
             "deadline": "2026-08-20",
             "status": "□"
@@ -5846,65 +5846,6 @@ const MULTI_PROJECT_DATA = {
     ],
     "people": [
       {
-        "name": "Hường",
-        "directorCount": 0,
-        "coordinatorCount": 1,
-        "executorCount": 4,
-        "totalTasks": 5,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Kế hoạch tuyển sinh",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-09-15",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Truyền thông đa kênh",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "15/09–31/10",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Báo giá, poster, thư ngỏ, brochure",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-09-20",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Tiếp nhận hồ sơ",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "15/09–31/10",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Tư vấn và chốt học viên",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-10-31",
-            "status": "□"
-          }
-        ]
-      },
-      {
         "name": "Hà",
         "directorCount": 5,
         "coordinatorCount": 0,
@@ -5957,6 +5898,65 @@ const MULTI_PROJECT_DATA = {
             "category": "I. TUYỂN SINH",
             "roles": [
               "Điều hành"
+            ],
+            "deadline": "2026-10-31",
+            "status": "□"
+          }
+        ]
+      },
+      {
+        "name": "Hòa",
+        "directorCount": 0,
+        "coordinatorCount": 0,
+        "executorCount": 5,
+        "totalTasks": 5,
+        "tasks": [
+          {
+            "stt": 1,
+            "task_name": "Kế hoạch tuyển sinh",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-09-15",
+            "status": "□"
+          },
+          {
+            "stt": 2,
+            "task_name": "Truyền thông đa kênh",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "15/09–31/10",
+            "status": "□"
+          },
+          {
+            "stt": 3,
+            "task_name": "Báo giá, poster, thư ngỏ, brochure",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-09-20",
+            "status": "□"
+          },
+          {
+            "stt": 4,
+            "task_name": "Tiếp nhận hồ sơ",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "15/09–31/10",
+            "status": "□"
+          },
+          {
+            "stt": 5,
+            "task_name": "Tư vấn và chốt học viên",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
             ],
             "deadline": "2026-10-31",
             "status": "□"
@@ -6023,10 +6023,10 @@ const MULTI_PROJECT_DATA = {
         ]
       },
       {
-        "name": "Hòa",
+        "name": "Hường",
         "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 5,
+        "coordinatorCount": 1,
+        "executorCount": 4,
         "totalTasks": 5,
         "tasks": [
           {
@@ -6034,7 +6034,7 @@ const MULTI_PROJECT_DATA = {
             "task_name": "Kế hoạch tuyển sinh",
             "category": "I. TUYỂN SINH",
             "roles": [
-              "Thực hiện"
+              "Điều phối"
             ],
             "deadline": "2026-09-15",
             "status": "□"
@@ -6430,25 +6430,6 @@ const MULTI_PROJECT_DATA = {
         ]
       },
       {
-        "name": "Vân Anh",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 1,
-        "totalTasks": 1,
-        "tasks": [
-          {
-            "stt": 6,
-            "task_name": "Phân lớp và phân công GVHD",
-            "category": "II. ÔN LUYỆN & HOÀN THIỆN ĐỀ TÀI",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-10-15",
-            "status": "□"
-          }
-        ]
-      },
-      {
         "name": "Chi",
         "directorCount": 0,
         "coordinatorCount": 9,
@@ -6543,6 +6524,25 @@ const MULTI_PROJECT_DATA = {
               "Điều phối"
             ],
             "deadline": "2026-12-16",
+            "status": "□"
+          }
+        ]
+      },
+      {
+        "name": "Vân Anh",
+        "directorCount": 0,
+        "coordinatorCount": 0,
+        "executorCount": 1,
+        "totalTasks": 1,
+        "tasks": [
+          {
+            "stt": 6,
+            "task_name": "Phân lớp và phân công GVHD",
+            "category": "II. ÔN LUYỆN & HOÀN THIỆN ĐỀ TÀI",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-10-15",
             "status": "□"
           }
         ]
@@ -7177,239 +7177,6 @@ const MULTI_PROJECT_DATA = {
     ],
     "people": [
       {
-        "name": "Hường",
-        "directorCount": 3,
-        "coordinatorCount": 3,
-        "executorCount": 20,
-        "totalTasks": 22,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Xây dựng kế hoạch tuyển sinh chương trình NCKH",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-06",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Xây dựng chính sách học phí và ưu đãi",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-06",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Thiết kế Brochure, Flyer, Profile chương trình",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-08",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Hoàn thiện báo giá và hồ sơ đăng ký",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-09",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Công bố mở tuyển sinh",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều phối",
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-10",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Tiếp nhận hồ sơ đăng ký",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Liên",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Tư vấn phụ huynh và học sinh",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Liên",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Chốt danh sách học viên IENA",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-20",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Chốt danh sách học viên IPITEX",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-09-30",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Xây dựng kế hoạch truyền thông",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-08",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Xây dựng IMC Campaign",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-08",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Thiết kế bộ nhận diện truyền thông",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-09",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Sản xuất video giới thiệu chương trình",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-10",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Viết bài giới thiệu chương trình NCKH",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-10",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Viết bài giới thiệu IENA",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-11",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Viết bài giới thiệu IPITEX",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-11",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Gửi Email Marketing",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Hàng",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Triển khai Facebook Ads",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-11",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Triển khai Google Ads",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-11",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Triển khai TikTok Ads",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-12",
-            "status": "□"
-          },
-          {
-            "stt": 24,
-            "task_name": "Webinar giới thiệu chương trình",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-15",
-            "status": "□"
-          },
-          {
-            "stt": 25,
-            "task_name": "Hội thảo tại trường học",
-            "category": "II. TRUYỀN THÔNG",
-            "roles": [
-              "Điều hành",
-              "Thực hiện"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          }
-        ]
-      },
-      {
         "name": "Hà",
         "directorCount": 24,
         "coordinatorCount": 0,
@@ -7858,6 +7625,239 @@ const MULTI_PROJECT_DATA = {
         ]
       },
       {
+        "name": "Hường",
+        "directorCount": 3,
+        "coordinatorCount": 3,
+        "executorCount": 20,
+        "totalTasks": 22,
+        "tasks": [
+          {
+            "stt": 1,
+            "task_name": "Xây dựng kế hoạch tuyển sinh chương trình NCKH",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-06",
+            "status": "□"
+          },
+          {
+            "stt": 2,
+            "task_name": "Xây dựng chính sách học phí và ưu đãi",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-06",
+            "status": "□"
+          },
+          {
+            "stt": 4,
+            "task_name": "Thiết kế Brochure, Flyer, Profile chương trình",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-08",
+            "status": "□"
+          },
+          {
+            "stt": 7,
+            "task_name": "Hoàn thiện báo giá và hồ sơ đăng ký",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-09",
+            "status": "□"
+          },
+          {
+            "stt": 8,
+            "task_name": "Công bố mở tuyển sinh",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều phối",
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-10",
+            "status": "□"
+          },
+          {
+            "stt": 9,
+            "task_name": "Tiếp nhận hồ sơ đăng ký",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "Liên",
+            "status": "□"
+          },
+          {
+            "stt": 10,
+            "task_name": "Tư vấn phụ huynh và học sinh",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Điều hành"
+            ],
+            "deadline": "Liên",
+            "status": "□"
+          },
+          {
+            "stt": 11,
+            "task_name": "Chốt danh sách học viên IENA",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-20",
+            "status": "□"
+          },
+          {
+            "stt": 12,
+            "task_name": "Chốt danh sách học viên IPITEX",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-09-30",
+            "status": "□"
+          },
+          {
+            "stt": 13,
+            "task_name": "Xây dựng kế hoạch truyền thông",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-08",
+            "status": "□"
+          },
+          {
+            "stt": 14,
+            "task_name": "Xây dựng IMC Campaign",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-08",
+            "status": "□"
+          },
+          {
+            "stt": 15,
+            "task_name": "Thiết kế bộ nhận diện truyền thông",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-09",
+            "status": "□"
+          },
+          {
+            "stt": 16,
+            "task_name": "Sản xuất video giới thiệu chương trình",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-10",
+            "status": "□"
+          },
+          {
+            "stt": 17,
+            "task_name": "Viết bài giới thiệu chương trình NCKH",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-10",
+            "status": "□"
+          },
+          {
+            "stt": 18,
+            "task_name": "Viết bài giới thiệu IENA",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-11",
+            "status": "□"
+          },
+          {
+            "stt": 19,
+            "task_name": "Viết bài giới thiệu IPITEX",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-11",
+            "status": "□"
+          },
+          {
+            "stt": 20,
+            "task_name": "Gửi Email Marketing",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Hàng",
+            "status": "□"
+          },
+          {
+            "stt": 21,
+            "task_name": "Triển khai Facebook Ads",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-11",
+            "status": "□"
+          },
+          {
+            "stt": 22,
+            "task_name": "Triển khai Google Ads",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-11",
+            "status": "□"
+          },
+          {
+            "stt": 23,
+            "task_name": "Triển khai TikTok Ads",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-12",
+            "status": "□"
+          },
+          {
+            "stt": 24,
+            "task_name": "Webinar giới thiệu chương trình",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-15",
+            "status": "□"
+          },
+          {
+            "stt": 25,
+            "task_name": "Hội thảo tại trường học",
+            "category": "II. TRUYỀN THÔNG",
+            "roles": [
+              "Điều hành",
+              "Thực hiện"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          }
+        ]
+      },
+      {
         "name": "Nam",
         "directorCount": 0,
         "coordinatorCount": 0,
@@ -8082,6 +8082,175 @@ const MULTI_PROJECT_DATA = {
               "Thực hiện"
             ],
             "deadline": "Theo",
+            "status": "□"
+          }
+        ]
+      },
+      {
+        "name": "Chi",
+        "directorCount": 0,
+        "coordinatorCount": 2,
+        "executorCount": 14,
+        "totalTasks": 16,
+        "tasks": [
+          {
+            "stt": 3,
+            "task_name": "Hoàn thiện chương trình đào tạo NCKH",
+            "category": "I. TUYỂN SINH",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-07",
+            "status": "□"
+          },
+          {
+            "stt": 26,
+            "task_name": "Phân lớp học",
+            "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-18",
+            "status": "□"
+          },
+          {
+            "stt": 27,
+            "task_name": "Phân công giáo viên hướng dẫn",
+            "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
+            "roles": [
+              "Điều phối"
+            ],
+            "deadline": "2026-08-18",
+            "status": "□"
+          },
+          {
+            "stt": 28,
+            "task_name": "Định hướng và lựa chọn đề tài",
+            "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "2026-08-22",
+            "status": "□"
+          },
+          {
+            "stt": 38,
+            "task_name": "Hoàn thiện hồ sơ học sinh",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 39,
+            "task_name": "Đặt vé máy bay",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 40,
+            "task_name": "Đặt khách sạn",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 41,
+            "task_name": "Mua bảo hiểm",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 42,
+            "task_name": "Xin Visa (nếu cần)",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 43,
+            "task_name": "Chuẩn bị đồng phục đoàn",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 44,
+            "task_name": "Chuẩn bị quà tặng đối ngoại",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 45,
+            "task_name": "Họp phụ huynh trước khi xuất quân",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 46,
+            "task_name": "Kiểm tra hồ sơ xuất cảnh",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 47,
+            "task_name": "Tổ chức Lễ xuất quân",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trước",
+            "status": "□"
+          },
+          {
+            "stt": 48,
+            "task_name": "Điều phối đoàn tham dự cuộc thi",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Theo",
+            "status": "□"
+          },
+          {
+            "stt": 49,
+            "task_name": "Tổng kết, truyền thông thành tích sau cuộc thi",
+            "category": "IV. LOGISTICS",
+            "roles": [
+              "Thực hiện"
+            ],
+            "deadline": "Trong",
             "status": "□"
           }
         ]
@@ -8598,175 +8767,6 @@ const MULTI_PROJECT_DATA = {
             "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
             "roles": [
               "Thực hiện"
-            ],
-            "deadline": "2026-08-18",
-            "status": "□"
-          },
-          {
-            "stt": 28,
-            "task_name": "Định hướng và lựa chọn đề tài",
-            "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-22",
-            "status": "□"
-          },
-          {
-            "stt": 38,
-            "task_name": "Hoàn thiện hồ sơ học sinh",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 39,
-            "task_name": "Đặt vé máy bay",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 40,
-            "task_name": "Đặt khách sạn",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 41,
-            "task_name": "Mua bảo hiểm",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 42,
-            "task_name": "Xin Visa (nếu cần)",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 43,
-            "task_name": "Chuẩn bị đồng phục đoàn",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 44,
-            "task_name": "Chuẩn bị quà tặng đối ngoại",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 45,
-            "task_name": "Họp phụ huynh trước khi xuất quân",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 46,
-            "task_name": "Kiểm tra hồ sơ xuất cảnh",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 47,
-            "task_name": "Tổ chức Lễ xuất quân",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trước",
-            "status": "□"
-          },
-          {
-            "stt": 48,
-            "task_name": "Điều phối đoàn tham dự cuộc thi",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo",
-            "status": "□"
-          },
-          {
-            "stt": 49,
-            "task_name": "Tổng kết, truyền thông thành tích sau cuộc thi",
-            "category": "IV. LOGISTICS",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Trong",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Chi",
-        "directorCount": 0,
-        "coordinatorCount": 2,
-        "executorCount": 14,
-        "totalTasks": 16,
-        "tasks": [
-          {
-            "stt": 3,
-            "task_name": "Hoàn thiện chương trình đào tạo NCKH",
-            "category": "I. TUYỂN SINH",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "2026-08-07",
-            "status": "□"
-          },
-          {
-            "stt": 26,
-            "task_name": "Phân lớp học",
-            "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
-            "roles": [
-              "Điều phối"
-            ],
-            "deadline": "2026-08-18",
-            "status": "□"
-          },
-          {
-            "stt": 27,
-            "task_name": "Phân công giáo viên hướng dẫn",
-            "category": "III. ÔN LUYỆN & CHUẨN BỊ ĐỘI TUYỂN",
-            "roles": [
-              "Điều phối"
             ],
             "deadline": "2026-08-18",
             "status": "□"
@@ -9561,3392 +9561,6 @@ const MULTI_PROJECT_DATA = {
               "Điều phối"
             ],
             "deadline": "Trong",
-            "status": "□"
-          }
-        ]
-      }
-    ]
-  },
-  "media": {
-    "title": "SẢN PHẨM TRUYỀN THÔNG & ẤN PHẨM",
-    "meta": {
-      "title": "DANH MỤC SẢN PHẨM TRUYỀN THÔNG VÀ PHÂN CÔNG NHÂN SỰ",
-      "scope": "Ấn phẩm truyền thông, bộ nhận diện, brochure, poster & video"
-    },
-    "tasks": [
-      {
-        "stt": 1,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Đề án chương trình",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Chi, Vân Anh",
-        "product": "Đề án",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 3,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Bộ nhận diện",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 4,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Brochure",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Brochure",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 5,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Profile/Hồ sơ năng lực",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Profile",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 6,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Poster",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Poster",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 7,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Flyer",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Flyer",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 8,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Standee",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Standee",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 9,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Backdrop",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Backdrop",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 10,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Landing Page",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Landing Page",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 11,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Website",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Website",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 12,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Form đăng ký",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Form Online",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 13,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Báo giá",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Báo giá",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 14,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Thư ngỏ hợp tác",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Thư ngỏ",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 15,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Hợp đồng",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Hợp đồng",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 16,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "MOU",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "MOU",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 17,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Slide giới thiệu",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "PowerPoint",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 18,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Video giới thiệu",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Video",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 19,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "FAQ",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "FAQ",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 20,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Email Marketing Template",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Template Email",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 21,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Bộ bài viết Fanpage",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Nội dung",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 22,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Bộ ảnh truyền thông",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Album ảnh",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 23,
-        "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-        "task_name": "Thông cáo báo chí",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Thảo Nguyên, Lộc, Hường, Hòa, Nam",
-        "product": "Thông cáo",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 2,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Sổ tay kỳ thi",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 3,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Thư ngỏ trường học",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 4,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Brochure kỳ thi",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 5,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Poster tuyển sinh",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 6,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Flyer",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 7,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Video giới thiệu",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 8,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Landing Page",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 9,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Báo giá",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 10,
-        "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-        "task_name": "Bộ bài viết truyền thông",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Chi, Vân Anh",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 1,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Đề án chương trình",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 2,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Sổ tay NCKH",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 3,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Sổ tay cuộc thi",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 4,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Thư ngỏ hợp tác",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 5,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Brochure chương trình",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 6,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Poster tuyển sinh",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 7,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Flyer",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 8,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Landing Page",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 9,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Video giới thiệu",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 10,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Slide hội thảo",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 11,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Báo giá",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 12,
-        "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-        "task_name": "Checklist hồ sơ quốc tế",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 1,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Đề án phát triển du học",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 2,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Hồ sơ năng lực",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 3,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Brochure du học",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 4,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Poster du học",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 5,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Catalogue trường",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 6,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Cẩm nang du học",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 7,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Cẩm nang học bổng",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 8,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Chương trình AP",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 9,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Chương trình Song bằng",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 10,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Chương trình THPT nội trú",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 11,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Chương trình Summer Camp",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 12,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Landing Page",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 13,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Video giới thiệu",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 14,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Bộ bài viết truyền thông",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 15,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Báo giá dịch vụ",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 16,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Thư ngỏ hợp tác",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 17,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Checklist hồ sơ du học",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 18,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Checklist học bổng",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 19,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Slide hội thảo",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      },
-      {
-        "stt": 20,
-        "category": "III. NHÓM DU HỌC",
-        "task_name": "Email Marketing",
-        "director": "Diệu Anh",
-        "coordinator": "",
-        "executor": "Lộc, Hường, Hòa",
-        "product": "Chưa có",
-        "deadline": "Theo tiến độ",
-        "status": "□"
-      }
-    ],
-    "people": [
-      {
-        "name": "Diệu Anh",
-        "directorCount": 63,
-        "coordinatorCount": 0,
-        "executorCount": 0,
-        "totalTasks": 63,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Đề án chương trình",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Profile/Hồ sơ năng lực",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Standee",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Backdrop",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Landing Page",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Website",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Form đăng ký",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Báo giá",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Hợp đồng",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "MOU",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Slide giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Video giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "FAQ",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing Template",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Bộ bài viết Fanpage",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Bộ ảnh truyền thông",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Thông cáo báo chí",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Sổ tay kỳ thi",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Thư ngỏ trường học",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure kỳ thi",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Poster tuyển sinh",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Flyer",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Video giới thiệu",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Landing Page",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Báo giá",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 1,
-            "task_name": "Đề án chương trình",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Sổ tay NCKH",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Sổ tay cuộc thi",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Brochure chương trình",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster tuyển sinh",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Landing Page",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Video giới thiệu",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Slide hội thảo",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Báo giá",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Checklist hồ sơ quốc tế",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 1,
-            "task_name": "Đề án phát triển du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hồ sơ năng lực",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Brochure du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Poster du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Catalogue trường",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Cẩm nang du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Cẩm nang học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Chương trình AP",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Chương trình Song bằng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Chương trình THPT nội trú",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Chương trình Summer Camp",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Landing Page",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Video giới thiệu",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Báo giá dịch vụ",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Checklist hồ sơ du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Checklist học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Slide hội thảo",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Điều hành"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Vân Anh",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 10,
-        "totalTasks": 10,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Đề án chương trình",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Sổ tay kỳ thi",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Thư ngỏ trường học",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure kỳ thi",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Poster tuyển sinh",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Flyer",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Video giới thiệu",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Landing Page",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Báo giá",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Chi",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 10,
-        "totalTasks": 10,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Đề án chương trình",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Sổ tay kỳ thi",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Thư ngỏ trường học",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure kỳ thi",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Poster tuyển sinh",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Flyer",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Video giới thiệu",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Landing Page",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Báo giá",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "I. NHÓM KỲ THI HỌC THUẬT (ASMO - SEAMO - IKLC - IKSC)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Thảo Nguyên",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 22,
-        "totalTasks": 22,
-        "tasks": [
-          {
-            "stt": 1,
-            "task_name": "Đề án chương trình",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Profile/Hồ sơ năng lực",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Standee",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Backdrop",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Landing Page",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Website",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Form đăng ký",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Báo giá",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Hợp đồng",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "MOU",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Slide giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Video giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "FAQ",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing Template",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Bộ bài viết Fanpage",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Bộ ảnh truyền thông",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Thông cáo báo chí",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Nam",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 21,
-        "totalTasks": 21,
-        "tasks": [
-          {
-            "stt": 3,
-            "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Profile/Hồ sơ năng lực",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Standee",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Backdrop",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Landing Page",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Website",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Form đăng ký",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Báo giá",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Hợp đồng",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "MOU",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Slide giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Video giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "FAQ",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing Template",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Bộ bài viết Fanpage",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Bộ ảnh truyền thông",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Thông cáo báo chí",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Lộc",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 53,
-        "totalTasks": 53,
-        "tasks": [
-          {
-            "stt": 3,
-            "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Profile/Hồ sơ năng lực",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Standee",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Backdrop",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Landing Page",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Website",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Form đăng ký",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Báo giá",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Hợp đồng",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "MOU",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Slide giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Video giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "FAQ",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing Template",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Bộ bài viết Fanpage",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Bộ ảnh truyền thông",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Thông cáo báo chí",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 1,
-            "task_name": "Đề án chương trình",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Sổ tay NCKH",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Sổ tay cuộc thi",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Brochure chương trình",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster tuyển sinh",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Landing Page",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Video giới thiệu",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Slide hội thảo",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Báo giá",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Checklist hồ sơ quốc tế",
-            "category": "II. NHÓM NGHIÊN CỨU KHOA HỌC (SVIIF - IENA - IPITEX)",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 1,
-            "task_name": "Đề án phát triển du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hồ sơ năng lực",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Brochure du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Poster du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Catalogue trường",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Cẩm nang du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Cẩm nang học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Chương trình AP",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Chương trình Song bằng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Chương trình THPT nội trú",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Chương trình Summer Camp",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Landing Page",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Video giới thiệu",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Báo giá dịch vụ",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Checklist hồ sơ du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Checklist học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Slide hội thảo",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Hường",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 41,
-        "totalTasks": 41,
-        "tasks": [
-          {
-            "stt": 3,
-            "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Profile/Hồ sơ năng lực",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Standee",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Backdrop",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Landing Page",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Website",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Form đăng ký",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Báo giá",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Hợp đồng",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "MOU",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Slide giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Video giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "FAQ",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing Template",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Bộ bài viết Fanpage",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Bộ ảnh truyền thông",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Thông cáo báo chí",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 1,
-            "task_name": "Đề án phát triển du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hồ sơ năng lực",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Brochure du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Poster du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Catalogue trường",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Cẩm nang du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Cẩm nang học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Chương trình AP",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Chương trình Song bằng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Chương trình THPT nội trú",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Chương trình Summer Camp",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Landing Page",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Video giới thiệu",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Báo giá dịch vụ",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Checklist hồ sơ du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Checklist học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Slide hội thảo",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          }
-        ]
-      },
-      {
-        "name": "Hòa",
-        "directorCount": 0,
-        "coordinatorCount": 0,
-        "executorCount": 41,
-        "totalTasks": 41,
-        "tasks": [
-          {
-            "stt": 3,
-            "task_name": "Bộ nhận diện thương hiệu (Logo, Banner, Cover)",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Brochure",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Profile/Hồ sơ năng lực",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Poster",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Flyer",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Standee",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Backdrop",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Landing Page",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Website",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Form đăng ký",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Báo giá",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Hợp đồng",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "MOU",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Slide giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Video giới thiệu",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "FAQ",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing Template",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 21,
-            "task_name": "Bộ bài viết Fanpage",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 22,
-            "task_name": "Bộ ảnh truyền thông",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 23,
-            "task_name": "Thông cáo báo chí",
-            "category": "DANH MỤC TRUYỀN THÔNG DÙNG CHUNG",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 1,
-            "task_name": "Đề án phát triển du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 2,
-            "task_name": "Hồ sơ năng lực",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 3,
-            "task_name": "Brochure du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 4,
-            "task_name": "Poster du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 5,
-            "task_name": "Catalogue trường",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 6,
-            "task_name": "Cẩm nang du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 7,
-            "task_name": "Cẩm nang học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 8,
-            "task_name": "Chương trình AP",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 9,
-            "task_name": "Chương trình Song bằng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 10,
-            "task_name": "Chương trình THPT nội trú",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 11,
-            "task_name": "Chương trình Summer Camp",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 12,
-            "task_name": "Landing Page",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 13,
-            "task_name": "Video giới thiệu",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 14,
-            "task_name": "Bộ bài viết truyền thông",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 15,
-            "task_name": "Báo giá dịch vụ",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 16,
-            "task_name": "Thư ngỏ hợp tác",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 17,
-            "task_name": "Checklist hồ sơ du học",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 18,
-            "task_name": "Checklist học bổng",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 19,
-            "task_name": "Slide hội thảo",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
-            "status": "□"
-          },
-          {
-            "stt": 20,
-            "task_name": "Email Marketing",
-            "category": "III. NHÓM DU HỌC",
-            "roles": [
-              "Thực hiện"
-            ],
-            "deadline": "Theo tiến độ",
             "status": "□"
           }
         ]
